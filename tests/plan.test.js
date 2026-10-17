@@ -31,3 +31,16 @@ test('usePlan : nouveau plan oublie la sauvegarde, replace la garde', () => {
   clear()
   assert.equal(plan.value.savedId, undefined)
 })
+
+test('usePlan : ajouter, modifier et retirer un bloc commentaire', () => {
+  const { plan, clear, addNote, updateNote, remove, totalMinutes } = usePlan()
+  clear()
+  const id = addNote()
+  assert.match(id, /^note-/)
+  assert.deepEqual(plan.value.items, [{ kind: 'note', id, title: '', text: '', minutes: null }])
+  updateNote(id, { title: 'Pause', minutes: 3 })
+  assert.equal(plan.value.items[0].title, 'Pause')
+  assert.equal(totalMinutes.value, 3)
+  remove(id)
+  assert.deepEqual(plan.value.items, [])
+})

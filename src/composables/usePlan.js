@@ -1,5 +1,6 @@
 import { ref, computed, watch } from 'vue'
 import { storage } from '../lib/storage.js'
+import { newNoteId } from '../lib/planCodec.js'
 
 const stored = storage.get('plan', null)
 const plan = ref(Array.isArray(stored?.items) ? stored : { title: '', items: [] })
@@ -13,6 +14,16 @@ export function usePlan() {
 
   function add(id) {
     if (!has(id)) plan.value.items.push({ id, minutes: null })
+  }
+
+  function addNote() {
+    const id = newNoteId()
+    plan.value.items.push({ kind: 'note', id, title: '', text: '', minutes: null })
+    return id
+  }
+
+  function updateNote(id, changes) {
+    Object.assign(plan.value.items.find((it) => it.id === id), changes)
   }
 
   function remove(id) {
@@ -42,5 +53,5 @@ export function usePlan() {
     plan.value.savedId = id
   }
 
-  return { plan, has, add, remove, move, setMinutes, totalMinutes, replace, clear, markSaved }
+  return { plan, has, add, addNote, updateNote, remove, move, setMinutes, totalMinutes, replace, clear, markSaved }
 }

@@ -8,14 +8,30 @@ import { useSavedPlans } from '../composables/useSavedPlans.js'
 import { useSyncStatus, markSynced } from '../composables/usePlanSync.js'
 import DrillImage from '../components/DrillImage.vue'
 
-const { plan, remove, move, setMinutes, totalMinutes, replace, clear, markSaved } = usePlan()
+const { plan, remove, move, setMinutes, totalMinutes, replace, clear, markSaved, addNote, updateNote } = usePlan()
 const { user } = useAuth()
 const { save } = useSavedPlans()
 const saving = ref(false)
 const syncStatus = useSyncStatus()
 const syncLabel = { idle: 'Synchronisé', saved: 'Synchronisé', saving: 'Synchronisation…', error: 'Hors ligne — sera réessayé' }
 
-const rows = computed(() => plan.value.items.map((item) => ({ ...item, drill: drillById.get(item.id) })).filter((r) => r.drill))
+const rows = computed(() =>
+  plan.value.items.map((item) => ({ ...item, drill: drillById.get(item.id) })).filter((r) => r.kind === 'note' || r.drill),
+)
+const drillCount = computed(() => rows.value.filter((r) => r.kind !== 'note').length)
+const noteCount = computed(() => rows.value.length - drillCount.value)
+
+function newNote() {
+  const id = addNote()
+  setTimeout(() => document.getElementById(`${id}-title`)?.focus(), 250)
+}
+
+function noteMinutes(id, value) {
+  const n = parseInt(value, 10)
+  updateNote(id, { minutes: Number.isNaN(n) || n < 0 ? null : n })
+}
+
+const label = (row) => (row.kind === 'note' ? row.title || 'Bloc commentaire' : row.drill.title)
 
 const toast = ref('')
 let toastTimer
@@ -89,7 +105,7 @@ if (plan.value.items.some((it) => !known.has(it.id))) replace(resolvePlan(plan.v
       />
       <h1 class="hidden text-3xl font-bold print:block">{{ plan.title || 'Plan de pratique' }}</h1>
       <p v-if="rows.length" class="text-navy/70 dark:text-ice/70">
-        {{ rows.length }} exercice{{ rows.length > 1 ? 's' : '' }} · Durée totale : <strong class="text-navy dark:text-white">{{ totalMinutes }} min</strong>
+        {{ drillCount }} exercice{{ drillCount > 1 ? 's' : '' }}<template v-if="noteCount"> · {{ noteCount }} bloc{{ noteCount > 1 ? 's' : '' }}</template> · Durée totale : <strong class="text-navy dark:text-white">{{ totalMinutes }} min</strong>
       </p>
       <div v-if="rows.length" class="flex flex-wrap gap-2 print:hidden">
         <button type="button" class="inline-flex items-center gap-2 rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-royal/85 dark:bg-accent dark:text-on-accent dark:hover:bg-accent/85" @click="share">
@@ -119,26 +135,68 @@ if (plan.value.items.some((it) => !known.has(it.id))) replace(resolvePlan(plan.v
         class="plan-item flex items-center gap-3 rounded-2xl border border-navy/10 bg-white p-3 sm:gap-4 dark:border-ice/10 dark:bg-ice/5"
       >
         <span class="w-6 shrink-0 text-center text-lg font-bold text-royal dark:text-periwinkle">{{ index + 1 }}</span>
-        <RouterLink :to="{ name: 'drill', params: { id: row.id } }" class="plan-thumb w-24 shrink-0 overflow-hidden rounded-xl sm:w-32">
-          <DrillImage :src="row.drill.image" :alt="row.drill.title" />
-        </RouterLink>
-        <div class="plan-text flex min-w-0 flex-1 flex-col gap-2">
-          <RouterLink :to="{ name: 'drill', params: { id: row.id } }" class="leading-snug font-semibold text-navy hover:underline dark:text-white">{{ row.drill.title }}</RouterLink>
-          <label class="flex items-center gap-2 text-sm text-navy/60 dark:text-ice/60">
+        <template v-if="row.kind === 'note'">
+          <div class="plan-thumb grid aspect-2/1 w-24 shrink-0 place-items-center rounded-xl bg-royal/10 text-royal sm:w-32 print:hidden dark:bg-ice/10 dark:text-periwinkle" aria-hidden="true">
+            <svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z" /><path d="M8 9h8M8 13h5" /></svg>
+          </div>
+          <div class="plan-text flex min-w-0 flex-1 flex-col gap-2">
             <input
-              :value="row.minutes ?? ''"
-              type="number"
-              min="0"
-              inputmode="numeric"
-              placeholder="–"
-              :aria-label="`Durée de ${row.drill.title} en minutes`"
-              class="w-16 rounded-lg border border-navy/15 bg-transparent px-2 py-1 text-center text-navy outline-none focus:border-royal print:hidden dark:border-ice/20 dark:text-ice dark:focus:border-periwinkle"
-              @input="onMinutes(index, $event.target.value)"
+              :id="`${row.id}-title`"
+              :value="row.title"
+              type="text"
+              placeholder="Titre du bloc"
+              aria-label="Titre du bloc commentaire"
+              class="w-full rounded-lg border border-transparent bg-transparent px-1 py-0.5 font-semibold text-navy outline-none placeholder:text-navy/40 focus:border-navy/15 print:hidden dark:text-white dark:placeholder:text-ice/40 dark:focus:border-ice/20"
+              @input="updateNote(row.id, { title: $event.target.value })"
             />
-            <span class="hidden print:inline">{{ row.minutes ?? '–' }}</span>
-            min
-          </label>
-        </div>
+            <textarea
+              :value="row.text"
+              rows="2"
+              placeholder="Description, consignes, points à souligner…"
+              aria-label="Description du bloc commentaire"
+              class="field-sizing-content min-h-12 w-full resize-none rounded-lg border border-navy/10 bg-transparent px-2 py-1.5 text-sm text-navy outline-none placeholder:text-navy/40 focus:border-royal print:hidden dark:border-ice/15 dark:text-ice dark:placeholder:text-ice/40 dark:focus:border-periwinkle"
+              @input="updateNote(row.id, { text: $event.target.value })"
+            ></textarea>
+            <p class="hidden font-semibold print:block">{{ row.title || 'Bloc commentaire' }}</p>
+            <p class="hidden text-sm whitespace-pre-line print:block">{{ row.text }}</p>
+            <label class="flex items-center gap-2 text-sm text-navy/60 dark:text-ice/60">
+              <input
+                :value="row.minutes ?? ''"
+                type="number"
+                min="0"
+                inputmode="numeric"
+                placeholder="–"
+                :aria-label="`Durée de ${label(row)} en minutes`"
+                class="w-16 rounded-lg border border-navy/15 bg-transparent px-2 py-1 text-center text-navy outline-none focus:border-royal print:hidden dark:border-ice/20 dark:text-ice dark:focus:border-periwinkle"
+                @input="noteMinutes(row.id, $event.target.value)"
+              />
+              <span class="hidden print:inline">{{ row.minutes ?? '–' }}</span>
+              min
+            </label>
+          </div>
+        </template>
+        <template v-else>
+          <RouterLink :to="{ name: 'drill', params: { id: row.id } }" class="plan-thumb w-24 shrink-0 overflow-hidden rounded-xl sm:w-32">
+            <DrillImage :src="row.drill.image" :alt="row.drill.title" />
+          </RouterLink>
+          <div class="plan-text flex min-w-0 flex-1 flex-col gap-2">
+            <RouterLink :to="{ name: 'drill', params: { id: row.id } }" class="leading-snug font-semibold text-navy hover:underline dark:text-white">{{ row.drill.title }}</RouterLink>
+            <label class="flex items-center gap-2 text-sm text-navy/60 dark:text-ice/60">
+              <input
+                :value="row.minutes ?? ''"
+                type="number"
+                min="0"
+                inputmode="numeric"
+                placeholder="–"
+                :aria-label="`Durée de ${row.drill.title} en minutes`"
+                class="w-16 rounded-lg border border-navy/15 bg-transparent px-2 py-1 text-center text-navy outline-none focus:border-royal print:hidden dark:border-ice/20 dark:text-ice dark:focus:border-periwinkle"
+                @input="onMinutes(index, $event.target.value)"
+              />
+              <span class="hidden print:inline">{{ row.minutes ?? '–' }}</span>
+              min
+            </label>
+          </div>
+        </template>
         <div class="flex shrink-0 flex-col items-center gap-1 sm:flex-row print:hidden">
           <button type="button" :disabled="index === 0" aria-label="Monter" class="grid size-9 place-items-center rounded-full text-navy/60 transition-colors duration-200 hover:bg-navy/5 disabled:opacity-25 dark:text-ice/60 dark:hover:bg-ice/10" @click="move(index, -1)">
             <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6" /></svg>
@@ -146,7 +204,7 @@ if (plan.value.items.some((it) => !known.has(it.id))) replace(resolvePlan(plan.v
           <button type="button" :disabled="index === rows.length - 1" aria-label="Descendre" class="grid size-9 place-items-center rounded-full text-navy/60 transition-colors duration-200 hover:bg-navy/5 disabled:opacity-25 dark:text-ice/60 dark:hover:bg-ice/10" @click="move(index, 1)">
             <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
           </button>
-          <button type="button" :aria-label="`Retirer ${row.drill.title}`" class="grid size-9 place-items-center rounded-full text-navy/40 transition-colors duration-200 hover:bg-red-500/10 hover:text-red-500 dark:text-ice/40" @click="remove(row.id)">
+          <button type="button" :aria-label="`Retirer ${label(row)}`" class="grid size-9 place-items-center rounded-full text-navy/40 transition-colors duration-200 hover:bg-red-500/10 hover:text-red-500 dark:text-ice/40" @click="remove(row.id)">
             <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
           </button>
         </div>
@@ -156,6 +214,17 @@ if (plan.value.items.some((it) => !known.has(it.id))) replace(resolvePlan(plan.v
     <div v-else class="flex flex-col items-center gap-4 rounded-3xl border border-dashed border-navy/15 px-6 py-16 text-center dark:border-ice/15">
       <p class="text-lg text-navy/70 dark:text-ice/70">Ton plan est vide.</p>
       <RouterLink :to="{ name: 'catalogue' }" class="rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white dark:bg-accent dark:text-on-accent">Choisir des exercices</RouterLink>
+    </div>
+
+    <div class="mt-3 flex gap-2 print:hidden">
+      <button type="button" class="inline-flex flex-1 items-center justify-center gap-2 rounded-2xl border border-dashed border-navy/20 px-4 py-3 text-sm font-semibold text-navy/70 transition-colors duration-200 hover:border-royal hover:text-royal dark:border-ice/20 dark:text-ice/70 dark:hover:border-periwinkle dark:hover:text-periwinkle" @click="newNote">
+        <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+        Ajouter un bloc commentaire
+      </button>
+      <RouterLink v-if="rows.length" :to="{ name: 'catalogue' }" class="inline-flex flex-1 items-center justify-center gap-2 rounded-2xl border border-dashed border-navy/20 px-4 py-3 text-sm font-semibold text-navy/70 transition-colors duration-200 hover:border-royal hover:text-royal dark:border-ice/20 dark:text-ice/70 dark:hover:border-periwinkle dark:hover:text-periwinkle">
+        <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+        Ajouter des exercices
+      </RouterLink>
     </div>
 
     <Transition name="page">

@@ -11,23 +11,37 @@ function fromBase64Url(s) {
 }
 
 export function encodePlan(plan) {
-  return toBase64Url(JSON.stringify({ t: plan.title, i: plan.items.map((it) => [it.id, it.minutes]) }))
+  const encodeItem = (it) => (it.kind === 'note' ? [NOTE, it.minutes, it.title, it.text] : [it.id, it.minutes])
+  return toBase64Url(JSON.stringify({ t: plan.title, i: plan.items.map(encodeItem) }))
 }
 
+const NOTE = '#'
+
+export const newNoteId = () => `note-${Math.random().toString(36).slice(2, 10)}`
+
 const isMinutes = (m) => m === null || (Number.isInteger(m) && m >= 0)
+
+const isValidItem = (it) =>
+  Array.isArray(it) &&
+  typeof it[0] === 'string' &&
+  isMinutes(it[1]) &&
+  (it[0] !== NOTE || (typeof it[2] === 'string' && typeof it[3] === 'string'))
+
+const decodeItem = ([id, minutes, title, text]) =>
+  id === NOTE ? { kind: 'note', id: newNoteId(), title, text, minutes } : { id, minutes }
 
 export function decodePlan(s) {
   try {
     const { t, i } = JSON.parse(fromBase64Url(s))
     if (typeof t !== 'string' || !Array.isArray(i)) return null
-    if (!i.every((it) => Array.isArray(it) && typeof it[0] === 'string' && isMinutes(it[1]))) return null
-    return { title: t, items: i.map(([id, minutes]) => ({ id, minutes })) }
+    if (!i.every(isValidItem)) return null
+    return { title: t, items: i.map(decodeItem) }
   } catch {
     return null
   }
 }
 
 export function resolvePlan(plan, knownIds) {
-  const items = plan.items.filter((it) => knownIds.has(it.id))
+  const items = plan.items.filter((it) => it.kind === 'note' || knownIds.has(it.id))
   return { plan: { title: plan.title, items }, missing: plan.items.length - items.length }
 }

@@ -16,6 +16,8 @@ const resolved = computed(() => decoded.value && resolvePlan(decoded.value, new 
 const shared = computed(() => resolved.value?.plan)
 const missing = computed(() => resolved.value?.missing ?? 0)
 const rows = computed(() => (shared.value?.items ?? []).map((item) => ({ ...item, drill: drillById.get(item.id) })))
+const drillCount = computed(() => rows.value.filter((r) => r.kind !== 'note').length)
+const noteCount = computed(() => rows.value.length - drillCount.value)
 const totalMinutes = computed(() => rows.value.reduce((sum, r) => sum + (r.minutes ?? 0), 0))
 
 const saving = ref(false)
@@ -52,7 +54,7 @@ function printPlan() {
         <p class="text-sm font-medium tracking-wide text-royal uppercase print:hidden dark:text-periwinkle">Plan partagé · lecture seule</p>
         <h1 class="text-3xl font-bold tracking-tight text-navy sm:text-4xl dark:text-white">{{ shared.title || 'Plan de pratique' }}</h1>
         <p class="text-navy/70 dark:text-ice/70">
-          {{ rows.length }} exercice{{ rows.length > 1 ? 's' : '' }} · Durée totale : <strong class="text-navy dark:text-white">{{ totalMinutes }} min</strong>
+          {{ drillCount }} exercice{{ drillCount > 1 ? 's' : '' }}<template v-if="noteCount"> · {{ noteCount }} bloc{{ noteCount > 1 ? 's' : '' }}</template> · Durée totale : <strong class="text-navy dark:text-white">{{ totalMinutes }} min</strong>
         </p>
         <p v-if="missing" class="text-sm text-navy/60 print:hidden dark:text-ice/60">{{ missing }} exercice{{ missing > 1 ? 's' : '' }} introuvable{{ missing > 1 ? 's' : '' }} ignoré{{ missing > 1 ? 's' : '' }}.</p>
         <div class="flex flex-wrap items-center gap-2 print:hidden">
@@ -74,13 +76,25 @@ function printPlan() {
       <ol class="flex flex-col gap-3">
         <li v-for="(row, index) in rows" :key="`${row.id}-${index}`" class="plan-item flex items-center gap-3 rounded-2xl border border-navy/10 bg-white p-3 sm:gap-4 dark:border-ice/10 dark:bg-ice/5">
           <span class="w-6 shrink-0 text-center text-lg font-bold text-royal dark:text-periwinkle">{{ index + 1 }}</span>
-          <RouterLink :to="{ name: 'drill', params: { id: row.id } }" class="plan-thumb w-24 shrink-0 overflow-hidden rounded-xl sm:w-32">
-            <DrillImage :src="row.drill.image" :alt="row.drill.title" />
-          </RouterLink>
-          <div class="plan-text flex min-w-0 flex-1 flex-col gap-1">
-            <RouterLink :to="{ name: 'drill', params: { id: row.id } }" class="leading-snug font-semibold text-navy hover:underline dark:text-white">{{ row.drill.title }}</RouterLink>
-            <span class="text-sm text-navy/60 dark:text-ice/60">{{ row.minutes ?? '–' }} min</span>
-          </div>
+          <template v-if="row.kind === 'note'">
+            <div class="plan-thumb grid aspect-2/1 w-24 shrink-0 place-items-center rounded-xl bg-royal/10 text-royal sm:w-32 print:hidden dark:bg-ice/10 dark:text-periwinkle" aria-hidden="true">
+              <svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z" /><path d="M8 9h8M8 13h5" /></svg>
+            </div>
+            <div class="plan-text flex min-w-0 flex-1 flex-col gap-1">
+              <p class="leading-snug font-semibold text-navy dark:text-white">{{ row.title || 'Bloc commentaire' }}</p>
+              <p v-if="row.text" class="text-sm whitespace-pre-line text-navy/80 dark:text-ice/80">{{ row.text }}</p>
+              <span class="text-sm text-navy/60 dark:text-ice/60">{{ row.minutes ?? '–' }} min</span>
+            </div>
+          </template>
+          <template v-else>
+            <RouterLink :to="{ name: 'drill', params: { id: row.id } }" class="plan-thumb w-24 shrink-0 overflow-hidden rounded-xl sm:w-32">
+              <DrillImage :src="row.drill.image" :alt="row.drill.title" />
+            </RouterLink>
+            <div class="plan-text flex min-w-0 flex-1 flex-col gap-1">
+              <RouterLink :to="{ name: 'drill', params: { id: row.id } }" class="leading-snug font-semibold text-navy hover:underline dark:text-white">{{ row.drill.title }}</RouterLink>
+              <span class="text-sm text-navy/60 dark:text-ice/60">{{ row.minutes ?? '–' }} min</span>
+            </div>
+          </template>
         </li>
       </ol>
     </template>
