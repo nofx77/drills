@@ -1,14 +1,15 @@
 <script setup>
 import { useTheme } from '../composables/useTheme.js'
+import { usePlan } from '../composables/usePlan.js'
 
 const { isDark, toggle } = useTheme()
+const { plan } = usePlan()
 
 const links = [
   { to: { name: 'catalogue' }, label: 'Exercices', icon: 'M4 6h16M4 12h16M4 18h10' },
   { to: { name: 'favoris' }, label: 'Favoris', icon: 'M12 20.5s-7.5-4.6-7.5-10.1A4.4 4.4 0 0 1 12 7.6a4.4 4.4 0 0 1 7.5 2.8c0 5.5-7.5 10.1-7.5 10.1Z' },
   { to: { name: 'plan' }, label: 'Plan', icon: 'M9 5h10M9 12h10M9 19h10M5 5h.01M5 12h.01M5 19h.01' },
 ]
-const planCount = 0
 </script>
 
 <template>
@@ -28,7 +29,7 @@ const planCount = 0
         >
           <svg class="size-6 md:size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path :d="link.icon" /></svg>
           {{ link.label }}
-          <span v-if="link.label === 'Plan' && planCount" class="absolute top-1 right-2 grid min-w-5 place-items-center rounded-full bg-royal px-1 text-[10px] font-semibold text-white md:static">{{ planCount }}</span>
+          <span v-if="link.label === 'Plan' && plan.items.length" class="absolute top-1 right-2 grid min-w-5 place-items-center rounded-full bg-royal px-1 text-[10px] font-semibold text-white md:static">{{ plan.items.length }}</span>
         </RouterLink>
       </div>
       <button
