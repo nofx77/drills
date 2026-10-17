@@ -1,5 +1,12 @@
+<script>
+import { ref } from 'vue'
+
+const PAGE = 24
+const shown = ref(PAGE)
+</script>
+
 <script setup>
-import { computed } from 'vue'
+import { computed, watch, nextTick, onBeforeUnmount } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { drills, allCategories } from '../data/drills.js'
 import { filterDrills } from '../lib/filter.js'
@@ -26,6 +33,28 @@ const selected = computed({
 const results = computed(() =>
   filterDrills(drills, { query: query.value, categories: selected.value, favoritesOnly: props.favoritesOnly, favorites: favorites.value }),
 )
+
+const visible = computed(() => results.value.slice(0, shown.value))
+
+watch([query, selected, () => props.favoritesOnly], () => (shown.value = PAGE))
+
+const sentinel = ref(null)
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    if (!entry.isIntersecting || shown.value >= results.value.length) return
+    shown.value += PAGE
+    observer.unobserve(entry.target)
+    nextTick(() => sentinel.value && observer.observe(sentinel.value))
+  },
+  { rootMargin: '800px 0px' },
+)
+
+watch(sentinel, (el, old) => {
+  if (old) observer.unobserve(old)
+  if (el) observer.observe(el)
+})
+
+onBeforeUnmount(() => observer.disconnect())
 
 const hasFilters = computed(() => query.value || selected.value.length)
 
@@ -55,8 +84,9 @@ function clearFilters() {
     </header>
 
     <TransitionGroup v-if="results.length" tag="div" name="list" class="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      <DrillCard v-for="drill in results" :key="drill.id" :drill="drill" />
+      <DrillCard v-for="drill in visible" :key="drill.id" :drill="drill" />
     </TransitionGroup>
+    <div v-if="visible.length < results.length" ref="sentinel" class="h-px" aria-hidden="true"></div>
 
     <div v-else class="flex flex-col items-center gap-4 rounded-3xl border border-dashed border-navy/15 px-6 py-16 text-center dark:border-ice/15">
       <p class="text-lg text-navy/70 dark:text-ice/70">
