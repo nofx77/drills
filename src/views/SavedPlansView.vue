@@ -5,6 +5,7 @@ import { useAuth } from '../composables/useAuth.js'
 import { useSavedPlans } from '../composables/useSavedPlans.js'
 import { usePlan } from '../composables/usePlan.js'
 import { fromRow } from '../lib/savedPlans.js'
+import { markSynced } from '../composables/usePlanSync.js'
 
 const router = useRouter()
 const { user, ready, signIn, signOut } = useAuth()
@@ -40,7 +41,9 @@ function sendLink() {
 function open(row) {
   const unsaved = plan.value.items.length && plan.value.savedId !== row.id
   if (unsaved && !confirm('Remplacer ton plan en cours par celui-ci ?')) return
-  replace(fromRow(row))
+  const opened = fromRow(row)
+  markSynced(opened)
+  replace(opened)
   router.push({ name: 'plan' })
 }
 

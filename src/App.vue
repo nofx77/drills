@@ -3,9 +3,11 @@ import { watch } from 'vue'
 import { useRouter } from 'vue-router'
 import AppNav from './components/AppNav.vue'
 import { useAuth } from './composables/useAuth.js'
+import { startPlanSync } from './composables/usePlanSync.js'
 
 const router = useRouter()
 const { user, cameFromEmail } = useAuth()
+startPlanSync()
 
 if (cameFromEmail) {
   const stop = watch(user, (u) => {

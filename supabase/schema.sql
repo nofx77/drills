@@ -32,3 +32,5 @@ $$;
 
 drop trigger if exists plans_touch on public.plans;
 create trigger plans_touch before update on public.plans for each row execute function public.touch_updated_at();
+
+alter publication supabase_realtime add table public.plans;

@@ -1,9 +1,8 @@
 <script setup>
-import { useTheme, THEMES, THEME_LABELS } from '../composables/useTheme.js'
+import { useTheme } from '../composables/useTheme.js'
 import { usePlan } from '../composables/usePlan.js'
 
-const { theme, cycle } = useTheme()
-const nextLabel = () => THEME_LABELS[THEMES[(THEMES.indexOf(theme.value) + 1) % THEMES.length]]
+const { theme, toggleLight, toggleHabs } = useTheme()
 const { plan } = usePlan()
 
 const links = [
@@ -34,17 +33,32 @@ const links = [
           <span v-if="link.label === 'Plan' && plan.items.length" class="absolute top-1 right-2 grid min-w-5 place-items-center rounded-full bg-royal px-1 text-[10px] font-semibold text-white md:static">{{ plan.items.length }}</span>
         </RouterLink>
       </div>
-      <button
-        type="button"
-        class="ml-2 grid size-10 place-items-center rounded-xl text-navy/60 transition-colors duration-200 hover:bg-navy/5 hover:text-navy md:ml-auto dark:text-ice/60 dark:hover:bg-ice/10 dark:hover:text-ice"
-        :aria-label="`Thème ${THEME_LABELS[theme]} — passer au thème ${nextLabel()}`"
-        :title="`Thème : ${THEME_LABELS[theme]}`"
-        @click="cycle"
-      >
-        <svg v-if="theme === 'dark'" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" /></svg>
-        <svg v-else-if="theme === 'light'" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
-        <svg v-else class="size-6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" class="fill-royal" /><circle cx="12" cy="12" r="6.5" class="fill-white" /><circle cx="12" cy="12" r="4" class="fill-habs-blue" /></svg>
-      </button>
+      <div class="ml-1 flex items-center md:ml-auto">
+        <button
+          type="button"
+          class="grid size-10 place-items-center rounded-xl transition-colors duration-200 hover:bg-navy/5 hover:text-navy dark:hover:bg-ice/10 dark:hover:text-ice text-navy/60 dark:text-ice/60"
+          :aria-label="theme === 'light' ? 'Passer en mode sombre' : 'Passer en mode clair'"
+          :title="theme === 'light' ? 'Mode sombre' : 'Mode clair'"
+          @click="toggleLight"
+        >
+          <svg v-if="theme === 'light'" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" /></svg>
+          <svg v-else class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+        </button>
+        <button
+          type="button"
+          class="grid size-10 place-items-center rounded-xl transition-colors duration-200 hover:bg-navy/5 hover:text-navy dark:hover:bg-ice/10 dark:hover:text-ice"
+          :class="theme === 'habs' ? 'text-royal dark:text-periwinkle' : 'text-navy/60 dark:text-ice/60'"
+          :aria-pressed="theme === 'habs'"
+          aria-label="Thème Canadiens"
+          title="Thème Canadiens"
+          @click="toggleHabs"
+        >
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19.66 5.57A10 10 0 1 0 19.66 18.43L16.98 16.18A6.5 6.5 0 1 1 16.98 7.82Z" />
+            <path d="M9 8.5h2v2.7h4V8.5h2v7h-2v-2.7h-4v2.7H9Z" />
+          </svg>
+        </button>
+      </div>
     </div>
   </nav>
 </template>

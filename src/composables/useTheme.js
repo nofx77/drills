@@ -1,24 +1,21 @@
 import { ref } from 'vue'
 import { storage } from '../lib/storage.js'
 
-export const THEMES = ['dark', 'light', 'habs']
-export const THEME_LABELS = { dark: 'Sombre', light: 'Clair', habs: 'Canadiens' }
+const THEMES = ['dark', 'light', 'habs']
 
 const stored = storage.get('theme', 'dark')
 const theme = ref(THEMES.includes(stored) ? stored : 'dark')
 
-export function applyTheme(name) {
-  const root = document.documentElement
-  root.classList.toggle('dark', name !== 'light')
-  root.classList.toggle('habs', name === 'habs')
+function setTheme(name) {
+  theme.value = name
+  document.documentElement.classList.toggle('dark', name !== 'light')
+  document.documentElement.classList.toggle('habs', name === 'habs')
+  storage.set('theme', name)
 }
 
 export function useTheme() {
-  function cycle() {
-    theme.value = THEMES[(THEMES.indexOf(theme.value) + 1) % THEMES.length]
-    applyTheme(theme.value)
-    storage.set('theme', theme.value)
-  }
+  const toggleLight = () => setTheme(theme.value === 'light' ? 'dark' : 'light')
+  const toggleHabs = () => setTheme(theme.value === 'habs' ? 'dark' : 'habs')
 
-  return { theme, cycle }
+  return { theme, toggleLight, toggleHabs }
 }

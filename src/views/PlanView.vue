@@ -6,6 +6,7 @@ import { encodePlan, decodePlan, resolvePlan } from '../lib/planCodec.js'
 import { usePlan } from '../composables/usePlan.js'
 import { useAuth } from '../composables/useAuth.js'
 import { useSavedPlans } from '../composables/useSavedPlans.js'
+import { useSyncStatus, markSynced } from '../composables/usePlanSync.js'
 import DrillImage from '../components/DrillImage.vue'
 
 const route = useRoute()
@@ -14,6 +15,8 @@ const { plan, remove, move, setMinutes, totalMinutes, replace, clear, markSaved 
 const { user } = useAuth()
 const { save } = useSavedPlans()
 const saving = ref(false)
+const syncStatus = useSyncStatus()
+const syncLabel = { idle: 'Synchronisé', saved: 'Synchronisé', saving: 'Synchronisation…', error: 'Hors ligne — sera réessayé' }
 
 const rows = computed(() => plan.value.items.map((item) => ({ ...item, drill: drillById.get(item.id) })).filter((r) => r.drill))
 
@@ -56,7 +59,9 @@ function printPlan() {
 async function savePlan() {
   saving.value = true
   try {
-    markSaved(await save(plan.value))
+    const id = await save(plan.value)
+    markSynced(plan.value)
+    markSaved(id)
     notify('Plan enregistré')
   } catch (e) {
     notify(`Échec de l’enregistrement : ${e.message}`)
@@ -114,8 +119,12 @@ watch(() => route.query.p, openLink, { immediate: true })
           <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z" /></svg>
           Imprimer
         </button>
-        <button v-if="user" type="button" :disabled="saving" class="inline-flex items-center gap-2 rounded-full border border-royal px-4 py-2 text-sm font-semibold text-royal transition-colors duration-200 hover:bg-royal/10 disabled:opacity-60 dark:border-periwinkle dark:text-periwinkle dark:hover:bg-periwinkle/10" @click="savePlan">
-          {{ saving ? 'Enregistrement…' : plan.savedId ? 'Mettre à jour' : 'Enregistrer' }}
+        <span v-if="user && plan.savedId" role="status" class="inline-flex items-center gap-2 px-2 py-2 text-sm font-medium text-navy/60 dark:text-ice/60">
+          <span class="size-2 rounded-full transition-colors duration-200" :class="syncStatus === 'error' ? 'bg-red-500' : syncStatus === 'saving' ? 'bg-amber-400' : 'bg-emerald-500'" aria-hidden="true"></span>
+          {{ syncLabel[syncStatus] }}
+        </span>
+        <button v-else-if="user" type="button" :disabled="saving" class="inline-flex items-center gap-2 rounded-full border border-royal px-4 py-2 text-sm font-semibold text-royal transition-colors duration-200 hover:bg-royal/10 disabled:opacity-60 dark:border-periwinkle dark:text-periwinkle dark:hover:bg-periwinkle/10" @click="savePlan">
+          {{ saving ? 'Enregistrement…' : 'Enregistrer' }}
         </button>
         <RouterLink v-else :to="{ name: 'plans' }" class="inline-flex items-center rounded-full border border-navy/15 px-4 py-2 text-sm font-semibold transition-colors duration-200 hover:border-navy/40 dark:border-ice/20 dark:hover:border-ice/50">Se connecter pour enregistrer</RouterLink>
         <button type="button" class="ml-auto rounded-full px-4 py-2 text-sm font-medium text-navy/50 transition-colors duration-200 hover:text-navy dark:text-ice/50 dark:hover:text-ice" @click="newPlan">Nouveau plan</button>
