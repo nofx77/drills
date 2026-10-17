@@ -2,18 +2,19 @@
 import { ref, computed } from 'vue'
 import { useAuth } from '../composables/useAuth.js'
 import { authErrorMessage } from '../lib/auth.js'
+import { authLinkError } from '../lib/supabase.js'
 
-const { signIn, signInWithPassword, signUp } = useAuth()
+const { signIn, signInWithPassword } = useAuth()
 
 const mode = ref('login')
 const email = ref('')
 const password = ref('')
 const busy = ref(false)
-const error = ref('')
+const error = ref(authLinkError ? authErrorMessage({ code: authLinkError }) : '')
 const info = ref('')
 
-const titles = { login: 'Connexion', signup: 'Créer un compte', link: 'Recevoir un lien par courriel' }
-const buttons = { login: 'Se connecter', signup: 'Créer mon compte', link: 'Recevoir le lien' }
+const titles = { login: 'Connexion', link: 'Recevoir un lien par courriel' }
+const buttons = { login: 'Se connecter', link: 'Recevoir le lien' }
 const needsPassword = computed(() => mode.value !== 'link')
 
 function switchTo(next) {
@@ -32,10 +33,6 @@ async function submit() {
     if (mode.value === 'link') {
       await signIn(address)
       info.value = `Un lien de connexion a été envoyé à ${address}. Ouvre-le sur cet appareil.`
-    }
-    if (mode.value === 'signup') {
-      const { needsConfirmation } = await signUp(address, password.value)
-      if (needsConfirmation) info.value = `Presque fini : confirme ton adresse avec le lien envoyé à ${address}, puis connecte-toi.`
     }
   } catch (e) {
     error.value = authErrorMessage(e)
@@ -66,7 +63,7 @@ const input =
           name="password"
           required
           minlength="6"
-          :autocomplete="mode === 'signup' ? 'new-password' : 'current-password'"
+          autocomplete="current-password"
           placeholder="••••••••"
           :class="input"
         />
@@ -81,8 +78,8 @@ const input =
     </form>
 
     <div class="mt-5 flex flex-col items-center gap-2 text-sm">
-      <button v-if="mode !== 'login'" type="button" class="text-royal underline-offset-4 hover:underline dark:text-periwinkle" @click="switchTo('login')">J’ai déjà un mot de passe</button>
-      <button v-if="mode !== 'signup'" type="button" class="text-royal underline-offset-4 hover:underline dark:text-periwinkle" @click="switchTo('signup')">Créer un compte</button>
+      <button v-if="mode !== 'login'" type="button" class="text-royal underline-offset-4 hover:underline dark:text-periwinkle" @click="switchTo('login')">Me connecter avec mon mot de passe</button>
+      <p v-if="mode === 'login'" class="text-center text-navy/50 dark:text-ice/50">Accès sur invitation seulement.</p>
       <button v-if="mode !== 'link'" type="button" class="text-navy/60 underline-offset-4 hover:underline dark:text-ice/60" @click="switchTo('link')">Mot de passe oublié ? Recevoir un lien par courriel</button>
     </div>
   </section>

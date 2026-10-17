@@ -17,7 +17,7 @@ export function useAuth() {
   async function signIn(email) {
     const { error } = await supabase.auth.signInWithOtp({
       email,
-      options: { emailRedirectTo: `${location.origin}${location.pathname}` },
+      options: { emailRedirectTo: `${location.origin}${location.pathname}`, shouldCreateUser: false },
     })
     if (error) throw error
   }
@@ -25,16 +25,6 @@ export function useAuth() {
   async function signInWithPassword(email, password) {
     const { error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) throw error
-  }
-
-  async function signUp(email, password) {
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: { emailRedirectTo: `${location.origin}${location.pathname}` },
-    })
-    if (error) throw error
-    return { needsConfirmation: !data.session }
   }
 
   async function setPassword(password) {
@@ -46,5 +36,5 @@ export function useAuth() {
     await supabase.auth.signOut()
   }
 
-  return { user, ready, cameFromEmail, signIn, signInWithPassword, signUp, setPassword, signOut }
+  return { user, ready, cameFromEmail, signIn, signInWithPassword, setPassword, signOut }
 }

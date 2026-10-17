@@ -19,7 +19,7 @@ export default createRouter({
       component: PlanView,
       beforeEnter: (to) => (to.query.p ? { name: 'shared', query: { p: to.query.p } } : true),
     },
-    { path: '/partage', name: 'shared', component: SharedPlanView },
+    { path: '/partage', name: 'shared', component: SharedPlanView, meta: { public: true } },
     { path: '/admin', name: 'admin', component: AdminView },
     { path: '/compte', name: 'account', component: AccountView },
     { path: '/plans', name: 'plans', component: SavedPlansView },

@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, RouterLink } from 'vue-router'
 import { drillById } from '../data/drills.js'
 import { decodePlan, resolvePlan } from '../lib/planCodec.js'
 import { useAuth } from '../composables/useAuth.js'
@@ -10,6 +10,7 @@ import NoteLink from '../components/NoteLink.vue'
 import NoteThumb from '../components/NoteThumb.vue'
 
 const route = useRoute()
+const base = import.meta.env.BASE_URL
 const { user } = useAuth()
 const { save } = useSavedPlans()
 
@@ -86,12 +87,13 @@ function printPlan() {
             </div>
           </template>
           <template v-else>
-            <RouterLink :to="{ name: 'drill', params: { id: row.id } }" class="plan-thumb w-24 shrink-0 overflow-hidden rounded-xl sm:w-32">
+            <component :is="user ? RouterLink : 'div'" :to="{ name: 'drill', params: { id: row.id } }" class="plan-thumb w-24 shrink-0 overflow-hidden rounded-xl sm:w-32">
               <DrillImage :src="row.drill.image" :alt="row.drill.title" />
-            </RouterLink>
+            </component>
             <div class="plan-text flex min-w-0 flex-1 flex-col gap-1">
-              <RouterLink :to="{ name: 'drill', params: { id: row.id } }" class="leading-snug font-semibold text-navy hover:underline dark:text-white">{{ row.drill.title }}</RouterLink>
+              <component :is="user ? RouterLink : 'p'" :to="{ name: 'drill', params: { id: row.id } }" class="leading-snug font-semibold text-navy dark:text-white" :class="{ 'hover:underline': user }">{{ row.drill.title }}</component>
               <span class="text-sm text-navy/60 dark:text-ice/60">{{ row.minutes ?? '–' }} min</span>
+              <a v-if="row.drill.pdf" :href="base + row.drill.pdf" target="_blank" rel="noopener" class="w-fit text-sm font-medium text-royal underline-offset-4 hover:underline print:hidden dark:text-periwinkle">Fiche PDF</a>
             </div>
           </template>
         </li>
