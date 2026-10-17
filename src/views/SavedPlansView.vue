@@ -9,11 +9,9 @@ import { markSynced } from '../composables/usePlanSync.js'
 import { useFavoritesSyncState } from '../composables/useFavoritesSync.js'
 import { useFavorites } from '../composables/useFavorites.js'
 import { authErrorMessage } from '../lib/auth.js'
-import LoginPanel from '../components/LoginPanel.vue'
-import PasswordForm from '../components/PasswordForm.vue'
 
 const router = useRouter()
-const { user, ready, signOut } = useAuth()
+const { user, ready } = useAuth()
 const { plans, loading, refresh, remove, rename, duplicate } = useSavedPlans()
 const { plan, replace } = usePlan()
 const favSync = useFavoritesSyncState()
@@ -57,11 +55,6 @@ function askRemove(row) {
   <div class="mx-auto max-w-3xl">
     <header class="mb-6 flex flex-wrap items-end justify-between gap-4">
       <h1 class="text-3xl font-bold tracking-tight text-navy sm:text-4xl dark:text-white">Mes plans</h1>
-      <div v-if="user" class="flex flex-wrap items-center gap-3 text-sm text-navy/60 dark:text-ice/60">
-        <span class="truncate">{{ user.email }}</span>
-        <PasswordForm />
-        <button type="button" class="rounded-full border border-navy/15 px-3 py-1.5 font-medium transition-colors duration-200 hover:border-navy/40 hover:text-navy dark:border-ice/20 dark:hover:border-ice/50 dark:hover:text-ice" @click="signOut">Se déconnecter</button>
-      </div>
     </header>
 
     <p v-if="user" class="mb-4 text-sm" :class="favSync.status === 'error' ? 'text-red-600 dark:text-red-300' : 'text-navy/60 dark:text-ice/60'">
@@ -74,7 +67,6 @@ function askRemove(row) {
 
     <p v-if="!ready" class="text-navy/60 dark:text-ice/60">Chargement…</p>
 
-    <LoginPanel v-else-if="!user" />
 
     <template v-else>
       <p v-if="loading && !plans.length" class="text-navy/60 dark:text-ice/60">Chargement…</p>

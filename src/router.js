@@ -5,6 +5,7 @@ import PlanView from './views/PlanView.vue'
 import SavedPlansView from './views/SavedPlansView.vue'
 import SharedPlanView from './views/SharedPlanView.vue'
 import AdminView from './views/AdminView.vue'
+import AccountView from './views/AccountView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -20,6 +21,7 @@ export default createRouter({
     },
     { path: '/partage', name: 'shared', component: SharedPlanView },
     { path: '/admin', name: 'admin', component: AdminView },
+    { path: '/compte', name: 'account', component: AccountView },
     { path: '/plans', name: 'plans', component: SavedPlansView },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],

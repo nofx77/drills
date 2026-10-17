@@ -1,23 +1,18 @@
 <script setup>
-import { computed } from 'vue'
 import { useTheme } from '../composables/useTheme.js'
-import { useAuth } from '../composables/useAuth.js'
-import { isAdmin } from '../lib/auth.js'
+import AccountMenu from './AccountMenu.vue'
 import { usePlan } from '../composables/usePlan.js'
 
 const { theme, toggleLight, toggleHabs } = useTheme()
 const { plan } = usePlan()
 
-const { user } = useAuth()
-
-const baseLinks = [
+const links = [
   { to: { name: 'catalogue' }, label: 'Exercices', icon: 'M4 6h16M4 12h16M4 18h10' },
   { to: { name: 'favoris' }, label: 'Favoris', icon: 'M12 20.5s-7.5-4.6-7.5-10.1A4.4 4.4 0 0 1 12 7.6a4.4 4.4 0 0 1 7.5 2.8c0 5.5-7.5 10.1-7.5 10.1Z' },
   { to: { name: 'plan' }, label: 'Plan', icon: 'M9 5h10M9 12h10M9 19h10M5 5h.01M5 12h.01M5 19h.01' },
   { to: { name: 'plans' }, label: 'Mes plans', icon: 'M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z' },
 ]
-const adminLink = { to: { name: 'admin' }, label: 'Admin', icon: 'M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6Z' }
-const links = computed(() => (isAdmin(user.value) ? [...baseLinks, adminLink] : baseLinks))
+
 </script>
 
 <template>
@@ -67,6 +62,7 @@ const links = computed(() => (isAdmin(user.value) ? [...baseLinks, adminLink] : 
             <path class="fill-habs-red" d="M362.56433,168.25866c-64.68077,37.92845-107.80127,45.32055-160.24988,44.79254-73.83288-.616-115.89737-30.18436-115.89737-65.38477,0-31.68038,38.54445-61.95274,117.39337-61.95274,52.97662,0,116.86537,14.25617,151.00977,47.87257l28.42432-28.95233-9.68008-45.93655L331.676,46.46524l-7.65609,8.53611c-22.96826-9.15209-61.77672-21.91226-121.44142-21.91226-90.11306,0-169.138,52.09662-169.138,115.01735,0,65.82478,68.81681,117.39337,166.41,117.39337,99.08916,0,157.16983-37.31244,190.69823-54.91265Z" />
           </svg>
         </button>
+        <AccountMenu />
       </div>
     </div>
   </nav>

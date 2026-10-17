@@ -51,7 +51,7 @@ const input =
 <template>
   <section class="mx-auto max-w-md rounded-3xl border border-navy/10 p-6 sm:p-8 dark:border-ice/10 dark:bg-ice/5">
     <h2 class="mb-1 text-xl font-semibold text-navy dark:text-white">{{ titles[mode] }}</h2>
-    <p class="mb-6 text-sm text-navy/70 dark:text-ice/70">Tes plans et tes favoris seront gardés sur tous tes appareils.</p>
+    <p class="mb-6 text-sm text-navy/70 dark:text-ice/70">Connecte-toi pour accéder aux exercices et à tes plans.</p>
 
     <form class="flex flex-col gap-3" @submit.prevent="submit">
       <label class="flex flex-col gap-1.5">

@@ -5,7 +5,6 @@ import { authErrorMessage } from '../lib/auth.js'
 
 const { user, setPassword } = useAuth()
 
-const open = ref(false)
 const password = ref('')
 const busy = ref(false)
 const message = ref('')
@@ -19,7 +18,6 @@ async function submit() {
     failed.value = false
     message.value = 'Mot de passe enregistré.'
     password.value = ''
-    open.value = false
   } catch (e) {
     failed.value = true
     message.value = authErrorMessage(e)
@@ -30,12 +28,10 @@ async function submit() {
 </script>
 
 <template>
-  <div class="text-sm">
-    <button v-if="!open" type="button" class="rounded-full border border-navy/15 px-3 py-1.5 font-medium text-navy/60 transition-colors duration-200 hover:border-navy/40 hover:text-navy dark:border-ice/20 dark:text-ice/60 dark:hover:border-ice/50 dark:hover:text-ice" @click="open = true">
-      Mot de passe
-    </button>
-    <form v-else class="flex flex-wrap items-center gap-2" @submit.prevent="submit">
-      <input :value="user?.email" type="email" name="email" autocomplete="username" readonly hidden />
+  <form class="flex flex-col gap-3" @submit.prevent="submit">
+    <input :value="user?.email" type="email" name="email" autocomplete="username" readonly hidden />
+    <label class="flex flex-col gap-1.5">
+      <span class="text-sm font-medium text-navy/80 dark:text-ice/80">Nouveau mot de passe</span>
       <input
         v-model="password"
         type="password"
@@ -43,13 +39,13 @@ async function submit() {
         required
         minlength="6"
         autocomplete="new-password"
-        placeholder="Nouveau mot de passe"
-        aria-label="Nouveau mot de passe"
-        class="w-48 rounded-full border border-navy/15 bg-transparent px-3 py-1.5 outline-none focus:border-royal dark:border-ice/20 dark:focus:border-periwinkle"
+        placeholder="Au moins 6 caractères"
+        class="w-full rounded-2xl border border-navy/10 bg-navy/[0.03] px-4 py-3 text-base outline-none transition-colors duration-200 placeholder:text-navy/40 focus:border-royal focus:ring-4 focus:ring-royal/15 dark:border-ice/10 dark:bg-ice/5 dark:placeholder:text-ice/40 dark:focus:border-periwinkle dark:focus:ring-periwinkle/20"
       />
-      <button type="submit" :disabled="busy" class="rounded-full bg-royal px-3 py-1.5 font-semibold text-white disabled:opacity-60 dark:bg-accent dark:text-on-accent">Enregistrer</button>
-      <button type="button" class="px-2 py-1.5 text-navy/50 dark:text-ice/50" @click="open = false">Annuler</button>
-    </form>
-    <p v-if="message" role="status" class="mt-1" :class="failed ? 'text-red-600 dark:text-red-300' : 'text-emerald-600 dark:text-emerald-300'">{{ message }}</p>
-  </div>
+    </label>
+    <p v-if="message" role="status" class="rounded-2xl px-4 py-3 text-sm" :class="failed ? 'bg-red-500/10 text-red-600 dark:text-red-300' : 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-300'">{{ message }}</p>
+    <button type="submit" :disabled="busy" class="rounded-2xl bg-royal px-5 py-3 font-semibold text-white transition-colors duration-200 hover:bg-royal/85 disabled:opacity-60 dark:bg-accent dark:text-on-accent dark:hover:bg-accent/85">
+      {{ busy ? '…' : 'Enregistrer le mot de passe' }}
+    </button>
+  </form>
 </template>
