@@ -57,3 +57,37 @@ body {
     animation-duration: 0ms !important;
   }
 }
+
+@media print {
+  html,
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  .plan-item {
+    flex-wrap: wrap;
+    break-inside: avoid;
+    border-color: transparent !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  main * {
+    color: black !important;
+  }
+
+  .plan-thumb {
+    order: 3;
+    width: 80% !important;
+    margin-left: 2.25rem;
+  }
+
+  .plan-text {
+    flex-basis: calc(100% - 3rem);
+  }
+}
