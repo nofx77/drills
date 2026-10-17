@@ -37,7 +37,7 @@ test('usePlan : ajouter, modifier et retirer un bloc commentaire', () => {
   clear()
   const id = addNote()
   assert.match(id, /^note-/)
-  assert.deepEqual(plan.value.items, [{ kind: 'note', id, title: '', text: '', minutes: null }])
+  assert.deepEqual(plan.value.items, [{ kind: 'note', id, title: '', text: '', url: '', minutes: null }])
   updateNote(id, { title: 'Pause', minutes: 3 })
   assert.equal(plan.value.items[0].title, 'Pause')
   assert.equal(totalMinutes.value, 3)

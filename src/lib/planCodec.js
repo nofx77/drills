@@ -11,7 +11,7 @@ function fromBase64Url(s) {
 }
 
 export function encodePlan(plan) {
-  const encodeItem = (it) => (it.kind === 'note' ? [NOTE, it.minutes, it.title, it.text] : [it.id, it.minutes])
+  const encodeItem = (it) => (it.kind === 'note' ? [NOTE, it.minutes, it.title, it.text, ...(it.url ? [it.url] : [])] : [it.id, it.minutes])
   return toBase64Url(JSON.stringify({ t: plan.title, i: plan.items.map(encodeItem) }))
 }
 
@@ -25,10 +25,10 @@ const isValidItem = (it) =>
   Array.isArray(it) &&
   typeof it[0] === 'string' &&
   isMinutes(it[1]) &&
-  (it[0] !== NOTE || (typeof it[2] === 'string' && typeof it[3] === 'string'))
+  (it[0] !== NOTE || (typeof it[2] === 'string' && typeof it[3] === 'string' && (it[4] === undefined || typeof it[4] === 'string')))
 
-const decodeItem = ([id, minutes, title, text]) =>
-  id === NOTE ? { kind: 'note', id: newNoteId(), title, text, minutes } : { id, minutes }
+const decodeItem = ([id, minutes, title, text, url = '']) =>
+  id === NOTE ? { kind: 'note', id: newNoteId(), title, text, url, minutes } : { id, minutes }
 
 export function decodePlan(s) {
   try {

@@ -18,7 +18,7 @@ export function usePlan() {
 
   function addNote() {
     const id = newNoteId()
-    plan.value.items.push({ kind: 'note', id, title: '', text: '', minutes: null })
+    plan.value.items.push({ kind: 'note', id, title: '', text: '', url: '', minutes: null })
     return id
   }
 
