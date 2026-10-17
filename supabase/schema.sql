@@ -73,3 +73,24 @@ drop policy if exists "Modifier son plan en cours" on public.current_plans;
 create policy "Modifier son plan en cours" on public.current_plans for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
 
 alter publication supabase_realtime add table public.current_plans;
+
+create or replace function public.admin_list_users()
+returns table (id uuid, email text, created_at timestamptz, last_sign_in_at timestamptz, plan_count bigint)
+language plpgsql
+security definer
+set search_path = ''
+as $$
+begin
+  if lower(coalesce(auth.jwt() ->> 'email', '')) <> 'martinantel@me.com' then
+    raise exception 'Accès réservé à l''administrateur' using errcode = '42501';
+  end if;
+  return query
+    select u.id, u.email::text, u.created_at, u.last_sign_in_at,
+           (select count(*) from public.plans p where p.user_id = u.id)
+    from auth.users u
+    order by u.last_sign_in_at desc nulls last;
+end;
+$$;
+
+revoke all on function public.admin_list_users() from public, anon;
+grant execute on function public.admin_list_users() to authenticated;

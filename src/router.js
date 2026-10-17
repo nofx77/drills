@@ -4,6 +4,7 @@ import DrillView from './views/DrillView.vue'
 import PlanView from './views/PlanView.vue'
 import SavedPlansView from './views/SavedPlansView.vue'
 import SharedPlanView from './views/SharedPlanView.vue'
+import AdminView from './views/AdminView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -18,6 +19,7 @@ export default createRouter({
       beforeEnter: (to) => (to.query.p ? { name: 'shared', query: { p: to.query.p } } : true),
     },
     { path: '/partage', name: 'shared', component: SharedPlanView },
+    { path: '/admin', name: 'admin', component: AdminView },
     { path: '/plans', name: 'plans', component: SavedPlansView },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],

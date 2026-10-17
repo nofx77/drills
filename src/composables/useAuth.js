@@ -22,9 +22,29 @@ export function useAuth() {
     if (error) throw error
   }
 
+  async function signInWithPassword(email, password) {
+    const { error } = await supabase.auth.signInWithPassword({ email, password })
+    if (error) throw error
+  }
+
+  async function signUp(email, password) {
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: { emailRedirectTo: `${location.origin}${location.pathname}` },
+    })
+    if (error) throw error
+    return { needsConfirmation: !data.session }
+  }
+
+  async function setPassword(password) {
+    const { error } = await supabase.auth.updateUser({ password })
+    if (error) throw error
+  }
+
   async function signOut() {
     await supabase.auth.signOut()
   }
 
-  return { user, ready, cameFromEmail, signIn, signOut }
+  return { user, ready, cameFromEmail, signIn, signInWithPassword, signUp, setPassword, signOut }
 }

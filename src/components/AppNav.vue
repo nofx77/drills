@@ -1,16 +1,23 @@
 <script setup>
+import { computed } from 'vue'
 import { useTheme } from '../composables/useTheme.js'
+import { useAuth } from '../composables/useAuth.js'
+import { isAdmin } from '../lib/auth.js'
 import { usePlan } from '../composables/usePlan.js'
 
 const { theme, toggleLight, toggleHabs } = useTheme()
 const { plan } = usePlan()
 
-const links = [
+const { user } = useAuth()
+
+const baseLinks = [
   { to: { name: 'catalogue' }, label: 'Exercices', icon: 'M4 6h16M4 12h16M4 18h10' },
   { to: { name: 'favoris' }, label: 'Favoris', icon: 'M12 20.5s-7.5-4.6-7.5-10.1A4.4 4.4 0 0 1 12 7.6a4.4 4.4 0 0 1 7.5 2.8c0 5.5-7.5 10.1-7.5 10.1Z' },
   { to: { name: 'plan' }, label: 'Plan', icon: 'M9 5h10M9 12h10M9 19h10M5 5h.01M5 12h.01M5 19h.01' },
   { to: { name: 'plans' }, label: 'Mes plans', icon: 'M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z' },
 ]
+const adminLink = { to: { name: 'admin' }, label: 'Admin', icon: 'M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6Z' }
+const links = computed(() => (isAdmin(user.value) ? [...baseLinks, adminLink] : baseLinks))
 </script>
 
 <template>
@@ -19,23 +26,23 @@ const links = [
       <RouterLink :to="{ name: 'catalogue' }" class="mr-8 hidden items-center gap-1.5 py-4 text-xl font-bold tracking-tight md:flex">
         <span class="text-navy dark:text-white">Drill</span><span class="text-royal dark:text-periwinkle">Hub</span>
       </RouterLink>
-      <div class="flex flex-1 justify-around md:flex-none md:gap-1">
+      <div class="flex min-w-0 flex-1 justify-around md:flex-none md:gap-1">
         <RouterLink
           v-for="link in links"
           :key="link.label"
           :to="link.to"
           exact-active-class="!text-royal dark:!text-periwinkle md:bg-royal/10 dark:md:bg-periwinkle/15"
-          class="relative flex flex-col items-center gap-1 rounded-xl px-3 py-2.5 whitespace-nowrap md:px-4 text-xs font-medium text-navy/60 transition-colors duration-200 hover:text-navy md:flex-row md:gap-2 md:text-sm dark:text-ice/60 dark:hover:text-ice"
+          class="relative flex min-w-0 flex-col items-center gap-1 rounded-xl px-1 py-2.5 whitespace-nowrap sm:px-3 md:px-4 text-[11px] sm:text-xs font-medium text-navy/60 transition-colors duration-200 hover:text-navy md:flex-row md:gap-2 md:text-sm dark:text-ice/60 dark:hover:text-ice"
         >
           <svg class="size-6 md:size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path :d="link.icon" /></svg>
           {{ link.label }}
           <span v-if="link.label === 'Plan' && plan.items.length" class="absolute top-1 right-2 grid min-w-5 place-items-center rounded-full bg-royal px-1 text-[10px] font-semibold text-white md:static">{{ plan.items.length }}</span>
         </RouterLink>
       </div>
-      <div class="ml-1 flex items-center md:ml-auto">
+      <div class="flex shrink-0 items-center md:ml-auto">
         <button
           type="button"
-          class="grid size-10 place-items-center rounded-xl transition-colors duration-200 hover:bg-navy/5 hover:text-navy dark:hover:bg-ice/10 dark:hover:text-ice text-navy/60 dark:text-ice/60"
+          class="grid size-9 place-items-center rounded-xl transition-colors sm:size-10 duration-200 hover:bg-navy/5 hover:text-navy dark:hover:bg-ice/10 dark:hover:text-ice text-navy/60 dark:text-ice/60"
           :aria-label="theme === 'light' ? 'Passer en mode sombre' : 'Passer en mode clair'"
           :title="theme === 'light' ? 'Mode sombre' : 'Mode clair'"
           @click="toggleLight"
@@ -45,7 +52,7 @@ const links = [
         </button>
         <button
           type="button"
-          class="grid size-10 place-items-center rounded-xl transition-colors duration-200 hover:bg-navy/5 hover:text-navy dark:hover:bg-ice/10 dark:hover:text-ice"
+          class="grid size-9 place-items-center rounded-xl transition-colors sm:size-10 duration-200 hover:bg-navy/5 hover:text-navy dark:hover:bg-ice/10 dark:hover:text-ice"
           :class="theme === 'habs' ? '' : 'hover:[&>svg]:opacity-100 hover:[&>svg]:grayscale-0'"
           :aria-pressed="theme === 'habs'"
           aria-label="Thème Canadiens"

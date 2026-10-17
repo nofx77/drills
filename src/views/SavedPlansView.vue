@@ -8,17 +8,17 @@ import { fromRow } from '../lib/savedPlans.js'
 import { markSynced } from '../composables/usePlanSync.js'
 import { useFavoritesSyncState } from '../composables/useFavoritesSync.js'
 import { useFavorites } from '../composables/useFavorites.js'
+import { authErrorMessage } from '../lib/auth.js'
+import LoginPanel from '../components/LoginPanel.vue'
+import PasswordForm from '../components/PasswordForm.vue'
 
 const router = useRouter()
-const { user, ready, signIn, signOut } = useAuth()
+const { user, ready, signOut } = useAuth()
 const { plans, loading, refresh, remove, rename, duplicate } = useSavedPlans()
 const { plan, replace } = usePlan()
 const favSync = useFavoritesSyncState()
 const { favorites } = useFavorites()
 
-const email = ref('')
-const sent = ref(false)
-const sending = ref(false)
 const error = ref('')
 
 const dateFormat = new Intl.DateTimeFormat('fr-CA', { dateStyle: 'medium', timeStyle: 'short' })
@@ -28,19 +28,11 @@ async function guard(action) {
   try {
     await action()
   } catch (e) {
-    error.value = e.message || 'Une erreur est survenue.'
+    error.value = authErrorMessage(e)
   }
 }
 
 watch(user, (u) => u && guard(refresh), { immediate: true })
-
-function sendLink() {
-  sending.value = true
-  guard(async () => {
-    await signIn(email.value.trim())
-    sent.value = true
-  }).finally(() => (sending.value = false))
-}
 
 function open(row) {
   const unsaved = plan.value.items.length && plan.value.savedId !== row.id
@@ -65,8 +57,9 @@ function askRemove(row) {
   <div class="mx-auto max-w-3xl">
     <header class="mb-6 flex flex-wrap items-end justify-between gap-4">
       <h1 class="text-3xl font-bold tracking-tight text-navy sm:text-4xl dark:text-white">Mes plans</h1>
-      <div v-if="user" class="flex items-center gap-3 text-sm text-navy/60 dark:text-ice/60">
+      <div v-if="user" class="flex flex-wrap items-center gap-3 text-sm text-navy/60 dark:text-ice/60">
         <span class="truncate">{{ user.email }}</span>
+        <PasswordForm />
         <button type="button" class="rounded-full border border-navy/15 px-3 py-1.5 font-medium transition-colors duration-200 hover:border-navy/40 hover:text-navy dark:border-ice/20 dark:hover:border-ice/50 dark:hover:text-ice" @click="signOut">Se déconnecter</button>
       </div>
     </header>
@@ -81,33 +74,7 @@ function askRemove(row) {
 
     <p v-if="!ready" class="text-navy/60 dark:text-ice/60">Chargement…</p>
 
-    <section v-else-if="!user" class="rounded-3xl border border-navy/10 p-6 sm:p-8 dark:border-ice/10 dark:bg-ice/5">
-      <template v-if="!sent">
-        <h2 class="mb-2 text-xl font-semibold text-navy dark:text-white">Connexion</h2>
-        <p class="mb-6 text-navy/70 dark:text-ice/70">Entre ton courriel : tu recevras un lien pour te connecter, sans mot de passe. Tes plans seront gardés sur tous tes appareils.</p>
-        <form class="flex flex-col gap-3 sm:flex-row" @submit.prevent="sendLink">
-          <label class="flex-1">
-            <span class="sr-only">Courriel</span>
-            <input
-              v-model="email"
-              type="email"
-              required
-              autocomplete="email"
-              placeholder="toi@exemple.com"
-              class="w-full rounded-2xl border border-navy/10 bg-navy/[0.03] px-4 py-3 text-base outline-none transition-colors duration-200 placeholder:text-navy/40 focus:border-royal focus:ring-4 focus:ring-royal/15 dark:border-ice/10 dark:bg-ice/5 dark:placeholder:text-ice/40 dark:focus:border-periwinkle dark:focus:ring-periwinkle/20"
-            />
-          </label>
-          <button type="submit" :disabled="sending" class="rounded-2xl bg-royal px-5 py-3 font-semibold text-white transition-colors duration-200 hover:bg-royal/85 disabled:opacity-60 dark:bg-accent dark:text-on-accent dark:hover:bg-accent/85">
-            {{ sending ? 'Envoi…' : 'Recevoir le lien' }}
-          </button>
-        </form>
-      </template>
-      <template v-else>
-        <h2 class="mb-2 text-xl font-semibold text-navy dark:text-white">Vérifie tes courriels</h2>
-        <p class="text-navy/70 dark:text-ice/70">Un lien de connexion a été envoyé à <strong class="text-navy dark:text-white">{{ email }}</strong>. Ouvre-le sur cet appareil.</p>
-        <button type="button" class="mt-4 text-sm text-royal underline-offset-4 hover:underline dark:text-periwinkle" @click="sent = false">Utiliser une autre adresse</button>
-      </template>
-    </section>
+    <LoginPanel v-else-if="!user" />
 
     <template v-else>
       <p v-if="loading && !plans.length" class="text-navy/60 dark:text-ice/60">Chargement…</p>
