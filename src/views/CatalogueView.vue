@@ -88,7 +88,7 @@ function clearFilters() {
     </TransitionGroup>
     <div v-if="visible.length < results.length" ref="sentinel" class="h-px" aria-hidden="true"></div>
 
-    <div v-else class="flex flex-col items-center gap-4 rounded-3xl border border-dashed border-navy/15 px-6 py-16 text-center dark:border-ice/15">
+    <div v-if="!results.length" class="flex flex-col items-center gap-4 rounded-3xl border border-dashed border-navy/15 px-6 py-16 text-center dark:border-ice/15">
       <p class="text-lg text-navy/70 dark:text-ice/70">
         {{ favoritesOnly && !hasFilters ? 'Touche le cœur d’un exercice pour le retrouver ici.' : 'Aucun exercice ne correspond.' }}
       </p>
