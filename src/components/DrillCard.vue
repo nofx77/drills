@@ -12,7 +12,9 @@ const { has, add } = usePlan()
   <article
     class="group relative flex flex-col overflow-hidden rounded-2xl border border-navy/10 bg-white transition duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-royal/20 active:translate-y-0 dark:border-ice/10 dark:bg-ice/5 dark:hover:border-ice/20"
   >
-    <DrillImage :src="drill.image" :alt="drill.title" />
+    <div class="p-3 pb-0">
+      <DrillImage :src="drill.image" :alt="drill.title" class="rounded-xl" />
+    </div>
     <div class="flex flex-1 flex-col gap-3 p-4">
       <h2 class="leading-snug font-semibold text-navy dark:text-white">
         <RouterLink :to="{ name: 'drill', params: { id: drill.id } }" class="outline-none after:absolute after:inset-0 after:rounded-2xl focus-visible:after:ring-4 focus-visible:after:ring-periwinkle/50">{{ drill.title }}</RouterLink>
