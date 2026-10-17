@@ -1,1 +1,754 @@
-{}
+{
+  "1-on-1-re-gap-transition": [
+    "Jeu défensif",
+    "Angle / pression",
+    "Transition"
+  ],
+  "1-on-1-retrievals": [
+    "Batailles 1 c. 1",
+    "Sortie de zone"
+  ],
+  "1-v-1-race-to-puck-to-2-v-2": [
+    "Batailles 1 c. 1",
+    "Transition"
+  ],
+  "1-v-1-to-2-v-2-stick-vs-no-stick": [
+    "Batailles 1 c. 1",
+    "Jeu défensif"
+  ],
+  "1-v-1-to-2-v-2-down-low": [
+    "Batailles 1 c. 1",
+    "Petits jeux"
+  ],
+  "1-v-1-v-1-game": [
+    "Batailles 1 c. 1",
+    "Petits jeux"
+  ],
+  "1-v-1-2-v-2-3-v-3": [
+    "Petits jeux",
+    "Batailles 1 c. 1"
+  ],
+  "1-v-1-to-2-v-2-to-3-v-3": [
+    "Petits jeux",
+    "Batailles 1 c. 1"
+  ],
+  "1-3-1-mad-attacker": [
+    "Avantage numérique"
+  ],
+  "1-2-3-bumper-game": [
+    "Petits jeux",
+    "Passes"
+  ],
+  "1-2-3-forecheck": [
+    "Sortie de zone",
+    "Angle / pression"
+  ],
+  "2-on-1-with-d-activation": [
+    "Transition",
+    "Entrée de zone"
+  ],
+  "2-on-2-angle-game": [
+    "Angle / pression",
+    "Petits jeux",
+    "Transition"
+  ],
+  "2-on-2-angling-with-defensive-reward": [
+    "Angle / pression",
+    "Petits jeux"
+  ],
+  "2-on-2-continuous-transition": [
+    "Transition",
+    "Sortie de zone"
+  ],
+  "2-on-2-down-low-rim": [
+    "Batailles 1 c. 1",
+    "Jeu défensif"
+  ],
+  "2-on-2-net-to-corner": [
+    "Petits jeux",
+    "Batailles 1 c. 1"
+  ],
+  "2-on-2-transition-track": [
+    "Transition",
+    "Petits jeux",
+    "Jeu défensif"
+  ],
+  "2-v-0-catch-and-release": [
+    "Tir",
+    "Passes"
+  ],
+  "2-v-0-continuous-backcheck": [
+    "Transition",
+    "Jeu défensif"
+  ],
+  "2-v-0-high-roll": [
+    "Tir"
+  ],
+  "2-v-0-to-2-v-2-full-ice-backcheck": [
+    "Transition",
+    "Jeu défensif"
+  ],
+  "2-v-1-keep-away": [
+    "Petits jeux",
+    "Passes"
+  ],
+  "2-v-1-puck-pursuit-angling": [
+    "Angle / pression",
+    "Sortie de zone"
+  ],
+  "2-v-1-quick-strike-game": [
+    "Petits jeux"
+  ],
+  "2-v-2-any-net-game": [
+    "Petits jeux"
+  ],
+  "2-v-2-bagger": [
+    "Petits jeux"
+  ],
+  "2-v-2-crossfire-box-game-with-outlets": [
+    "Petits jeux",
+    "Passes"
+  ],
+  "2-v-2-high-roll": [
+    "Batailles 1 c. 1",
+    "Petits jeux"
+  ],
+  "2-v-2-net-front-corner-battles-with-support": [
+    "Batailles 1 c. 1",
+    "Petits jeux"
+  ],
+  "2-v-2-play-fast-with-support": [
+    "Transition",
+    "Petits jeux"
+  ],
+  "2-v-2-rim-game": [
+    "Batailles 1 c. 1",
+    "Sortie de zone"
+  ],
+  "2-v-2-shawzy": [
+    "Petits jeux",
+    "Angle / pression"
+  ],
+  "2-v-2-with-outlets": [
+    "Petits jeux",
+    "Jeu défensif"
+  ],
+  "2-vs-2-corner-battle-tag-up": [
+    "Petits jeux",
+    "Batailles 1 c. 1"
+  ],
+  "2-vs-2-with-point-shot-box-out": [
+    "Jeu défensif",
+    "Batailles 1 c. 1"
+  ],
+  "2-vs-2-2-ways-game": [
+    "Entrée de zone",
+    "Jeu défensif"
+  ],
+  "2-vs-2-finnish-buffet-game": [
+    "Transition",
+    "Petits jeux"
+  ],
+  "2-vs-3-cross-drop-drill": [
+    "Entrée de zone",
+    "Angle / pression"
+  ],
+  "2v2-shooting-board": [
+    "Tir",
+    "Batailles 1 c. 1"
+  ],
+  "3-man-shooting-warm-up": [
+    "Réchauffement",
+    "Tir"
+  ],
+  "3-on-2-jailbreak": [
+    "Petits jeux",
+    "Passes"
+  ],
+  "3-on-2-keep-away-game": [
+    "Jeu défensif",
+    "Petits jeux"
+  ],
+  "3-on-2-race-to-5": [
+    "Petits jeux",
+    "Jeu défensif"
+  ],
+  "3-on-2-with-d-activation": [
+    "Transition",
+    "Entrée de zone"
+  ],
+  "3-on-3-any-net": [
+    "Petits jeux"
+  ],
+  "3-on-3-carryout": [
+    "Sortie de zone",
+    "Petits jeux"
+  ],
+  "3-on-3-play-fast": [
+    "Petits jeux",
+    "Transition"
+  ],
+  "3-on-3-transition-game": [
+    "Petits jeux",
+    "Transition"
+  ],
+  "3-player-every-pass-a-one-touch": [
+    "Passes"
+  ],
+  "3-puck-3-on-3": [
+    "Jeu défensif"
+  ],
+  "3-regroup-3-vs-2-drill": [
+    "Zone neutre",
+    "Transition",
+    "Passes"
+  ],
+  "3-shot-off-the-wall": [
+    "Tir"
+  ],
+  "3-speed-warm-up-drill": [
+    "Réchauffement",
+    "Patinage"
+  ],
+  "3-v-1-keep-away-to-line-rush-with-backchecker": [
+    "Transition",
+    "Passes"
+  ],
+  "3-v-2-puck-protection-game": [
+    "Petits jeux",
+    "Batailles 1 c. 1"
+  ],
+  "3-v-3-change-on-the-fly": [
+    "Petits jeux",
+    "Sortie de zone"
+  ],
+  "3-v-3-keep-away-with-team-bumpers": [
+    "Petits jeux",
+    "Passes"
+  ],
+  "3-v-3-mystery-player-game": [
+    "Petits jeux"
+  ],
+  "3-v-3-neutral-zone-break-game": [
+    "Zone neutre",
+    "Petits jeux"
+  ],
+  "3-v-3-neutral-zone-rush-attack-game": [
+    "Zone neutre",
+    "Transition"
+  ],
+  "3-v-3-pass-through-the-cones": [
+    "Petits jeux",
+    "Passes"
+  ],
+  "3-v-3-pass-to-coach": [
+    "Petits jeux",
+    "Passes"
+  ],
+  "3-v-3-with-3-ways-to-score": [
+    "Petits jeux",
+    "Passes"
+  ],
+  "3-v-3-with-down-low-passer": [
+    "Petits jeux",
+    "Jeu défensif"
+  ],
+  "3-vs-3-picket-fences": [
+    "Petits jeux"
+  ],
+  "3-vs-3-corner-drill": [
+    "Petits jeux",
+    "Tir"
+  ],
+  "3-vs-3-split-zone-game": [
+    "Petits jeux"
+  ],
+  "3-x-wall-pick-ups-with-shot-around-circle": [
+    "Passes",
+    "Tir"
+  ],
+  "4-corner-possession-game-offensive-advantage": [
+    "Petits jeux",
+    "Passes"
+  ],
+  "4-on-2-power-play-game": [
+    "Avantage numérique",
+    "Petits jeux"
+  ],
+  "4-on-2-split-power-play-drill": [
+    "Avantage numérique"
+  ],
+  "4-v-2-rondo-to-4-v-2-quick-attack": [
+    "Passes",
+    "Petits jeux"
+  ],
+  "4-v-2-two-touch-game": [
+    "Avantage numérique",
+    "Petits jeux"
+  ],
+  "4-v-3-pass-between-2-players": [
+    "Passes",
+    "Petits jeux"
+  ],
+  "4-vs-2-transition-game": [
+    "Transition",
+    "Petits jeux"
+  ],
+  "4-vs-2-no-stickhandle-game": [
+    "Passes",
+    "Petits jeux"
+  ],
+  "5-player-every-pass-a-one-touch": [
+    "Passes"
+  ],
+  "5-v-5-neutral-zone-face-off-possession-game": [
+    "Zone neutre",
+    "Petits jeux"
+  ],
+  "5-v-5-to-5-v-3-face-off-game-on-the-circle": [
+    "Petits jeux",
+    "Avantage numérique"
+  ],
+  "6-on-3-monkey-in-the-middle": [
+    "Petits jeux",
+    "Passes",
+    "Jeu défensif"
+  ],
+  "6-vs-3-alley-game": [
+    "Avantage numérique"
+  ],
+  "add-on-game": [
+    "Petits jeux"
+  ],
+  "alternate-1-on-1-x-3": [
+    "Batailles 1 c. 1"
+  ],
+  "angle-add-on-game": [
+    "Angle / pression",
+    "Petits jeux"
+  ],
+  "angling-transition-1-v-1-to-2-v-1": [
+    "Angle / pression",
+    "Zone neutre",
+    "Transition"
+  ],
+  "battle-dome-1-on-1": [
+    "Batailles 1 c. 1"
+  ],
+  "beaver-track": [
+    "Jeu défensif",
+    "Transition"
+  ],
+  "belfry-full-ice-angle-drill": [
+    "Angle / pression",
+    "Batailles 1 c. 1"
+  ],
+  "bernie-burner": [
+    "Entrée de zone"
+  ],
+  "billy-purcell-breakout": [
+    "Sortie de zone",
+    "Entrée de zone"
+  ],
+  "billy-purcell-off-the-wall": [
+    "Réchauffement",
+    "Passes",
+    "Tir"
+  ],
+  "bing-bang-bong-2-v-1": [
+    "Transition",
+    "Passes"
+  ],
+  "black-vs-white-stick-tape-keep-away": [
+    "Petits jeux"
+  ],
+  "blueline-agility-reps": [
+    "Tir",
+    "Patinage"
+  ],
+  "boomer-shooting-game": [
+    "Petits jeux",
+    "Tir"
+  ],
+  "breakout-regroup-shooting": [
+    "Sortie de zone",
+    "Tir"
+  ],
+  "buffalo-2-on-1": [
+    "Zone neutre",
+    "Transition"
+  ],
+  "bump-pass-attack-the-net-drill": [
+    "Passes",
+    "Tir"
+  ],
+  "chaos-to-shot-warm-up-drill": [
+    "Réchauffement",
+    "Tir"
+  ],
+  "chase-the-rabbit": [
+    "Réchauffement",
+    "Patinage"
+  ],
+  "chute-angling-1-v-1": [
+    "Angle / pression",
+    "Batailles 1 c. 1"
+  ],
+  "circle-angling-drill": [
+    "Angle / pression",
+    "Batailles 1 c. 1"
+  ],
+  "circle-scoring-game": [
+    "Petits jeux",
+    "Tir"
+  ],
+  "cloverleaf-drill": [
+    "Patinage",
+    "Batailles 1 c. 1"
+  ],
+  "continuous-1-on-1-puck-retrieval-drill": [
+    "Batailles 1 c. 1",
+    "Sortie de zone"
+  ],
+  "continuous-1-vs-1-battle-game": [
+    "Batailles 1 c. 1"
+  ],
+  "continuous-2-on-2-tag-up": [
+    "Transition",
+    "Sortie de zone"
+  ],
+  "continuous-2-on-2-to-4-on-2": [
+    "Transition"
+  ],
+  "continuous-in-zone-2-vs-2-game": [
+    "Petits jeux",
+    "Jeu défensif"
+  ],
+  "continuous-in-zone-3-vs-3-game": [
+    "Petits jeux",
+    "Jeu défensif"
+  ],
+  "cornell-under-handling-with-shot": [
+    "Tir",
+    "Patinage"
+  ],
+  "corner-boards-1-v-1-loose-puck-battle": [
+    "Batailles 1 c. 1"
+  ],
+  "corner-houda": [
+    "Sortie de zone",
+    "Avantage numérique"
+  ],
+  "cross-fire-passing": [
+    "Passes",
+    "Petits jeux"
+  ],
+  "cross-ice-situational-game": [
+    "Petits jeux"
+  ],
+  "cut-drop-warm-up": [
+    "Réchauffement",
+    "Entrée de zone"
+  ],
+  "cutting-hands-warm-up": [
+    "Réchauffement",
+    "Batailles 1 c. 1",
+    "Angle / pression"
+  ],
+  "d-activation": [
+    "Transition",
+    "Zone neutre"
+  ],
+  "davos-game": [
+    "Petits jeux"
+  ],
+  "defend-net-front-progression-with-2-point-players": [
+    "Jeu défensif",
+    "Petits jeux"
+  ],
+  "defend-the-bucket": [
+    "Jeu défensif"
+  ],
+  "defend-the-gate": [
+    "Jeu défensif",
+    "Angle / pression",
+    "Batailles 1 c. 1"
+  ],
+  "defensive-transition-passing": [
+    "Réchauffement",
+    "Patinage",
+    "Transition"
+  ],
+  "designated-shooters-umbrella-power-play-game": [
+    "Avantage numérique",
+    "Petits jeux"
+  ],
+  "dig-pass-shoot": [
+    "Passes",
+    "Tir"
+  ],
+  "dinks-warm-up": [
+    "Réchauffement",
+    "Sortie de zone",
+    "Entrée de zone"
+  ],
+  "double-goals-game": [
+    "Petits jeux"
+  ],
+  "double-goals-game-royal-road": [
+    "Petits jeux",
+    "Passes"
+  ],
+  "double-regroup-2-on-1": [
+    "Zone neutre",
+    "Transition"
+  ],
+  "drop-down-4-on-2": [
+    "Entrée de zone",
+    "Zone neutre"
+  ],
+  "elmira-transition-retrieval-drill": [
+    "Sortie de zone",
+    "Transition"
+  ],
+  "escape-the-circle": [
+    "Patinage"
+  ],
+  "evasive-passing-drill": [
+    "Passes",
+    "Tir"
+  ],
+  "ferrari-3-on-2": [
+    "Entrée de zone",
+    "Transition"
+  ],
+  "fight-for-the-middle": [
+    "Transition"
+  ],
+  "finnish-5-puck-progression": [
+    "Passes"
+  ],
+  "forecheck-angling": [
+    "Angle / pression"
+  ],
+  "full-ice-skating-skills-with-9-variations": [
+    "Patinage"
+  ],
+  "fullback-puck-possession": [
+    "Batailles 1 c. 1",
+    "Patinage"
+  ],
+  "gate-game": [
+    "Petits jeux"
+  ],
+  "go-go": [
+    "Petits jeux",
+    "Jeu défensif"
+  ],
+  "goalie-defend-the-pad-3v3": [
+    "Gardien",
+    "Petits jeux"
+  ],
+  "gretzky-2-v-2-switch-game": [
+    "Petits jeux"
+  ],
+  "gretzky-coffey-game": [
+    "Petits jeux"
+  ],
+  "griffs-2-v-2-game": [
+    "Zone neutre",
+    "Transition"
+  ],
+  "hit-the-tire-passing-game-with-no-goalie": [
+    "Petits jeux",
+    "Passes"
+  ],
+  "hit-the-tire-with-1-goalie-game": [
+    "Petits jeux",
+    "Gardien"
+  ],
+  "honey-hole": [
+    "Tir"
+  ],
+  "houda-angle": [
+    "Angle / pression",
+    "Transition"
+  ],
+  "jets-2-v-2-drill": [
+    "Transition",
+    "Jeu défensif"
+  ],
+  "kick-out-warm-up": [
+    "Réchauffement"
+  ],
+  "kp-2-vs-2-neutral-zone-scoring-game": [
+    "Zone neutre",
+    "Petits jeux"
+  ],
+  "l-support-basic-triangle-movement": [
+    "Passes"
+  ],
+  "larionov-5-v-3-alternating-warm-up-drill": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "levels-3-vs-3-small-area-game": [
+    "Petits jeux"
+  ],
+  "long-bomb": [
+    "Zone neutre",
+    "Petits jeux"
+  ],
+  "lulea-2-v-0-neutral-zone-warm-up": [
+    "Réchauffement",
+    "Zone neutre"
+  ],
+  "merrimack-deception-retrieval-drill": [
+    "Sortie de zone"
+  ],
+  "merrimack-wall-drill": [
+    "Sortie de zone",
+    "Passes"
+  ],
+  "mirror-angling": [
+    "Angle / pression"
+  ],
+  "nehda-3-puck": [
+    "Passes"
+  ],
+  "nehda-defenseman-carousel": [
+    "Passes"
+  ],
+  "nehda-loop-n-drive-4-part-progression": [
+    "Passes",
+    "Tir"
+  ],
+  "net-drive-angle-drill": [
+    "Angle / pression"
+  ],
+  "neutral-zone-3-vs-3-game": [
+    "Zone neutre",
+    "Petits jeux"
+  ],
+  "neutral-zone-angle-2-v-2-to-3-v-2": [
+    "Zone neutre",
+    "Angle / pression"
+  ],
+  "neutral-zone-chaos-drill": [
+    "Zone neutre",
+    "Transition"
+  ],
+  "neutral-zone-game-with-outlets": [
+    "Zone neutre",
+    "Petits jeux"
+  ],
+  "neutral-zone-puck-races-with-support": [
+    "Zone neutre",
+    "Batailles 1 c. 1"
+  ],
+  "nobles-2-v-2-2-teammates-transition-game": [
+    "Transition",
+    "Petits jeux"
+  ],
+  "nobles-2-v-2-transition-game": [
+    "Transition",
+    "Petits jeux"
+  ],
+  "off-the-wall-neutral-zone-exchange": [
+    "Zone neutre",
+    "Passes"
+  ],
+  "off-side-game": [
+    "Petits jeux"
+  ],
+  "offensive-advantage-game": [
+    "Petits jeux"
+  ],
+  "oreo": [
+    "Petits jeux",
+    "Transition"
+  ],
+  "oswego-double-retrieval-drill": [
+    "Sortie de zone"
+  ],
+  "out-of-the-corner": [
+    "Batailles 1 c. 1",
+    "Tir"
+  ],
+  "outlet-game": [
+    "Petits jeux",
+    "Sortie de zone"
+  ],
+  "outside-2-on-1-s": [
+    "Transition"
+  ],
+  "owls-2-v-2": [
+    "Petits jeux"
+  ],
+  "pass-off-bumper-underhandle-with-shot": [
+    "Tir"
+  ],
+  "pass-through-2-players-out-of-the-corner": [
+    "Passes"
+  ],
+  "pass-through-the-circle-game": [
+    "Petits jeux",
+    "Passes"
+  ],
+  "pass-through-the-triangle-game": [
+    "Petits jeux",
+    "Passes"
+  ],
+  "pearl-4-v-2-game": [
+    "Avantage numérique",
+    "Petits jeux"
+  ],
+  "picket-fences-game-2-vs-2-or-3-vs-3": [
+    "Petits jeux"
+  ],
+  "pioneer-2-v-2-rush": [
+    "Transition",
+    "Jeu défensif"
+  ],
+  "pit-chaos-handling-with-passes": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "poker-2-v-2-game": [
+    "Petits jeux"
+  ],
+  "power-play-face-off-loss-drill": [
+    "Avantage numérique"
+  ],
+  "power-play-flank-shooting": [
+    "Avantage numérique",
+    "Tir"
+  ],
+  "power-play-game-long-short": [
+    "Avantage numérique"
+  ],
+  "power-play-scoring-competition": [
+    "Avantage numérique"
+  ],
+  "protect-the-puck-warm-up-individual-team": [
+    "Réchauffement",
+    "Batailles 1 c. 1"
+  ],
+  "puck-protection-skill-drill": [
+    "Batailles 1 c. 1"
+  ],
+  "puck-race-to-1-v-1": [
+    "Batailles 1 c. 1"
+  ],
+  "purple-eagle-angle-drill": [
+    "Angle / pression",
+    "Batailles 1 c. 1"
+  ],
+  "quick-start-continuous-outlet": [
+    "Sortie de zone",
+    "Passes"
+  ],
+  "quick-strike-3-v-1-circle-game": [
+    "Petits jeux"
+  ]
+}
