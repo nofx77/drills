@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { slugify, titleFromFolder, extractSourceUrl, buildDrill, dropDuplicatePngs } from './lib.mjs'
+import { slugify, titleFromFolder, extractSourceUrl, buildDrill, dropDuplicateImages } from './lib.mjs'
 
 test('slugify produit une URL propre', () => {
   assert.equal(slugify('Cut_&_Drop_Warm_Up'), 'cut-drop-warm-up')
@@ -44,10 +44,37 @@ test('buildDrill lit sourceUrl du html', () => {
   assert.equal(buildDrill('Go_Go', ['GO_GO.png']).drill.sourceUrl, null)
 })
 
-test('dropDuplicatePngs garde le schéma principal et retire les copies identiques', () => {
+test('dropDuplicateImages garde le schéma principal et retire les copies identiques', () => {
   const hash = { 'A.png': 'h1', 'drill-maker-1.png': 'h1', 'field_content_image.png': 'h2', 'drill.pdf': 'h3' }
   assert.deepEqual(
-    dropDuplicatePngs(['drill-maker-1.png', 'A.png', 'field_content_image.png', 'drill.pdf'], (f) => hash[f]),
+    dropDuplicateImages(['drill-maker-1.png', 'A.png', 'field_content_image.png', 'drill.pdf'], (f) => hash[f]),
     ['A.png', 'field_content_image.png', 'drill.pdf'],
   )
+})
+
+test('titleFromFolder met en casse de titre un nom tout en majuscules', () => {
+  assert.equal(titleFromFolder('1 ON 0 WITH BACKCHECKER'), '1 on 0 with Backchecker')
+  assert.equal(titleFromFolder("HOWIE'S WARM UP SKATING EVALUATION DRILL"), "Howie's Warm Up Skating Evaluation Drill")
+  assert.equal(titleFromFolder('2 ON 0 INTO 1 VS. 1'), '2 on 0 into 1 vs. 1')
+  assert.equal(titleFromFolder('SIMPLE BREAKOUT - D TO D TO 1 ON 1'), 'Simple Breakout - D to D to 1 on 1')
+  assert.equal(titleFromFolder('Go_Go'), 'Go Go')
+})
+
+test('buildDrill accepte les JPG et garde leur extension', () => {
+  const { drill, copies } = buildDrill('PIVOT, GIVE & GO', ['pivot-give-go.jpg', 'pivot-give-go.pdf', 'Notes.rtf', 'Swiffy output.html', 'a.mp4'])
+  assert.equal(drill.id, 'pivot-give-go')
+  assert.equal(drill.title, 'Pivot, Give & Go')
+  assert.equal(drill.image, 'drills/pivot-give-go/main.jpg')
+  assert.equal(drill.pdf, 'drills/pivot-give-go/fiche.pdf')
+  assert.deepEqual(copies, [['pivot-give-go.jpg', 'main.jpg'], ['pivot-give-go.pdf', 'fiche.pdf']])
+})
+
+test('buildDrill choisit le nom le plus court comme schéma principal', () => {
+  const { drill, copies } = buildDrill('EAST COAST 2 ON 0', ['east-coast-2-on-0-#2.jpg', 'east-coast-2-on-0.jpg', 'east-coast-2-on-0.pdf'])
+  assert.deepEqual(copies[0], ['east-coast-2-on-0.jpg', 'main.jpg'])
+  assert.deepEqual(drill.variants, ['drills/east-coast-2-on-0/variant-1.jpg'])
+})
+
+test('buildDrill normalise .jpeg et les majuscules d’extension', () => {
+  assert.equal(buildDrill('X', ['a.JPEG']).drill.image, 'drills/x/main.jpg')
 })

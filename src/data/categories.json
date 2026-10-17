@@ -1,8 +1,16 @@
 {
+  "1-on-0-with-backchecker": [
+    "Patinage",
+    "Jeu défensif"
+  ],
   "1-on-1-re-gap-transition": [
     "Jeu défensif",
     "Angle / pression",
     "Transition"
+  ],
+  "1-on-1-recovery-drill": [
+    "Batailles 1 c. 1",
+    "Jeu défensif"
   ],
   "1-on-1-retrievals": [
     "Batailles 1 c. 1",
@@ -43,6 +51,31 @@
     "Sortie de zone",
     "Angle / pression"
   ],
+  "2-dot-overspeed-skating-drill": [
+    "Patinage"
+  ],
+  "2-on-0-flow": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "2-on-0-neutral-zone-swing": [
+    "Zone neutre",
+    "Transition",
+    "Passes"
+  ],
+  "2-on-0-quick-re-group": [
+    "Réchauffement",
+    "Tir",
+    "Passes"
+  ],
+  "2-on-1-2-on-2-full-ice-regroup": [
+    "Transition",
+    "Passes"
+  ],
+  "2-on-1-with-backchecker": [
+    "Transition",
+    "Jeu défensif"
+  ],
   "2-on-1-with-d-activation": [
     "Transition",
     "Entrée de zone"
@@ -64,6 +97,10 @@
     "Batailles 1 c. 1",
     "Jeu défensif"
   ],
+  "2-on-2-full-ice": [
+    "Jeu défensif",
+    "Transition"
+  ],
   "2-on-2-net-to-corner": [
     "Petits jeux",
     "Batailles 1 c. 1"
@@ -72,6 +109,10 @@
     "Transition",
     "Petits jeux",
     "Jeu défensif"
+  ],
+  "2-shot-warm-up": [
+    "Réchauffement",
+    "Tir"
   ],
   "2-v-0-catch-and-release": [
     "Tir",
@@ -141,6 +182,18 @@
     "Jeu défensif",
     "Batailles 1 c. 1"
   ],
+  "2-vs-0-rush-series-1": [
+    "Passes",
+    "Entrée de zone"
+  ],
+  "2-vs-0-rush-series-2": [
+    "Passes",
+    "Entrée de zone"
+  ],
+  "2-vs-0-rush-series-3": [
+    "Passes",
+    "Entrée de zone"
+  ],
   "2-vs-2-2-ways-game": [
     "Entrée de zone",
     "Jeu défensif"
@@ -148,6 +201,10 @@
   "2-vs-2-finnish-buffet-game": [
     "Transition",
     "Petits jeux"
+  ],
+  "2-vs-2-stop-starts": [
+    "Patinage",
+    "Jeu défensif"
   ],
   "2-vs-3-cross-drop-drill": [
     "Entrée de zone",
@@ -160,6 +217,10 @@
   "3-man-shooting-warm-up": [
     "Réchauffement",
     "Tir"
+  ],
+  "3-on-0-regroup-on-whistle": [
+    "Zone neutre",
+    "Transition"
   ],
   "3-on-2-jailbreak": [
     "Petits jeux",
@@ -197,6 +258,10 @@
   ],
   "3-puck-3-on-3": [
     "Jeu défensif"
+  ],
+  "3-puck-break-away-races": [
+    "Patinage",
+    "Tir"
   ],
   "3-regroup-3-vs-2-drill": [
     "Zone neutre",
@@ -267,9 +332,34 @@
     "Passes",
     "Tir"
   ],
+  "3-zone-3-puck": [
+    "Petits jeux",
+    "Zone neutre"
+  ],
   "4-corner-possession-game-offensive-advantage": [
     "Petits jeux",
     "Passes"
+  ],
+  "4-lines-series-1": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "4-lines-series-2": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "4-lines-below-the-puck-zone-rush": [
+    "Entrée de zone",
+    "Zone neutre"
+  ],
+  "4-lines-series-6": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "4-lines-series-7": [
+    "Réchauffement",
+    "Passes",
+    "Transition"
   ],
   "4-on-2-power-play-game": [
     "Avantage numérique",
@@ -332,6 +422,15 @@
     "Zone neutre",
     "Transition"
   ],
+  "avalanche-flow-drill": [
+    "Réchauffement",
+    "Tir",
+    "Passes"
+  ],
+  "backcheck-flow-drill": [
+    "Patinage",
+    "Jeu défensif"
+  ],
   "battle-dome-1-on-1": [
     "Batailles 1 c. 1"
   ],
@@ -345,6 +444,10 @@
   ],
   "bernie-burner": [
     "Entrée de zone"
+  ],
+  "big-w-warm-up": [
+    "Réchauffement",
+    "Passes"
   ],
   "billy-purcell-breakout": [
     "Sortie de zone",
@@ -362,6 +465,14 @@
   "black-vs-white-stick-tape-keep-away": [
     "Petits jeux"
   ],
+  "blue-devils-flow-drill": [
+    "Réchauffement",
+    "Tir"
+  ],
+  "blue-line-1-vs-1": [
+    "Batailles 1 c. 1",
+    "Jeu défensif"
+  ],
   "blueline-agility-reps": [
     "Tir",
     "Patinage"
@@ -370,9 +481,27 @@
     "Petits jeux",
     "Tir"
   ],
+  "break-out-timing-1": [
+    "Sortie de zone"
+  ],
+  "break-out-timing-2": [
+    "Sortie de zone",
+    "Passes"
+  ],
+  "breakout-backcheck-drill": [
+    "Sortie de zone",
+    "Jeu défensif"
+  ],
   "breakout-regroup-shooting": [
     "Sortie de zone",
     "Tir"
+  ],
+  "breakout-weave-1": [
+    "Sortie de zone",
+    "Passes"
+  ],
+  "bruins-transition-drill": [
+    "Transition"
   ],
   "buffalo-2-on-1": [
     "Zone neutre",
@@ -382,6 +511,21 @@
     "Passes",
     "Tir"
   ],
+  "center-dish": [
+    "Zone neutre",
+    "Passes"
+  ],
+  "center-flow-breakout-drill": [
+    "Sortie de zone"
+  ],
+  "center-ice-figure-eight-one-touches": [
+    "Passes",
+    "Patinage"
+  ],
+  "center-timing-drill": [
+    "Zone neutre",
+    "Sortie de zone"
+  ],
   "chaos-to-shot-warm-up-drill": [
     "Réchauffement",
     "Tir"
@@ -389,6 +533,17 @@
   "chase-the-rabbit": [
     "Réchauffement",
     "Patinage"
+  ],
+  "chip-receive": [
+    "Zone neutre",
+    "Entrée de zone"
+  ],
+  "chip-and-chase": [
+    "Batailles 1 c. 1",
+    "Patinage"
+  ],
+  "chip-and-chase-angle-checking-drill": [
+    "Angle / pression"
   ],
   "chute-angling-1-v-1": [
     "Angle / pression",
@@ -413,12 +568,32 @@
   "continuous-1-vs-1-battle-game": [
     "Batailles 1 c. 1"
   ],
+  "continuous-2-on-1-with-backchecker": [
+    "Transition",
+    "Jeu défensif"
+  ],
+  "continuous-2-on-2-hockey-drill": [
+    "Jeu défensif",
+    "Transition"
+  ],
   "continuous-2-on-2-tag-up": [
     "Transition",
     "Sortie de zone"
   ],
   "continuous-2-on-2-to-4-on-2": [
     "Transition"
+  ],
+  "continuous-breakouts-1": [
+    "Réchauffement",
+    "Sortie de zone"
+  ],
+  "continuous-breakouts-2": [
+    "Sortie de zone",
+    "Passes"
+  ],
+  "continuous-breakouts-with-designated-forechecker": [
+    "Sortie de zone",
+    "Angle / pression"
   ],
   "continuous-in-zone-2-vs-2-game": [
     "Petits jeux",
@@ -427,6 +602,13 @@
   "continuous-in-zone-3-vs-3-game": [
     "Petits jeux",
     "Jeu défensif"
+  ],
+  "continuous-rim-drill": [
+    "Sortie de zone"
+  ],
+  "continuous-triple-transition": [
+    "Transition",
+    "Zone neutre"
   ],
   "cornell-under-handling-with-shot": [
     "Tir",
@@ -438,6 +620,13 @@
   "corner-houda": [
     "Sortie de zone",
     "Avantage numérique"
+  ],
+  "cow-hockey-s-continuous-2-on-0": [
+    "Passes"
+  ],
+  "crash-2-on-1": [
+    "Sortie de zone",
+    "Transition"
   ],
   "cross-fire-passing": [
     "Passes",
@@ -454,6 +643,10 @@
     "Réchauffement",
     "Batailles 1 c. 1",
     "Angle / pression"
+  ],
+  "cyclone-passing-drill": [
+    "Passes",
+    "Patinage"
   ],
   "d-activation": [
     "Transition",
@@ -492,6 +685,14 @@
     "Sortie de zone",
     "Entrée de zone"
   ],
+  "double-chip-flow-drill": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "double-chip-off-boards": [
+    "Zone neutre",
+    "Passes"
+  ],
   "double-goals-game": [
     "Petits jeux"
   ],
@@ -499,13 +700,25 @@
     "Petits jeux",
     "Passes"
   ],
+  "double-pass-backcheck": [
+    "Passes",
+    "Jeu défensif"
+  ],
   "double-regroup-2-on-1": [
     "Zone neutre",
     "Transition"
   ],
+  "drop-go-hockey-drill": [
+    "Réchauffement",
+    "Tir"
+  ],
   "drop-down-4-on-2": [
     "Entrée de zone",
     "Zone neutre"
+  ],
+  "east-coast-2-on-0": [
+    "Passes",
+    "Transition"
   ],
   "elmira-transition-retrieval-drill": [
     "Sortie de zone",
@@ -514,9 +727,17 @@
   "escape-the-circle": [
     "Patinage"
   ],
+  "escape-pass-follow": [
+    "Transition",
+    "Passes"
+  ],
   "evasive-passing-drill": [
     "Passes",
     "Tir"
+  ],
+  "extended-chip-chase": [
+    "Batailles 1 c. 1",
+    "Patinage"
   ],
   "ferrari-3-on-2": [
     "Entrée de zone",
@@ -525,11 +746,83 @@
   "fight-for-the-middle": [
     "Transition"
   ],
+  "figure-eight-gap-up-1-on-1": [
+    "Batailles 1 c. 1",
+    "Jeu défensif"
+  ],
+  "finland-3-on-0-re-group": [
+    "Zone neutre",
+    "Transition"
+  ],
+  "finland-warm-up-skate-1-on-1": [
+    "Réchauffement",
+    "Patinage"
+  ],
+  "finland-warm-up-skate-2-on-0": [
+    "Réchauffement",
+    "Patinage"
+  ],
   "finnish-5-puck-progression": [
     "Passes"
   ],
+  "flim-flom-one-touches": [
+    "Passes",
+    "Tir"
+  ],
   "forecheck-angling": [
     "Angle / pression"
+  ],
+  "four-cone-neutral-zone-drill": [
+    "Zone neutre"
+  ],
+  "four-lines-1-on-1": [
+    "Batailles 1 c. 1",
+    "Transition"
+  ],
+  "four-lines-flow-1": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "four-lines-flow-3": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "four-lines-overspeed-shooting-1": [
+    "Patinage",
+    "Tir"
+  ],
+  "four-lines-overspeed-shooting-2": [
+    "Patinage"
+  ],
+  "four-lines-overspeed-shooting-3": [
+    "Patinage",
+    "Passes"
+  ],
+  "four-wise-men-warm-up": [
+    "Réchauffement",
+    "Tir"
+  ],
+  "full-ice-1-on-1": [
+    "Batailles 1 c. 1",
+    "Jeu défensif"
+  ],
+  "full-ice-overspeed-skating-progression-1": [
+    "Réchauffement",
+    "Patinage"
+  ],
+  "full-ice-overspeed-skating-progression-2": [
+    "Patinage"
+  ],
+  "full-ice-overspeed-skating-progression-2-with-pucks": [
+    "Patinage",
+    "Tir"
+  ],
+  "full-ice-overspeed-skating-progression-3": [
+    "Patinage"
+  ],
+  "full-ice-overspeed-skating-progression-drill-4": [
+    "Réchauffement",
+    "Patinage"
   ],
   "full-ice-skating-skills-with-9-variations": [
     "Patinage"
@@ -540,6 +833,10 @@
   ],
   "gate-game": [
     "Petits jeux"
+  ],
+  "german-regroup-drill": [
+    "Transition",
+    "Zone neutre"
   ],
   "go-go": [
     "Petits jeux",
@@ -559,6 +856,24 @@
     "Zone neutre",
     "Transition"
   ],
+  "half-horse-shoe-chip": [
+    "Entrée de zone",
+    "Passes"
+  ],
+  "half-horse-shoe-give-go": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "heads-up-breakout-drill": [
+    "Sortie de zone"
+  ],
+  "high-slot-shot-turnover-into-1-vs-1": [
+    "Batailles 1 c. 1",
+    "Jeu défensif"
+  ],
+  "high-speed-chase": [
+    "Patinage"
+  ],
   "hit-the-tire-passing-game-with-no-goalie": [
     "Petits jeux",
     "Passes"
@@ -570,9 +885,17 @@
   "honey-hole": [
     "Tir"
   ],
+  "horseshoe-re-group-drill": [
+    "Transition",
+    "Passes"
+  ],
   "houda-angle": [
     "Angle / pression",
     "Transition"
+  ],
+  "howie-s-warm-up-skating-evaluation-drill": [
+    "Réchauffement",
+    "Patinage"
   ],
   "jets-2-v-2-drill": [
     "Transition",
@@ -599,6 +922,10 @@
     "Zone neutre",
     "Petits jeux"
   ],
+  "loose-puck-transition-1-on-1": [
+    "Zone neutre",
+    "Transition"
+  ],
   "lulea-2-v-0-neutral-zone-warm-up": [
     "Réchauffement",
     "Zone neutre"
@@ -610,8 +937,19 @@
     "Sortie de zone",
     "Passes"
   ],
+  "michigan-neutral-zone-timing-drill": [
+    "Zone neutre",
+    "Entrée de zone"
+  ],
   "mirror-angling": [
     "Angle / pression"
+  ],
+  "moose-simple-timing-2-on-1": [
+    "Zone neutre",
+    "Transition"
+  ],
+  "moose-simple-timing-drill-1": [
+    "Zone neutre"
   ],
   "nehda-3-puck": [
     "Passes"
@@ -634,6 +972,24 @@
     "Zone neutre",
     "Angle / pression"
   ],
+  "neutral-zone-attack-with-speed-1": [
+    "Zone neutre",
+    "Entrée de zone"
+  ],
+  "neutral-zone-attack-with-speed-2": [
+    "Entrée de zone"
+  ],
+  "neutral-zone-attack-with-speed-3": [
+    "Entrée de zone"
+  ],
+  "neutral-zone-attack-with-speed-4": [
+    "Entrée de zone",
+    "Tir"
+  ],
+  "neutral-zone-attack-with-speed-5": [
+    "Entrée de zone",
+    "Tir"
+  ],
   "neutral-zone-chaos-drill": [
     "Zone neutre",
     "Transition"
@@ -642,9 +998,45 @@
     "Zone neutre",
     "Petits jeux"
   ],
+  "neutral-zone-give-go": [
+    "Passes",
+    "Zone neutre"
+  ],
+  "neutral-zone-horse-shoe": [
+    "Réchauffement",
+    "Zone neutre"
+  ],
+  "neutral-zone-offense-double-chip": [
+    "Zone neutre",
+    "Entrée de zone"
+  ],
+  "neutral-zone-offense-swing": [
+    "Zone neutre",
+    "Entrée de zone"
+  ],
   "neutral-zone-puck-races-with-support": [
     "Zone neutre",
     "Batailles 1 c. 1"
+  ],
+  "neutral-zone-support-2-on-1": [
+    "Zone neutre",
+    "Transition"
+  ],
+  "neutral-zone-support-3-on-1-2": [
+    "Zone neutre",
+    "Transition"
+  ],
+  "neutral-zone-transition-1v1": [
+    "Zone neutre",
+    "Batailles 1 c. 1"
+  ],
+  "neutral-zone-transition-warm-up": [
+    "Réchauffement",
+    "Zone neutre"
+  ],
+  "neutral-zone-transition-with-high-roll": [
+    "Zone neutre",
+    "Entrée de zone"
   ],
   "nobles-2-v-2-2-teammates-transition-game": [
     "Transition",
@@ -653,6 +1045,10 @@
   "nobles-2-v-2-transition-game": [
     "Transition",
     "Petits jeux"
+  ],
+  "norwegian-flow-drill": [
+    "Réchauffement",
+    "Passes"
   ],
   "off-the-wall-neutral-zone-exchange": [
     "Zone neutre",
@@ -663,6 +1059,18 @@
   ],
   "offensive-advantage-game": [
     "Petits jeux"
+  ],
+  "one-man-regroup": [
+    "Jeu défensif",
+    "Zone neutre"
+  ],
+  "one-touch-warm-up": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "open-up-double-pass": [
+    "Réchauffement",
+    "Zone neutre"
   ],
   "oreo": [
     "Petits jeux",
@@ -682,8 +1090,27 @@
   "outside-2-on-1-s": [
     "Transition"
   ],
+  "outside-loop-passing": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "outside-to-inside-hockey-attack": [
+    "Entrée de zone"
+  ],
+  "overspeed-quick-pass": [
+    "Patinage",
+    "Passes"
+  ],
   "owls-2-v-2": [
     "Petits jeux"
+  ],
+  "panda-2-on-1-with-backcheck": [
+    "Transition",
+    "Jeu défensif"
+  ],
+  "panther-warm-up-skate": [
+    "Réchauffement",
+    "Patinage"
   ],
   "pass-off-bumper-underhandle-with-shot": [
     "Tir"
@@ -699,6 +1126,13 @@
     "Petits jeux",
     "Passes"
   ],
+  "pat-s-1-on-1": [
+    "Réchauffement",
+    "Batailles 1 c. 1"
+  ],
+  "patrick-perpetual-breakout-drill": [
+    "Sortie de zone"
+  ],
   "pearl-4-v-2-game": [
     "Avantage numérique",
     "Petits jeux"
@@ -712,6 +1146,14 @@
   ],
   "pit-chaos-handling-with-passes": [
     "Réchauffement",
+    "Passes"
+  ],
+  "pivot-pass": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "pivot-give-go": [
+    "Zone neutre",
     "Passes"
   ],
   "poker-2-v-2-game": [
@@ -744,11 +1186,207 @@
     "Angle / pression",
     "Batailles 1 c. 1"
   ],
+  "quick-coach-2-on-1-with-backcheck": [
+    "Transition",
+    "Jeu défensif"
+  ],
+  "quick-counter-open-up": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "quick-gap-1-on-1": [
+    "Batailles 1 c. 1",
+    "Jeu défensif"
+  ],
   "quick-start-continuous-outlet": [
     "Sortie de zone",
     "Passes"
   ],
   "quick-strike-3-v-1-circle-game": [
     "Petits jeux"
+  ],
+  "quick-transition-2-on-1": [
+    "Transition",
+    "Jeu défensif"
+  ],
+  "re-group-1-on-1": [
+    "Jeu défensif",
+    "Zone neutre"
+  ],
+  "react-and-angle-drill": [
+    "Angle / pression"
+  ],
+  "ring-around-1-on-1": [
+    "Batailles 1 c. 1",
+    "Sortie de zone"
+  ],
+  "ring-around-2-on-1": [
+    "Sortie de zone",
+    "Transition"
+  ],
+  "ring-it-1-on-1": [
+    "Batailles 1 c. 1",
+    "Sortie de zone"
+  ],
+  "round-a-round": [
+    "Réchauffement",
+    "Tir"
+  ],
+  "russian-circles": [
+    "Patinage"
+  ],
+  "sabres-defense-drill": [
+    "Jeu défensif"
+  ],
+  "savy-s-continuous-breakout-drill": [
+    "Sortie de zone"
+  ],
+  "savy-s-continuous-breakout-drill-with-forecheckers": [
+    "Sortie de zone",
+    "Angle / pression"
+  ],
+  "scissors-warm-up": [
+    "Réchauffement",
+    "Tir"
+  ],
+  "shadow-recovery-drill": [
+    "Patinage",
+    "Jeu défensif"
+  ],
+  "shoot-go": [
+    "Tir",
+    "Patinage"
+  ],
+  "shoot-and-shadow-1-vs-1": [
+    "Batailles 1 c. 1",
+    "Jeu défensif"
+  ],
+  "short-track-flim-flom": [
+    "Patinage"
+  ],
+  "simple-breakout-control-to-2-on-1": [
+    "Sortie de zone",
+    "Transition"
+  ],
+  "simple-breakout-counter-1-on-1": [
+    "Sortie de zone",
+    "Batailles 1 c. 1"
+  ],
+  "simple-breakout-d-to-d-to-1-on-1": [
+    "Sortie de zone",
+    "Batailles 1 c. 1"
+  ],
+  "simple-breakout-1-on-1": [
+    "Sortie de zone",
+    "Batailles 1 c. 1"
+  ],
+  "simple-breakout-reverse-to-2-on-1": [
+    "Sortie de zone",
+    "Transition"
+  ],
+  "soft-chip-overlap-possession-hockey-drill": [
+    "Entrée de zone"
+  ],
+  "speed-2-on-1": [
+    "Transition",
+    "Zone neutre"
+  ],
+  "stop-and-start-1-vs-1": [
+    "Batailles 1 c. 1",
+    "Patinage"
+  ],
+  "stretch-pass-3-on-0": [
+    "Transition",
+    "Passes"
+  ],
+  "swap-drill": [
+    "Passes",
+    "Entrée de zone"
+  ],
+  "swedish-transition-series-1": [
+    "Transition",
+    "Zone neutre"
+  ],
+  "swedish-transition-series-2": [
+    "Transition",
+    "Zone neutre"
+  ],
+  "swiss-warm-up-passing-drill": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "the-u-transition-drill": [
+    "Transition"
+  ],
+  "three-lane-shooting": [
+    "Réchauffement",
+    "Tir",
+    "Gardien"
+  ],
+  "three-zone-transition-pivots-with-pucks": [
+    "Patinage"
+  ],
+  "timing-in-transition-1-on-0": [
+    "Transition",
+    "Jeu défensif"
+  ],
+  "tip-drill-into-2-on-2": [
+    "Tir",
+    "Batailles 1 c. 1"
+  ],
+  "touch-pass-warm-up": [
+    "Réchauffement",
+    "Passes"
+  ],
+  "transition-angling-drill": [
+    "Angle / pression",
+    "Transition"
+  ],
+  "transition-chip-2-on-0": [
+    "Entrée de zone",
+    "Passes"
+  ],
+  "transition-passing-sequence-1": [
+    "Zone neutre",
+    "Passes"
+  ],
+  "transition-passing-sequence-2": [
+    "Zone neutre",
+    "Passes"
+  ],
+  "transition-passing-sequence-3": [
+    "Zone neutre",
+    "Entrée de zone"
+  ],
+  "transition-passing-sequence-4": [
+    "Zone neutre",
+    "Passes"
+  ],
+  "transition-pivot-hockey-races": [
+    "Patinage",
+    "Jeu défensif"
+  ],
+  "triple-give-go-full-ice": [
+    "Passes"
+  ],
+  "up-back-give-gos": [
+    "Passes",
+    "Jeu défensif"
+  ],
+  "vancouver-1-on-1": [
+    "Zone neutre",
+    "Batailles 1 c. 1"
+  ],
+  "warm-up-delay": [
+    "Zone neutre",
+    "Entrée de zone"
+  ],
+  "whip-one-on-one": [
+    "Batailles 1 c. 1",
+    "Jeu défensif"
+  ],
+  "wing-defense-give-go": [
+    "Réchauffement",
+    "Passes"
   ]
 }

@@ -7,22 +7,35 @@ export function slugify(folder) {
     .replace(/^-+|-+$/g, '')
 }
 
+const SMALL_WORDS = new Set(['on', 'vs', 'vs.', 'to', 'into', 'with', 'and', 'the', 'of', 'in', 'a', 'or', 'for'])
+
+function titleCase(text) {
+  return text
+    .toLowerCase()
+    .split(' ')
+    .map((word, i) => (i > 0 && SMALL_WORDS.has(word) ? word : word.charAt(0).toUpperCase() + word.slice(1)))
+    .join(' ')
+}
+
 export function titleFromFolder(folder) {
-  return folder.replace(/_/g, ' ').replace(/\s+/g, ' ').trim()
+  const title = folder.replace(/_/g, ' ').replace(/\s+/g, ' ').trim()
+  return /[a-z]/.test(title) ? title : titleCase(title)
 }
 
 export function extractSourceUrl(html) {
   return html.match(/content="\d+;\s*url=([^"]+)"/i)?.[1] ?? null
 }
 
+const IMAGE = /\.(png|jpe?g)$/i
+const isImage = (name) => IMAGE.test(name)
 const isVariant = (name) => name.startsWith('drill-maker-') || name.startsWith('field_content_image')
+const ext = (name) => (name.toLowerCase().endsWith('.png') ? 'png' : 'jpg')
+const mainFirst = (a, b) => isVariant(a) - isVariant(b) || a.length - b.length || a.localeCompare(b)
 
-export function dropDuplicatePngs(files, hashOf) {
+export function dropDuplicateImages(files, hashOf) {
   const seen = new Set()
-  const ordered = [...files].sort((a, b) => isVariant(a) - isVariant(b))
   const dropped = new Set()
-  for (const f of ordered) {
-    if (!f.toLowerCase().endsWith('.png')) continue
+  for (const f of [...files].filter(isImage).sort(mainFirst)) {
     const h = hashOf(f)
     if (seen.has(h)) dropped.add(f)
     seen.add(h)
@@ -33,23 +46,21 @@ export function dropDuplicatePngs(files, hashOf) {
 export function buildDrill(folder, files, html) {
   const id = slugify(folder)
   const dir = `drills/${id}`
-  const pngs = files.filter((f) => f.toLowerCase().endsWith('.png')).sort()
-  const main = pngs.find((f) => !isVariant(f)) ?? pngs[0]
-  const others = pngs.filter((f) => f !== main)
+  const [main, ...others] = files.filter(isImage).sort(mainFirst)
   const pdfs = files.filter((f) => f.toLowerCase().endsWith('.pdf'))
   const pdf = pdfs.includes('drill.pdf') ? 'drill.pdf' : pdfs[0]
 
   const copies = []
-  if (main) copies.push([main, 'main.png'])
-  others.forEach((f, i) => copies.push([f, `variant-${i + 1}.png`]))
+  if (main) copies.push([main, `main.${ext(main)}`])
+  others.forEach((f, i) => copies.push([f, `variant-${i + 1}.${ext(f)}`]))
   if (pdf) copies.push([pdf, 'fiche.pdf'])
 
   return {
     drill: {
       id,
       title: titleFromFolder(folder),
-      image: main ? `${dir}/main.png` : null,
-      variants: others.map((_, i) => `${dir}/variant-${i + 1}.png`),
+      image: main ? `${dir}/main.${ext(main)}` : null,
+      variants: others.map((f, i) => `${dir}/variant-${i + 1}.${ext(f)}`),
       pdf: pdf ? `${dir}/fiche.pdf` : null,
       sourceUrl: html ? extractSourceUrl(html) : null,
     },

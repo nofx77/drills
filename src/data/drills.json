@@ -1,11 +1,27 @@
 [
   {
+    "id": "1-on-0-with-backchecker",
+    "title": "1 on 0 with Backchecker",
+    "image": "drills/1-on-0-with-backchecker/main.jpg",
+    "variants": [],
+    "pdf": "drills/1-on-0-with-backchecker/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "1-on-1-re-gap-transition",
     "title": "1 on 1 Re-Gap Transition",
     "image": "drills/1-on-1-re-gap-transition/main.png",
     "variants": [],
     "pdf": "drills/1-on-1-re-gap-transition/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/1-on-1-re-gap-transition"
+  },
+  {
+    "id": "1-on-1-recovery-drill",
+    "title": "1 on 1 Recovery Drill",
+    "image": "drills/1-on-1-recovery-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/1-on-1-recovery-drill/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "1-on-1-retrievals",
@@ -88,6 +104,54 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/1-2-3-forecheck-drill"
   },
   {
+    "id": "2-dot-overspeed-skating-drill",
+    "title": "2 Dot Overspeed Skating Drill",
+    "image": "drills/2-dot-overspeed-skating-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/2-dot-overspeed-skating-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "2-on-0-flow",
+    "title": "2 on 0 Flow",
+    "image": "drills/2-on-0-flow/main.jpg",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
+  },
+  {
+    "id": "2-on-0-neutral-zone-swing",
+    "title": "2 on 0 Neutral Zone Swing",
+    "image": "drills/2-on-0-neutral-zone-swing/main.jpg",
+    "variants": [],
+    "pdf": "drills/2-on-0-neutral-zone-swing/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "2-on-0-quick-re-group",
+    "title": "2 on 0 Quick Re-group",
+    "image": "drills/2-on-0-quick-re-group/main.jpg",
+    "variants": [],
+    "pdf": "drills/2-on-0-quick-re-group/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "2-on-1-2-on-2-full-ice-regroup",
+    "title": "2 on 1 - 2 on 2 Full Ice Regroup",
+    "image": "drills/2-on-1-2-on-2-full-ice-regroup/main.jpg",
+    "variants": [],
+    "pdf": "drills/2-on-1-2-on-2-full-ice-regroup/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "2-on-1-with-backchecker",
+    "title": "2 on 1 with Backchecker",
+    "image": "drills/2-on-1-with-backchecker/main.jpg",
+    "variants": [],
+    "pdf": "drills/2-on-1-with-backchecker/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "2-on-1-with-d-activation",
     "title": "2 on 1 with D Activation",
     "image": "drills/2-on-1-with-d-activation/main.png",
@@ -128,6 +192,14 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/2-on-2-down-low-rim"
   },
   {
+    "id": "2-on-2-full-ice",
+    "title": "2 on 2 Full Ice",
+    "image": "drills/2-on-2-full-ice/main.jpg",
+    "variants": [],
+    "pdf": "drills/2-on-2-full-ice/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "2-on-2-net-to-corner",
     "title": "2 on 2 Net to Corner",
     "image": "drills/2-on-2-net-to-corner/main.png",
@@ -142,6 +214,14 @@
     "variants": [],
     "pdf": "drills/2-on-2-transition-track/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/2-on-2-transition-track"
+  },
+  {
+    "id": "2-shot-warm-up",
+    "title": "2 Shot Warm Up",
+    "image": "drills/2-shot-warm-up/main.jpg",
+    "variants": [],
+    "pdf": "drills/2-shot-warm-up/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "2-v-0-catch-and-release",
@@ -288,6 +368,30 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/2-vs-2-point-shot-box-out"
   },
   {
+    "id": "2-vs-0-rush-series-1",
+    "title": "2 vs. 0 Rush Series #1",
+    "image": "drills/2-vs-0-rush-series-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/2-vs-0-rush-series-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "2-vs-0-rush-series-2",
+    "title": "2 vs. 0 Rush Series #2",
+    "image": null,
+    "variants": [],
+    "pdf": "drills/2-vs-0-rush-series-2/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "2-vs-0-rush-series-3",
+    "title": "2 vs. 0 Rush Series #3",
+    "image": "drills/2-vs-0-rush-series-3/main.jpg",
+    "variants": [],
+    "pdf": "drills/2-vs-0-rush-series-3/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "2-vs-2-2-ways-game",
     "title": "2 vs. 2 2 Ways Game",
     "image": "drills/2-vs-2-2-ways-game/main.png",
@@ -302,6 +406,14 @@
     "variants": [],
     "pdf": "drills/2-vs-2-finnish-buffet-game/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/2-vs-2-finnish-buffet"
+  },
+  {
+    "id": "2-vs-2-stop-starts",
+    "title": "2 vs. 2 Stop & Starts",
+    "image": "drills/2-vs-2-stop-starts/main.jpg",
+    "variants": [],
+    "pdf": "drills/2-vs-2-stop-starts/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "2-vs-3-cross-drop-drill",
@@ -326,6 +438,14 @@
     "variants": [],
     "pdf": "drills/3-man-shooting-warm-up/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/3-man-shooting-warm-up"
+  },
+  {
+    "id": "3-on-0-regroup-on-whistle",
+    "title": "3 on 0 Regroup on Whistle",
+    "image": "drills/3-on-0-regroup-on-whistle/main.jpg",
+    "variants": [],
+    "pdf": "drills/3-on-0-regroup-on-whistle/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "3-on-2-jailbreak",
@@ -406,6 +526,14 @@
     "variants": [],
     "pdf": "drills/3-puck-3-on-3/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/3-puck-3-3"
+  },
+  {
+    "id": "3-puck-break-away-races",
+    "title": "3 Puck Break Away Races",
+    "image": "drills/3-puck-break-away-races/main.jpg",
+    "variants": [],
+    "pdf": "drills/3-puck-break-away-races/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "3-regroup-3-vs-2-drill",
@@ -552,12 +680,60 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/3-x-wall-pick-ups-shot-around-circle"
   },
   {
+    "id": "3-zone-3-puck",
+    "title": "3 Zone 3 Puck",
+    "image": "drills/3-zone-3-puck/main.jpg",
+    "variants": [],
+    "pdf": "drills/3-zone-3-puck/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "4-corner-possession-game-offensive-advantage",
     "title": "4 Corner Possession Game - Offensive Advantage",
     "image": "drills/4-corner-possession-game-offensive-advantage/main.png",
     "variants": [],
     "pdf": "drills/4-corner-possession-game-offensive-advantage/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/4-corner-possession-game-offensive-advantage-1"
+  },
+  {
+    "id": "4-lines-series-1",
+    "title": "4 Lines - Series 1",
+    "image": "drills/4-lines-series-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/4-lines-series-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "4-lines-series-2",
+    "title": "4 Lines - Series 2",
+    "image": "drills/4-lines-series-2/main.jpg",
+    "variants": [],
+    "pdf": "drills/4-lines-series-2/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "4-lines-below-the-puck-zone-rush",
+    "title": "4 Lines Below the Puck Zone Rush",
+    "image": "drills/4-lines-below-the-puck-zone-rush/main.jpg",
+    "variants": [],
+    "pdf": "drills/4-lines-below-the-puck-zone-rush/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "4-lines-series-6",
+    "title": "4 Lines Series #6",
+    "image": "drills/4-lines-series-6/main.jpg",
+    "variants": [],
+    "pdf": "drills/4-lines-series-6/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "4-lines-series-7",
+    "title": "4 Lines Series #7",
+    "image": "drills/4-lines-series-7/main.jpg",
+    "variants": [],
+    "pdf": "drills/4-lines-series-7/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "4-on-2-power-play-game",
@@ -577,7 +753,7 @@
   },
   {
     "id": "4-v-2-rondo-to-4-v-2-quick-attack",
-    "title": "4 V 2 RONDO TO 4 V 2 QUICK ATTACK",
+    "title": "4 V 2 Rondo to 4 V 2 Quick Attack",
     "image": "drills/4-v-2-rondo-to-4-v-2-quick-attack/main.png",
     "variants": [],
     "pdf": "drills/4-v-2-rondo-to-4-v-2-quick-attack/fiche.pdf",
@@ -688,6 +864,22 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/angling-transition-1-v-1-2-v-1"
   },
   {
+    "id": "avalanche-flow-drill",
+    "title": "Avalanche Flow Drill",
+    "image": "drills/avalanche-flow-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/avalanche-flow-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "backcheck-flow-drill",
+    "title": "Backcheck Flow Drill",
+    "image": "drills/backcheck-flow-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/backcheck-flow-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "battle-dome-1-on-1",
     "title": "Battle Dome 1 on 1",
     "image": "drills/battle-dome-1-on-1/main.png",
@@ -718,6 +910,14 @@
     "variants": [],
     "pdf": "drills/bernie-burner/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/bernie-burner"
+  },
+  {
+    "id": "big-w-warm-up",
+    "title": "Big W Warm Up",
+    "image": "drills/big-w-warm-up/main.jpg",
+    "variants": [],
+    "pdf": "drills/big-w-warm-up/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "billy-purcell-breakout",
@@ -752,6 +952,22 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/black-vs-white-stick-tape-keep-away"
   },
   {
+    "id": "blue-devils-flow-drill",
+    "title": "Blue Devils Flow Drill",
+    "image": "drills/blue-devils-flow-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/blue-devils-flow-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "blue-line-1-vs-1",
+    "title": "Blue Line 1 vs. 1",
+    "image": "drills/blue-line-1-vs-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/blue-line-1-vs-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "blueline-agility-reps",
     "title": "Blueline Agility Reps",
     "image": "drills/blueline-agility-reps/main.png",
@@ -768,12 +984,52 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/boomer-shooting-game"
   },
   {
+    "id": "break-out-timing-1",
+    "title": "Break Out Timing #1",
+    "image": "drills/break-out-timing-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/break-out-timing-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "break-out-timing-2",
+    "title": "Break Out Timing #2",
+    "image": "drills/break-out-timing-2/main.jpg",
+    "variants": [],
+    "pdf": "drills/break-out-timing-2/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "breakout-backcheck-drill",
+    "title": "Breakout Backcheck Drill",
+    "image": "drills/breakout-backcheck-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/breakout-backcheck-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "breakout-regroup-shooting",
     "title": "Breakout Regroup Shooting",
     "image": "drills/breakout-regroup-shooting/main.png",
     "variants": [],
     "pdf": "drills/breakout-regroup-shooting/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/breakout-regroup-shooting"
+  },
+  {
+    "id": "breakout-weave-1",
+    "title": "Breakout Weave #1",
+    "image": "drills/breakout-weave-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/breakout-weave-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "bruins-transition-drill",
+    "title": "Bruins Transition Drill",
+    "image": "drills/bruins-transition-drill/main.jpg",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
   },
   {
     "id": "buffalo-2-on-1",
@@ -792,6 +1048,38 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/bump-pass-attack-net-drill"
   },
   {
+    "id": "center-dish",
+    "title": "Center Dish",
+    "image": "drills/center-dish/main.jpg",
+    "variants": [],
+    "pdf": "drills/center-dish/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "center-flow-breakout-drill",
+    "title": "Center Flow Breakout Drill",
+    "image": "drills/center-flow-breakout-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/center-flow-breakout-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "center-ice-figure-eight-one-touches",
+    "title": "Center Ice Figure Eight One Touches",
+    "image": "drills/center-ice-figure-eight-one-touches/main.jpg",
+    "variants": [],
+    "pdf": "drills/center-ice-figure-eight-one-touches/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "center-timing-drill",
+    "title": "Center Timing Drill",
+    "image": "drills/center-timing-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/center-timing-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "chaos-to-shot-warm-up-drill",
     "title": "Chaos to Shot Warm-up Drill",
     "image": "drills/chaos-to-shot-warm-up-drill/main.png",
@@ -806,6 +1094,30 @@
     "variants": [],
     "pdf": "drills/chase-the-rabbit/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/chase-the-rabbit"
+  },
+  {
+    "id": "chip-receive",
+    "title": "Chip & Receive",
+    "image": "drills/chip-receive/main.jpg",
+    "variants": [],
+    "pdf": "drills/chip-receive/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "chip-and-chase",
+    "title": "Chip and Chase",
+    "image": "drills/chip-and-chase/main.jpg",
+    "variants": [],
+    "pdf": "drills/chip-and-chase/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "chip-and-chase-angle-checking-drill",
+    "title": "Chip and Chase Angle Checking Drill",
+    "image": "drills/chip-and-chase-angle-checking-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/chip-and-chase-angle-checking-drill/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "chute-angling-1-v-1",
@@ -856,6 +1168,22 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/continuous-1-vs-1-battle"
   },
   {
+    "id": "continuous-2-on-1-with-backchecker",
+    "title": "Continuous 2 on 1 with Backchecker",
+    "image": "drills/continuous-2-on-1-with-backchecker/main.jpg",
+    "variants": [],
+    "pdf": "drills/continuous-2-on-1-with-backchecker/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "continuous-2-on-2-hockey-drill",
+    "title": "Continuous 2 on 2 Hockey Drill",
+    "image": "drills/continuous-2-on-2-hockey-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/continuous-2-on-2-hockey-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "continuous-2-on-2-tag-up",
     "title": "Continuous 2 on 2 Tag Up",
     "image": "drills/continuous-2-on-2-tag-up/main.png",
@@ -872,6 +1200,30 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/continuous-2-2-4-2"
   },
   {
+    "id": "continuous-breakouts-1",
+    "title": "Continuous Breakouts - #1",
+    "image": "drills/continuous-breakouts-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/continuous-breakouts-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "continuous-breakouts-2",
+    "title": "Continuous Breakouts - #2",
+    "image": "drills/continuous-breakouts-2/main.jpg",
+    "variants": [],
+    "pdf": "drills/continuous-breakouts-2/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "continuous-breakouts-with-designated-forechecker",
+    "title": "Continuous Breakouts with Designated Forechecker",
+    "image": "drills/continuous-breakouts-with-designated-forechecker/main.jpg",
+    "variants": [],
+    "pdf": "drills/continuous-breakouts-with-designated-forechecker/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "continuous-in-zone-2-vs-2-game",
     "title": "Continuous In Zone 2 vs. 2 Game",
     "image": "drills/continuous-in-zone-2-vs-2-game/main.png",
@@ -886,6 +1238,22 @@
     "variants": [],
     "pdf": "drills/continuous-in-zone-3-vs-3-game/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/continuous-zone-3-vs-3"
+  },
+  {
+    "id": "continuous-rim-drill",
+    "title": "Continuous Rim Drill",
+    "image": "drills/continuous-rim-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/continuous-rim-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "continuous-triple-transition",
+    "title": "Continuous Triple Transition",
+    "image": "drills/continuous-triple-transition/main.jpg",
+    "variants": [],
+    "pdf": "drills/continuous-triple-transition/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "cornell-under-handling-with-shot",
@@ -910,6 +1278,22 @@
     "variants": [],
     "pdf": "drills/corner-houda/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/corner-houda-drill"
+  },
+  {
+    "id": "cow-hockey-s-continuous-2-on-0",
+    "title": "Cow Hockey's Continuous 2 on 0",
+    "image": "drills/cow-hockey-s-continuous-2-on-0/main.jpg",
+    "variants": [],
+    "pdf": "drills/cow-hockey-s-continuous-2-on-0/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "crash-2-on-1",
+    "title": "Crash 2 on 1",
+    "image": "drills/crash-2-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/crash-2-on-1/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "cross-fire-passing",
@@ -942,6 +1326,14 @@
     "variants": [],
     "pdf": "drills/cutting-hands-warm-up/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/cutting-hands-warm-up"
+  },
+  {
+    "id": "cyclone-passing-drill",
+    "title": "Cyclone Passing Drill",
+    "image": "drills/cyclone-passing-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/cyclone-passing-drill/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "d-activation",
@@ -1016,6 +1408,22 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/dinks-warm-up"
   },
   {
+    "id": "double-chip-flow-drill",
+    "title": "Double Chip Flow Drill",
+    "image": "drills/double-chip-flow-drill/main.png",
+    "variants": [],
+    "pdf": "drills/double-chip-flow-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "double-chip-off-boards",
+    "title": "Double Chip Off Boards",
+    "image": "drills/double-chip-off-boards/main.jpg",
+    "variants": [],
+    "pdf": "drills/double-chip-off-boards/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "double-goals-game",
     "title": "Double Goals Game",
     "image": "drills/double-goals-game/main.png",
@@ -1032,6 +1440,14 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/double-goals-game-royal-road"
   },
   {
+    "id": "double-pass-backcheck",
+    "title": "Double Pass Backcheck",
+    "image": "drills/double-pass-backcheck/main.jpg",
+    "variants": [],
+    "pdf": "drills/double-pass-backcheck/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "double-regroup-2-on-1",
     "title": "Double Regroup 2 on 1",
     "image": "drills/double-regroup-2-on-1/main.png",
@@ -1040,12 +1456,30 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/double-regroup-2-1"
   },
   {
+    "id": "drop-go-hockey-drill",
+    "title": "Drop & Go Hockey Drill",
+    "image": "drills/drop-go-hockey-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/drop-go-hockey-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "drop-down-4-on-2",
     "title": "Drop Down 4 on 2",
     "image": "drills/drop-down-4-on-2/main.png",
     "variants": [],
     "pdf": "drills/drop-down-4-on-2/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/drop-down-4-on-2"
+  },
+  {
+    "id": "east-coast-2-on-0",
+    "title": "East Coast 2 on 0",
+    "image": "drills/east-coast-2-on-0/main.jpg",
+    "variants": [
+      "drills/east-coast-2-on-0/variant-1.jpg"
+    ],
+    "pdf": "drills/east-coast-2-on-0/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "elmira-transition-retrieval-drill",
@@ -1064,12 +1498,28 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/escape-the-circle"
   },
   {
+    "id": "escape-pass-follow",
+    "title": "Escape, Pass, Follow",
+    "image": "drills/escape-pass-follow/main.jpg",
+    "variants": [],
+    "pdf": "drills/escape-pass-follow/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "evasive-passing-drill",
     "title": "Evasive Passing Drill",
     "image": "drills/evasive-passing-drill/main.png",
     "variants": [],
     "pdf": "drills/evasive-passing-drill/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/evasive-passing-drill"
+  },
+  {
+    "id": "extended-chip-chase",
+    "title": "Extended Chip & Chase",
+    "image": "drills/extended-chip-chase/main.jpg",
+    "variants": [],
+    "pdf": "drills/extended-chip-chase/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "ferrari-3-on-2",
@@ -1088,6 +1538,38 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/fight-for-the-middle"
   },
   {
+    "id": "figure-eight-gap-up-1-on-1",
+    "title": "Figure Eight Gap Up 1 on 1",
+    "image": "drills/figure-eight-gap-up-1-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/figure-eight-gap-up-1-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "finland-3-on-0-re-group",
+    "title": "Finland 3 on 0 Re-group",
+    "image": "drills/finland-3-on-0-re-group/main.jpg",
+    "variants": [],
+    "pdf": "drills/finland-3-on-0-re-group/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "finland-warm-up-skate-1-on-1",
+    "title": "Finland Warm Up Skate 1 on 1",
+    "image": "drills/finland-warm-up-skate-1-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/finland-warm-up-skate-1-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "finland-warm-up-skate-2-on-0",
+    "title": "Finland Warm Up Skate 2 on 0",
+    "image": "drills/finland-warm-up-skate-2-on-0/main.jpg",
+    "variants": [],
+    "pdf": "drills/finland-warm-up-skate-2-on-0/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "finnish-5-puck-progression",
     "title": "Finnish 5 Puck Progression",
     "image": "drills/finnish-5-puck-progression/main.png",
@@ -1096,12 +1578,132 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/finnish-5-puck-progression"
   },
   {
+    "id": "flim-flom-one-touches",
+    "title": "Flim Flom One Touches",
+    "image": "drills/flim-flom-one-touches/main.jpg",
+    "variants": [],
+    "pdf": "drills/flim-flom-one-touches/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "forecheck-angling",
     "title": "Forecheck Angling",
     "image": "drills/forecheck-angling/main.png",
     "variants": [],
     "pdf": "drills/forecheck-angling/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/forecheck-angling-10"
+  },
+  {
+    "id": "four-cone-neutral-zone-drill",
+    "title": "Four Cone Neutral Zone Drill",
+    "image": "drills/four-cone-neutral-zone-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/four-cone-neutral-zone-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "four-lines-1-on-1",
+    "title": "Four Lines 1 on 1",
+    "image": "drills/four-lines-1-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/four-lines-1-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "four-lines-flow-1",
+    "title": "Four Lines Flow #1",
+    "image": "drills/four-lines-flow-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/four-lines-flow-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "four-lines-flow-3",
+    "title": "Four Lines Flow #3",
+    "image": "drills/four-lines-flow-3/main.jpg",
+    "variants": [],
+    "pdf": "drills/four-lines-flow-3/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "four-lines-overspeed-shooting-1",
+    "title": "Four Lines Overspeed Shooting #1",
+    "image": "drills/four-lines-overspeed-shooting-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/four-lines-overspeed-shooting-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "four-lines-overspeed-shooting-2",
+    "title": "Four Lines Overspeed Shooting #2",
+    "image": "drills/four-lines-overspeed-shooting-2/main.jpg",
+    "variants": [],
+    "pdf": "drills/four-lines-overspeed-shooting-2/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "four-lines-overspeed-shooting-3",
+    "title": "Four Lines Overspeed Shooting #3",
+    "image": "drills/four-lines-overspeed-shooting-3/main.jpg",
+    "variants": [],
+    "pdf": "drills/four-lines-overspeed-shooting-3/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "four-wise-men-warm-up",
+    "title": "Four Wise Men Warm Up",
+    "image": "drills/four-wise-men-warm-up/main.jpg",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
+  },
+  {
+    "id": "full-ice-1-on-1",
+    "title": "Full Ice 1 on 1",
+    "image": "drills/full-ice-1-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/full-ice-1-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "full-ice-overspeed-skating-progression-1",
+    "title": "Full Ice Overspeed Skating Progression #1",
+    "image": "drills/full-ice-overspeed-skating-progression-1/main.jpg",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
+  },
+  {
+    "id": "full-ice-overspeed-skating-progression-2",
+    "title": "Full Ice Overspeed Skating Progression #2",
+    "image": "drills/full-ice-overspeed-skating-progression-2/main.jpg",
+    "variants": [],
+    "pdf": "drills/full-ice-overspeed-skating-progression-2/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "full-ice-overspeed-skating-progression-2-with-pucks",
+    "title": "Full Ice Overspeed Skating Progression #2 with Pucks",
+    "image": "drills/full-ice-overspeed-skating-progression-2-with-pucks/main.jpg",
+    "variants": [],
+    "pdf": "drills/full-ice-overspeed-skating-progression-2-with-pucks/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "full-ice-overspeed-skating-progression-3",
+    "title": "Full Ice Overspeed Skating Progression #3",
+    "image": "drills/full-ice-overspeed-skating-progression-3/main.jpg",
+    "variants": [],
+    "pdf": "drills/full-ice-overspeed-skating-progression-3/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "full-ice-overspeed-skating-progression-drill-4",
+    "title": "Full Ice Overspeed Skating Progression Drill #4",
+    "image": "drills/full-ice-overspeed-skating-progression-drill-4/main.jpg",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
   },
   {
     "id": "full-ice-skating-skills-with-9-variations",
@@ -1126,6 +1728,14 @@
     "variants": [],
     "pdf": "drills/gate-game/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/the-gate-game"
+  },
+  {
+    "id": "german-regroup-drill",
+    "title": "German Regroup Drill",
+    "image": "drills/german-regroup-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/german-regroup-drill/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "go-go",
@@ -1168,6 +1778,46 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/griffs-2-v-2-game"
   },
   {
+    "id": "half-horse-shoe-chip",
+    "title": "Half Horse Shoe Chip",
+    "image": "drills/half-horse-shoe-chip/main.jpg",
+    "variants": [],
+    "pdf": "drills/half-horse-shoe-chip/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "half-horse-shoe-give-go",
+    "title": "Half Horse Shoe Give & Go",
+    "image": "drills/half-horse-shoe-give-go/main.jpg",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
+  },
+  {
+    "id": "heads-up-breakout-drill",
+    "title": "Heads Up Breakout Drill",
+    "image": "drills/heads-up-breakout-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/heads-up-breakout-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "high-slot-shot-turnover-into-1-vs-1",
+    "title": "High Slot Shot, Turnover into 1 vs. 1",
+    "image": "drills/high-slot-shot-turnover-into-1-vs-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/high-slot-shot-turnover-into-1-vs-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "high-speed-chase",
+    "title": "High Speed Chase",
+    "image": "drills/high-speed-chase/main.jpg",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
+  },
+  {
     "id": "hit-the-tire-passing-game-with-no-goalie",
     "title": "Hit The Tire Passing Game WIth No Goalie",
     "image": "drills/hit-the-tire-passing-game-with-no-goalie/main.png",
@@ -1192,12 +1842,28 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/honey-hole"
   },
   {
+    "id": "horseshoe-re-group-drill",
+    "title": "Horseshoe Re-group Drill",
+    "image": "drills/horseshoe-re-group-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/horseshoe-re-group-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "houda-angle",
     "title": "Houda Angle",
     "image": "drills/houda-angle/main.png",
     "variants": [],
     "pdf": "drills/houda-angle/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/houda-angle-1"
+  },
+  {
+    "id": "howie-s-warm-up-skating-evaluation-drill",
+    "title": "Howie's Warm Up Skating Evaluation Drill",
+    "image": "drills/howie-s-warm-up-skating-evaluation-drill/main.jpg",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
   },
   {
     "id": "jets-2-v-2-drill",
@@ -1256,6 +1922,14 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/long-bomb"
   },
   {
+    "id": "loose-puck-transition-1-on-1",
+    "title": "Loose Puck Transition 1 on 1",
+    "image": "drills/loose-puck-transition-1-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/loose-puck-transition-1-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "lulea-2-v-0-neutral-zone-warm-up",
     "title": "Lulea 2 v 0 Neutral Zone Warm Up",
     "image": "drills/lulea-2-v-0-neutral-zone-warm-up/main.png",
@@ -1280,12 +1954,36 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/merrimack-wall-drill"
   },
   {
+    "id": "michigan-neutral-zone-timing-drill",
+    "title": "Michigan Neutral Zone Timing Drill",
+    "image": "drills/michigan-neutral-zone-timing-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/michigan-neutral-zone-timing-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "mirror-angling",
     "title": "Mirror Angling",
     "image": "drills/mirror-angling/main.png",
     "variants": [],
     "pdf": "drills/mirror-angling/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/mirror-angling-4"
+  },
+  {
+    "id": "moose-simple-timing-2-on-1",
+    "title": "Moose Simple Timing 2 on 1",
+    "image": "drills/moose-simple-timing-2-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/moose-simple-timing-2-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "moose-simple-timing-drill-1",
+    "title": "Moose Simple Timing Drill #1",
+    "image": "drills/moose-simple-timing-drill-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/moose-simple-timing-drill-1/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "nehda-3-puck",
@@ -1336,6 +2034,46 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/neutral-zone-angle-2v2-3v2"
   },
   {
+    "id": "neutral-zone-attack-with-speed-1",
+    "title": "Neutral Zone Attack with Speed #1",
+    "image": "drills/neutral-zone-attack-with-speed-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/neutral-zone-attack-with-speed-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "neutral-zone-attack-with-speed-2",
+    "title": "Neutral Zone Attack with Speed #2",
+    "image": "drills/neutral-zone-attack-with-speed-2/main.jpg",
+    "variants": [],
+    "pdf": "drills/neutral-zone-attack-with-speed-2/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "neutral-zone-attack-with-speed-3",
+    "title": "Neutral Zone Attack with Speed #3",
+    "image": "drills/neutral-zone-attack-with-speed-3/main.jpg",
+    "variants": [],
+    "pdf": "drills/neutral-zone-attack-with-speed-3/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "neutral-zone-attack-with-speed-4",
+    "title": "Neutral Zone Attack with Speed #4",
+    "image": "drills/neutral-zone-attack-with-speed-4/main.jpg",
+    "variants": [],
+    "pdf": "drills/neutral-zone-attack-with-speed-4/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "neutral-zone-attack-with-speed-5",
+    "title": "Neutral Zone Attack with Speed #5",
+    "image": "drills/neutral-zone-attack-with-speed-5/main.jpg",
+    "variants": [],
+    "pdf": "drills/neutral-zone-attack-with-speed-5/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "neutral-zone-chaos-drill",
     "title": "Neutral Zone Chaos Drill",
     "image": "drills/neutral-zone-chaos-drill/main.png",
@@ -1352,12 +2090,84 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/neutral-zone-game-outlets"
   },
   {
+    "id": "neutral-zone-give-go",
+    "title": "Neutral Zone Give & Go",
+    "image": "drills/neutral-zone-give-go/main.jpg",
+    "variants": [],
+    "pdf": "drills/neutral-zone-give-go/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "neutral-zone-horse-shoe",
+    "title": "Neutral Zone Horse Shoe",
+    "image": "drills/neutral-zone-horse-shoe/main.jpg",
+    "variants": [],
+    "pdf": "drills/neutral-zone-horse-shoe/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "neutral-zone-offense-double-chip",
+    "title": "Neutral Zone Offense Double Chip",
+    "image": "drills/neutral-zone-offense-double-chip/main.jpg",
+    "variants": [],
+    "pdf": "drills/neutral-zone-offense-double-chip/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "neutral-zone-offense-swing",
+    "title": "Neutral Zone Offense Swing",
+    "image": "drills/neutral-zone-offense-swing/main.jpg",
+    "variants": [],
+    "pdf": "drills/neutral-zone-offense-swing/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "neutral-zone-puck-races-with-support",
     "title": "Neutral Zone Puck Races With Support",
     "image": "drills/neutral-zone-puck-races-with-support/main.png",
     "variants": [],
     "pdf": "drills/neutral-zone-puck-races-with-support/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/neutral-zone-puck-races-support"
+  },
+  {
+    "id": "neutral-zone-support-2-on-1",
+    "title": "Neutral Zone Support 2 on 1",
+    "image": "drills/neutral-zone-support-2-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/neutral-zone-support-2-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "neutral-zone-support-3-on-1-2",
+    "title": "Neutral Zone Support 3 on 1 - #2",
+    "image": "drills/neutral-zone-support-3-on-1-2/main.jpg",
+    "variants": [],
+    "pdf": "drills/neutral-zone-support-3-on-1-2/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "neutral-zone-transition-1v1",
+    "title": "Neutral Zone Transition 1v1",
+    "image": "drills/neutral-zone-transition-1v1/main.jpg",
+    "variants": [],
+    "pdf": "drills/neutral-zone-transition-1v1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "neutral-zone-transition-warm-up",
+    "title": "Neutral Zone Transition Warm Up",
+    "image": "drills/neutral-zone-transition-warm-up/main.jpg",
+    "variants": [],
+    "pdf": "drills/neutral-zone-transition-warm-up/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "neutral-zone-transition-with-high-roll",
+    "title": "Neutral Zone Transition with High Roll",
+    "image": "drills/neutral-zone-transition-with-high-roll/main.jpg",
+    "variants": [],
+    "pdf": "drills/neutral-zone-transition-with-high-roll/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "nobles-2-v-2-2-teammates-transition-game",
@@ -1374,6 +2184,14 @@
     "variants": [],
     "pdf": "drills/nobles-2-v-2-transition-game/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/nobles-2-v-2-transition-game"
+  },
+  {
+    "id": "norwegian-flow-drill",
+    "title": "Norwegian Flow Drill",
+    "image": "drills/norwegian-flow-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/norwegian-flow-drill/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "off-the-wall-neutral-zone-exchange",
@@ -1398,6 +2216,30 @@
     "variants": [],
     "pdf": "drills/offensive-advantage-game/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/offensive-advantage-game"
+  },
+  {
+    "id": "one-man-regroup",
+    "title": "One Man Regroup",
+    "image": "drills/one-man-regroup/main.jpg",
+    "variants": [],
+    "pdf": "drills/one-man-regroup/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "one-touch-warm-up",
+    "title": "One Touch Warm Up",
+    "image": "drills/one-touch-warm-up/main.jpg",
+    "variants": [],
+    "pdf": "drills/one-touch-warm-up/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "open-up-double-pass",
+    "title": "Open Up Double Pass",
+    "image": "drills/open-up-double-pass/main.jpg",
+    "variants": [],
+    "pdf": "drills/open-up-double-pass/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "oreo",
@@ -1440,12 +2282,52 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/outside-2-1s"
   },
   {
+    "id": "outside-loop-passing",
+    "title": "Outside Loop Passing",
+    "image": "drills/outside-loop-passing/main.jpg",
+    "variants": [],
+    "pdf": "drills/outside-loop-passing/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "outside-to-inside-hockey-attack",
+    "title": "Outside to Inside Hockey Attack",
+    "image": "drills/outside-to-inside-hockey-attack/main.jpg",
+    "variants": [],
+    "pdf": "drills/outside-to-inside-hockey-attack/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "overspeed-quick-pass",
+    "title": "Overspeed Quick Pass",
+    "image": "drills/overspeed-quick-pass/main.jpg",
+    "variants": [],
+    "pdf": "drills/overspeed-quick-pass/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "owls-2-v-2",
-    "title": "OWLS 2 V 2",
+    "title": "Owls 2 V 2",
     "image": "drills/owls-2-v-2/main.png",
     "variants": [],
     "pdf": "drills/owls-2-v-2/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/owls-2-v-2"
+  },
+  {
+    "id": "panda-2-on-1-with-backcheck",
+    "title": "Panda 2 on 1 with Backcheck",
+    "image": "drills/panda-2-on-1-with-backcheck/main.jpg",
+    "variants": [],
+    "pdf": "drills/panda-2-on-1-with-backcheck/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "panther-warm-up-skate",
+    "title": "Panther Warm Up Skate",
+    "image": "drills/panther-warm-up-skate/main.jpg",
+    "variants": [],
+    "pdf": "drills/panther-warm-up-skate/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "pass-off-bumper-underhandle-with-shot",
@@ -1480,6 +2362,22 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/pass-through-triangle-game"
   },
   {
+    "id": "pat-s-1-on-1",
+    "title": "Pat's 1 on 1",
+    "image": "drills/pat-s-1-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/pat-s-1-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "patrick-perpetual-breakout-drill",
+    "title": "Patrick Perpetual Breakout Drill",
+    "image": "drills/patrick-perpetual-breakout-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/patrick-perpetual-breakout-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "pearl-4-v-2-game",
     "title": "Pearl 4 v 2 Game",
     "image": "drills/pearl-4-v-2-game/main.png",
@@ -1510,6 +2408,22 @@
     "variants": [],
     "pdf": "drills/pit-chaos-handling-with-passes/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/pit-chaos-handling-passes"
+  },
+  {
+    "id": "pivot-pass",
+    "title": "Pivot & Pass",
+    "image": "drills/pivot-pass/main.jpg",
+    "variants": [],
+    "pdf": "drills/pivot-pass/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "pivot-give-go",
+    "title": "Pivot, Give & Go",
+    "image": "drills/pivot-give-go/main.jpg",
+    "variants": [],
+    "pdf": "drills/pivot-give-go/fiche.pdf",
+    "sourceUrl": null
   },
   {
     "id": "poker-2-v-2-game",
@@ -1584,6 +2498,30 @@
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/the-purple-eagle-angle-drill"
   },
   {
+    "id": "quick-coach-2-on-1-with-backcheck",
+    "title": "Quick Coach 2 on 1 with Backcheck",
+    "image": "drills/quick-coach-2-on-1-with-backcheck/main.jpg",
+    "variants": [],
+    "pdf": "drills/quick-coach-2-on-1-with-backcheck/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "quick-counter-open-up",
+    "title": "Quick Counter Open Up",
+    "image": "drills/quick-counter-open-up/main.jpg",
+    "variants": [],
+    "pdf": "drills/quick-counter-open-up/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "quick-gap-1-on-1",
+    "title": "Quick Gap 1 on 1",
+    "image": "drills/quick-gap-1-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/quick-gap-1-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
     "id": "quick-start-continuous-outlet",
     "title": "Quick Start Continuous Outlet",
     "image": "drills/quick-start-continuous-outlet/main.png",
@@ -1598,5 +2536,389 @@
     "variants": [],
     "pdf": "drills/quick-strike-3-v-1-circle-game/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/quick-strike-3-v-1-circle-game"
+  },
+  {
+    "id": "quick-transition-2-on-1",
+    "title": "Quick Transition 2 on 1",
+    "image": "drills/quick-transition-2-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/quick-transition-2-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "re-group-1-on-1",
+    "title": "Re-group 1 on 1",
+    "image": "drills/re-group-1-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/re-group-1-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "react-and-angle-drill",
+    "title": "React and Angle Drill",
+    "image": "drills/react-and-angle-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/react-and-angle-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "ring-around-1-on-1",
+    "title": "Ring Around 1 on 1",
+    "image": "drills/ring-around-1-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/ring-around-1-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "ring-around-2-on-1",
+    "title": "Ring Around 2 on 1",
+    "image": "drills/ring-around-2-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/ring-around-2-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "ring-it-1-on-1",
+    "title": "Ring It 1 on 1",
+    "image": "drills/ring-it-1-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/ring-it-1-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "round-a-round",
+    "title": "Round a Round",
+    "image": "drills/round-a-round/main.jpg",
+    "variants": [],
+    "pdf": "drills/round-a-round/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "russian-circles",
+    "title": "Russian Circles",
+    "image": "drills/russian-circles/main.jpg",
+    "variants": [],
+    "pdf": "drills/russian-circles/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "sabres-defense-drill",
+    "title": "Sabres Defense Drill",
+    "image": "drills/sabres-defense-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/sabres-defense-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "savy-s-continuous-breakout-drill",
+    "title": "Savy's Continuous Breakout Drill",
+    "image": "drills/savy-s-continuous-breakout-drill/main.jpg",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
+  },
+  {
+    "id": "savy-s-continuous-breakout-drill-with-forecheckers",
+    "title": "Savy's Continuous Breakout Drill with Forecheckers",
+    "image": "drills/savy-s-continuous-breakout-drill-with-forecheckers/main.jpg",
+    "variants": [],
+    "pdf": "drills/savy-s-continuous-breakout-drill-with-forecheckers/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "scissors-warm-up",
+    "title": "Scissors Warm Up",
+    "image": "drills/scissors-warm-up/main.jpg",
+    "variants": [],
+    "pdf": "drills/scissors-warm-up/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "shadow-recovery-drill",
+    "title": "Shadow Recovery Drill",
+    "image": "drills/shadow-recovery-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/shadow-recovery-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "shoot-go",
+    "title": "Shoot & Go",
+    "image": "drills/shoot-go/main.jpg",
+    "variants": [],
+    "pdf": "drills/shoot-go/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "shoot-and-shadow-1-vs-1",
+    "title": "Shoot and Shadow 1 vs. 1",
+    "image": "drills/shoot-and-shadow-1-vs-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/shoot-and-shadow-1-vs-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "short-track-flim-flom",
+    "title": "Short Track Flim Flom",
+    "image": "drills/short-track-flim-flom/main.jpg",
+    "variants": [],
+    "pdf": "drills/short-track-flim-flom/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "simple-breakout-control-to-2-on-1",
+    "title": "Simple Breakout - Control to 2 on 1",
+    "image": "drills/simple-breakout-control-to-2-on-1/main.jpg",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
+  },
+  {
+    "id": "simple-breakout-counter-1-on-1",
+    "title": "Simple Breakout - Counter - 1 on 1",
+    "image": "drills/simple-breakout-counter-1-on-1/main.jpg",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
+  },
+  {
+    "id": "simple-breakout-d-to-d-to-1-on-1",
+    "title": "Simple Breakout - D to D to 1 on 1",
+    "image": "drills/simple-breakout-d-to-d-to-1-on-1/main.png",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
+  },
+  {
+    "id": "simple-breakout-1-on-1",
+    "title": "Simple Breakout 1 on 1",
+    "image": "drills/simple-breakout-1-on-1/main.jpg",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
+  },
+  {
+    "id": "simple-breakout-reverse-to-2-on-1",
+    "title": "Simple Breakout Reverse to 2 on 1",
+    "image": "drills/simple-breakout-reverse-to-2-on-1/main.png",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
+  },
+  {
+    "id": "soft-chip-overlap-possession-hockey-drill",
+    "title": "Soft Chip Overlap Possession Hockey Drill",
+    "image": "drills/soft-chip-overlap-possession-hockey-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/soft-chip-overlap-possession-hockey-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "speed-2-on-1",
+    "title": "Speed 2 on 1",
+    "image": "drills/speed-2-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/speed-2-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "stop-and-start-1-vs-1",
+    "title": "Stop and Start 1 vs. 1",
+    "image": "drills/stop-and-start-1-vs-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/stop-and-start-1-vs-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "stretch-pass-3-on-0",
+    "title": "Stretch Pass 3 on 0",
+    "image": "drills/stretch-pass-3-on-0/main.jpg",
+    "variants": [],
+    "pdf": "drills/stretch-pass-3-on-0/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "swap-drill",
+    "title": "Swap Drill",
+    "image": "drills/swap-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/swap-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "swedish-transition-series-1",
+    "title": "Swedish Transition Series #1",
+    "image": "drills/swedish-transition-series-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/swedish-transition-series-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "swedish-transition-series-2",
+    "title": "Swedish Transition Series #2",
+    "image": "drills/swedish-transition-series-2/main.jpg",
+    "variants": [],
+    "pdf": "drills/swedish-transition-series-2/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "swiss-warm-up-passing-drill",
+    "title": "Swiss Warm Up Passing Drill",
+    "image": "drills/swiss-warm-up-passing-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/swiss-warm-up-passing-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "the-u-transition-drill",
+    "title": "The U Transition Drill",
+    "image": "drills/the-u-transition-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/the-u-transition-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "three-lane-shooting",
+    "title": "Three Lane Shooting",
+    "image": "drills/three-lane-shooting/main.jpg",
+    "variants": [],
+    "pdf": "drills/three-lane-shooting/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "three-zone-transition-pivots-with-pucks",
+    "title": "Three Zone Transition Pivots with Pucks",
+    "image": "drills/three-zone-transition-pivots-with-pucks/main.jpg",
+    "variants": [],
+    "pdf": "drills/three-zone-transition-pivots-with-pucks/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "timing-in-transition-1-on-0",
+    "title": "Timing in Transition 1 on 0",
+    "image": "drills/timing-in-transition-1-on-0/main.jpg",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
+  },
+  {
+    "id": "tip-drill-into-2-on-2",
+    "title": "Tip Drill into 2 on 2",
+    "image": "drills/tip-drill-into-2-on-2/main.jpg",
+    "variants": [],
+    "pdf": "drills/tip-drill-into-2-on-2/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "touch-pass-warm-up",
+    "title": "Touch Pass Warm Up",
+    "image": "drills/touch-pass-warm-up/main.jpg",
+    "variants": [],
+    "pdf": "drills/touch-pass-warm-up/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "transition-angling-drill",
+    "title": "Transition Angling Drill",
+    "image": "drills/transition-angling-drill/main.jpg",
+    "variants": [],
+    "pdf": "drills/transition-angling-drill/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "transition-chip-2-on-0",
+    "title": "Transition Chip 2 on 0",
+    "image": "drills/transition-chip-2-on-0/main.jpg",
+    "variants": [],
+    "pdf": "drills/transition-chip-2-on-0/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "transition-passing-sequence-1",
+    "title": "Transition Passing Sequence #1",
+    "image": "drills/transition-passing-sequence-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/transition-passing-sequence-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "transition-passing-sequence-2",
+    "title": "Transition Passing Sequence #2",
+    "image": "drills/transition-passing-sequence-2/main.jpg",
+    "variants": [],
+    "pdf": "drills/transition-passing-sequence-2/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "transition-passing-sequence-3",
+    "title": "Transition Passing Sequence #3",
+    "image": "drills/transition-passing-sequence-3/main.jpg",
+    "variants": [],
+    "pdf": "drills/transition-passing-sequence-3/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "transition-passing-sequence-4",
+    "title": "Transition Passing Sequence #4",
+    "image": "drills/transition-passing-sequence-4/main.jpg",
+    "variants": [],
+    "pdf": null,
+    "sourceUrl": null
+  },
+  {
+    "id": "transition-pivot-hockey-races",
+    "title": "Transition Pivot Hockey Races",
+    "image": "drills/transition-pivot-hockey-races/main.jpg",
+    "variants": [],
+    "pdf": "drills/transition-pivot-hockey-races/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "triple-give-go-full-ice",
+    "title": "Triple Give & Go - Full Ice",
+    "image": "drills/triple-give-go-full-ice/main.jpg",
+    "variants": [],
+    "pdf": "drills/triple-give-go-full-ice/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "up-back-give-gos",
+    "title": "Up-back Give & Gos",
+    "image": "drills/up-back-give-gos/main.jpg",
+    "variants": [],
+    "pdf": "drills/up-back-give-gos/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "vancouver-1-on-1",
+    "title": "Vancouver 1 on 1",
+    "image": "drills/vancouver-1-on-1/main.jpg",
+    "variants": [],
+    "pdf": "drills/vancouver-1-on-1/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "warm-up-delay",
+    "title": "Warm Up Delay",
+    "image": "drills/warm-up-delay/main.jpg",
+    "variants": [],
+    "pdf": "drills/warm-up-delay/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "whip-one-on-one",
+    "title": "Whip One on One",
+    "image": "drills/whip-one-on-one/main.jpg",
+    "variants": [],
+    "pdf": "drills/whip-one-on-one/fiche.pdf",
+    "sourceUrl": null
+  },
+  {
+    "id": "wing-defense-give-go",
+    "title": "Wing, Defense Give & Go",
+    "image": "drills/wing-defense-give-go/main.jpg",
+    "variants": [],
+    "pdf": "drills/wing-defense-give-go/fiche.pdf",
+    "sourceUrl": null
   }
 ]

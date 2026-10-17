@@ -12,8 +12,8 @@ npm run dev
 ## Réimporter les exercices
 
 ```bash
-npm run import                       # dossier par défaut : ~/Downloads/2025/2025
-npm run import -- /chemin/du/dossier
+npm run import                       # dossiers par défaut : ~/Downloads/2025/2025 et ~/Downloads/FULLICE/FULLICE
+npm run import -- /dossier/1 /dossier/2   # tous les dossiers à fusionner
 ```
 
 Le script copie les PNG et PDF dans `public/drills/` (jamais les vidéos) et régénère `src/data/drills.json`. Il ne touche pas aux catégories.
