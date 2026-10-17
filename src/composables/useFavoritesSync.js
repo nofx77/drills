@@ -1,8 +1,18 @@
-import { watch } from 'vue'
+import { ref, watch } from 'vue'
 import { supabase } from '../lib/supabase.js'
 import { diffSets, reconcile } from '../lib/favoritesSync.js'
 import { useAuth } from './useAuth.js'
 import { useFavorites } from './useFavorites.js'
+
+const favoritesSyncState = ref({ status: 'idle', error: '' })
+
+export function useFavoritesSyncState() {
+  return favoritesSyncState
+}
+
+function fail(step, e) {
+  favoritesSyncState.value = { status: 'error', error: `${step} : ${e?.message || e}` }
+}
 
 export function startFavoritesSync() {
   const { user } = useAuth()
@@ -23,13 +33,17 @@ export function startFavoritesSync() {
       const remote = await fetchRemote()
       favorites.value = reconcile(remote, lastSynced ?? new Set(), favorites.value)
       lastSynced = remote
+      favoritesSyncState.value = { status: 'ok', error: '' }
       push()
-    } catch {}
+    } catch (e) {
+      fail('Lecture', e)
+    }
   }
 
   function push() {
     pushing = pushing.then(async () => {
-      if (!user.value || !lastSynced) return
+      if (!user.value) return
+      if (!lastSynced) return resync()
       const target = new Set(favorites.value)
       const { added, removed } = diffSets(lastSynced, target)
       try {
@@ -43,7 +57,10 @@ export function startFavoritesSync() {
           if (error) throw error
           removed.forEach((id) => lastSynced.delete(id))
         }
-      } catch {}
+        favoritesSyncState.value = { status: 'ok', error: '' }
+      } catch (e) {
+        fail('Envoi', e)
+      }
     })
   }
 

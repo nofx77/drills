@@ -6,11 +6,15 @@ import { useSavedPlans } from '../composables/useSavedPlans.js'
 import { usePlan } from '../composables/usePlan.js'
 import { fromRow } from '../lib/savedPlans.js'
 import { markSynced } from '../composables/usePlanSync.js'
+import { useFavoritesSyncState } from '../composables/useFavoritesSync.js'
+import { useFavorites } from '../composables/useFavorites.js'
 
 const router = useRouter()
 const { user, ready, signIn, signOut } = useAuth()
 const { plans, loading, refresh, remove, rename, duplicate } = useSavedPlans()
 const { plan, replace } = usePlan()
+const favSync = useFavoritesSyncState()
+const { favorites } = useFavorites()
 
 const email = ref('')
 const sent = ref(false)
@@ -66,6 +70,12 @@ function askRemove(row) {
         <button type="button" class="rounded-full border border-navy/15 px-3 py-1.5 font-medium transition-colors duration-200 hover:border-navy/40 hover:text-navy dark:border-ice/20 dark:hover:border-ice/50 dark:hover:text-ice" @click="signOut">Se déconnecter</button>
       </div>
     </header>
+
+    <p v-if="user" class="mb-4 text-sm" :class="favSync.status === 'error' ? 'text-red-600 dark:text-red-300' : 'text-navy/60 dark:text-ice/60'">
+      <template v-if="favSync.status === 'error'">Favoris non synchronisés — {{ favSync.error }}</template>
+      <template v-else-if="favSync.status === 'ok'">{{ favorites.size }} favori{{ favorites.size > 1 ? 's' : '' }} synchronisé{{ favorites.size > 1 ? 's' : '' }}</template>
+      <template v-else>Synchronisation des favoris…</template>
+    </p>
 
     <p v-if="error" role="alert" class="mb-4 rounded-2xl bg-red-500/10 px-4 py-3 text-sm text-red-600 dark:text-red-300">{{ error }}</p>
 
