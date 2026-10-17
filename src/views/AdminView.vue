@@ -2,7 +2,7 @@
 import { ref, watch } from 'vue'
 import { supabase } from '../lib/supabase.js'
 import { useAuth } from '../composables/useAuth.js'
-import { isAdmin } from '../lib/auth.js'
+import { isAdmin, authErrorMessage } from '../lib/auth.js'
 
 const { user, ready } = useAuth()
 const users = ref([])
@@ -22,6 +22,29 @@ async function load() {
 }
 
 watch(user, (u) => isAdmin(u) && load(), { immediate: true })
+
+const inviteEmail = ref('')
+const inviting = ref(false)
+const inviteMessage = ref('')
+const inviteFailed = ref(false)
+
+async function invite() {
+  inviting.value = true
+  inviteMessage.value = ''
+  const address = inviteEmail.value.trim()
+  const { error: e } = await supabase.functions.invoke('invite-coach', { body: { email: address } })
+  inviting.value = false
+  if (e) {
+    const body = await e.context?.json?.().catch(() => null)
+    inviteFailed.value = true
+    inviteMessage.value = body ? authErrorMessage(body.code ? body : { message: body.error }) : 'Invitation impossible : la fonction invite-coach est-elle déployée dans Supabase ?'
+    return
+  }
+  inviteFailed.value = false
+  inviteMessage.value = `Invitation envoyée à ${address}.`
+  inviteEmail.value = ''
+  load()
+}
 </script>
 
 <template>
@@ -35,6 +58,28 @@ watch(user, (u) => isAdmin(u) && load(), { immediate: true })
     <p v-else-if="!isAdmin(user)" class="text-navy/70 dark:text-ice/70">Cette page est réservée à l’administrateur.</p>
 
     <template v-else>
+      <form class="mb-8 flex flex-col gap-3 rounded-3xl border border-navy/10 p-5 sm:p-6 dark:border-ice/10 dark:bg-ice/5" @submit.prevent="invite">
+        <h2 class="text-lg font-semibold text-navy dark:text-white">Inviter un coach</h2>
+        <div class="flex flex-col gap-2 sm:flex-row">
+          <label class="flex-1">
+            <span class="sr-only">Courriel du coach</span>
+            <input
+              v-model="inviteEmail"
+              type="email"
+              required
+              autocomplete="off"
+              placeholder="coach@exemple.com"
+              class="w-full rounded-2xl border border-navy/10 bg-navy/[0.03] px-4 py-3 text-base outline-none transition-colors duration-200 placeholder:text-navy/40 focus:border-royal focus:ring-4 focus:ring-royal/15 dark:border-ice/10 dark:bg-ice/5 dark:placeholder:text-ice/40 dark:focus:border-periwinkle dark:focus:ring-periwinkle/20"
+            />
+          </label>
+          <button type="submit" :disabled="inviting" class="rounded-2xl bg-royal px-5 py-3 font-semibold text-white transition-colors duration-200 hover:bg-royal/85 disabled:opacity-60 dark:bg-accent dark:text-on-accent dark:hover:bg-accent/85">
+            {{ inviting ? 'Envoi…' : 'Envoyer l’invitation' }}
+          </button>
+        </div>
+        <p class="text-sm text-navy/60 dark:text-ice/60">Le coach reçoit un courriel avec un lien. Il arrive connecté sur Drill Hub et choisit son mot de passe.</p>
+        <p v-if="inviteMessage" role="status" class="rounded-2xl px-4 py-3 text-sm" :class="inviteFailed ? 'bg-red-500/10 text-red-600 dark:text-red-300' : 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-300'">{{ inviteMessage }}</p>
+      </form>
+
       <p v-if="error" role="alert" class="mb-4 rounded-2xl bg-red-500/10 px-4 py-3 text-sm text-red-600 dark:text-red-300">{{ error }}</p>
       <p v-if="loading && !users.length" class="text-navy/60 dark:text-ice/60">Chargement…</p>
       <template v-else-if="users.length">

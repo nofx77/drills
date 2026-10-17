@@ -9,6 +9,7 @@ const MESSAGES = {
   user_already_exists: 'Un compte existe déjà avec ce courriel : connecte-toi.',
   over_email_send_rate_limit: 'Trop de courriels envoyés : réessaie dans quelques minutes.',
   same_password: 'Ce mot de passe est déjà le tien.',
+  email_exists: 'Ce coach a déjà un compte.',
   otp_expired: 'Ce lien a expiré ou a déjà servi. Demande un nouveau lien ou une nouvelle invitation.',
   signup_disabled: 'Aucun compte pour ce courriel. Demande une invitation à ton administrateur.',
   otp_disabled: 'Aucun compte pour ce courriel. Demande une invitation à ton administrateur.',
