@@ -74,16 +74,16 @@ function askRemove(row) {
       <TransitionGroup v-else-if="plans.length" tag="ul" name="list" class="relative flex flex-col gap-3">
         <li v-for="row in plans" :key="row.id" class="flex flex-wrap items-center gap-3 rounded-2xl border border-navy/10 bg-white p-4 dark:border-ice/10 dark:bg-ice/5">
           <button type="button" class="min-w-0 flex-1 text-left" @click="open(row)">
-            <span class="block truncate font-semibold text-navy dark:text-white">{{ row.title || 'Plan sans titre' }}</span>
+            <span class="block font-semibold break-words text-navy dark:text-white">{{ row.title || 'Plan sans titre' }}</span>
             <span class="text-sm text-navy/60 dark:text-ice/60">
               {{ row.items.length }} exercice{{ row.items.length > 1 ? 's' : '' }} · {{ dateFormat.format(new Date(row.updated_at)) }}
             </span>
           </button>
-          <div class="flex items-center gap-1 text-sm">
+          <div class="flex flex-wrap items-center gap-1 text-sm">
             <button type="button" class="rounded-full bg-royal px-3.5 py-1.5 font-semibold text-white transition-colors duration-200 hover:bg-royal/85 dark:bg-accent dark:text-on-accent dark:hover:bg-accent/85" @click="open(row)">Ouvrir</button>
-            <button type="button" class="rounded-full px-3 py-1.5 font-medium text-navy/60 transition-colors duration-200 hover:text-navy dark:text-ice/60 dark:hover:text-ice" @click="guard(() => duplicate(row))">Dupliquer</button>
-            <button type="button" class="rounded-full px-3 py-1.5 font-medium text-navy/60 transition-colors duration-200 hover:text-navy dark:text-ice/60 dark:hover:text-ice" @click="askRename(row)">Renommer</button>
-            <button type="button" class="rounded-full px-3 py-1.5 font-medium text-navy/40 transition-colors duration-200 hover:text-red-500 dark:text-ice/40" @click="askRemove(row)">Supprimer</button>
+            <button type="button" class="rounded-full px-2 py-1.5 font-medium text-navy/60 sm:px-3 transition-colors duration-200 hover:text-navy dark:text-ice/60 dark:hover:text-ice" @click="guard(() => duplicate(row))">Dupliquer</button>
+            <button type="button" class="rounded-full px-2 py-1.5 font-medium text-navy/60 sm:px-3 transition-colors duration-200 hover:text-navy dark:text-ice/60 dark:hover:text-ice" @click="askRename(row)">Renommer</button>
+            <button type="button" class="rounded-full px-2 py-1.5 font-medium text-navy/40 sm:px-3 transition-colors duration-200 hover:text-red-500 dark:text-ice/40" @click="askRemove(row)">Supprimer</button>
           </div>
         </li>
       </TransitionGroup>
