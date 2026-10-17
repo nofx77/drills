@@ -4,11 +4,16 @@ import { useRoute, useRouter } from 'vue-router'
 import { drillById } from '../data/drills.js'
 import { encodePlan, decodePlan, resolvePlan } from '../lib/planCodec.js'
 import { usePlan } from '../composables/usePlan.js'
+import { useAuth } from '../composables/useAuth.js'
+import { useSavedPlans } from '../composables/useSavedPlans.js'
 import DrillImage from '../components/DrillImage.vue'
 
 const route = useRoute()
 const router = useRouter()
-const { plan, remove, move, setMinutes, totalMinutes, replace, clear } = usePlan()
+const { plan, remove, move, setMinutes, totalMinutes, replace, clear, markSaved } = usePlan()
+const { user } = useAuth()
+const { save } = useSavedPlans()
+const saving = ref(false)
 
 const rows = computed(() => plan.value.items.map((item) => ({ ...item, drill: drillById.get(item.id) })).filter((r) => r.drill))
 
@@ -48,8 +53,20 @@ function printPlan() {
   window.print()
 }
 
-function confirmClear() {
-  if (confirm('Vider le plan ?')) clear()
+async function savePlan() {
+  saving.value = true
+  try {
+    markSaved(await save(plan.value))
+    notify('Plan enregistré')
+  } catch (e) {
+    notify(`Échec de l’enregistrement : ${e.message}`)
+  } finally {
+    saving.value = false
+  }
+}
+
+function newPlan() {
+  if (!plan.value.items.length || confirm('Commencer un nouveau plan ? Le plan en cours sera vidé.')) clear()
 }
 
 const known = new Set(drillById.keys())
@@ -97,7 +114,11 @@ watch(() => route.query.p, openLink, { immediate: true })
           <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z" /></svg>
           Imprimer
         </button>
-        <button type="button" class="ml-auto rounded-full px-4 py-2 text-sm font-medium text-navy/50 transition-colors duration-200 hover:text-navy dark:text-ice/50 dark:hover:text-ice" @click="confirmClear">Vider le plan</button>
+        <button v-if="user" type="button" :disabled="saving" class="inline-flex items-center gap-2 rounded-full border border-royal px-4 py-2 text-sm font-semibold text-royal transition-colors duration-200 hover:bg-royal/10 disabled:opacity-60 dark:border-periwinkle dark:text-periwinkle dark:hover:bg-periwinkle/10" @click="savePlan">
+          {{ saving ? 'Enregistrement…' : plan.savedId ? 'Mettre à jour' : 'Enregistrer' }}
+        </button>
+        <RouterLink v-else :to="{ name: 'plans' }" class="inline-flex items-center rounded-full border border-navy/15 px-4 py-2 text-sm font-semibold transition-colors duration-200 hover:border-navy/40 dark:border-ice/20 dark:hover:border-ice/50">Se connecter pour enregistrer</RouterLink>
+        <button type="button" class="ml-auto rounded-full px-4 py-2 text-sm font-medium text-navy/50 transition-colors duration-200 hover:text-navy dark:text-ice/50 dark:hover:text-ice" @click="newPlan">Nouveau plan</button>
       </div>
     </header>
 

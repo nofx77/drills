@@ -35,3 +35,11 @@ Les catégories permises sont listées dans `tests/categories.test.js` : ajouter
 3. Chaque push sur `main` publie le site.
 
 Le site est public mais non référencé (`noindex` + `robots.txt`) : seules les personnes qui ont le lien le trouvent.
+
+## Plans enregistrés (Supabase)
+
+Les coachs se connectent par lien courriel et enregistrent leurs plans dans Supabase (projet `wcgfgdxsyfzwvgsgpjoi`).
+
+- Schéma de la table et règles d'accès : `supabase/schema.sql` (à exécuter dans l'éditeur SQL de Supabase).
+- Authentication → URL Configuration : Site URL `https://nofx77.github.io/drills/`, Redirect URLs `https://nofx77.github.io/drills/` et `http://localhost:5179/`.
+- La clé « anon » dans `src/lib/supabase.js` est publique par conception : ce sont les règles d'accès (RLS) qui protègent les plans.

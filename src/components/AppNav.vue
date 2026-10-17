@@ -9,6 +9,7 @@ const links = [
   { to: { name: 'catalogue' }, label: 'Exercices', icon: 'M4 6h16M4 12h16M4 18h10' },
   { to: { name: 'favoris' }, label: 'Favoris', icon: 'M12 20.5s-7.5-4.6-7.5-10.1A4.4 4.4 0 0 1 12 7.6a4.4 4.4 0 0 1 7.5 2.8c0 5.5-7.5 10.1-7.5 10.1Z' },
   { to: { name: 'plan' }, label: 'Plan', icon: 'M9 5h10M9 12h10M9 19h10M5 5h.01M5 12h.01M5 19h.01' },
+  { to: { name: 'plans' }, label: 'Mes plans', icon: 'M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z' },
 ]
 </script>
 
@@ -25,7 +26,7 @@ const links = [
           :key="link.label"
           :to="link.to"
           exact-active-class="!text-royal dark:!text-periwinkle md:bg-royal/10 dark:md:bg-periwinkle/15"
-          class="relative flex flex-col items-center gap-1 rounded-xl px-4 py-2.5 text-xs font-medium text-navy/60 transition-colors duration-200 hover:text-navy md:flex-row md:gap-2 md:text-sm dark:text-ice/60 dark:hover:text-ice"
+          class="relative flex flex-col items-center gap-1 rounded-xl px-3 py-2.5 whitespace-nowrap md:px-4 text-xs font-medium text-navy/60 transition-colors duration-200 hover:text-navy md:flex-row md:gap-2 md:text-sm dark:text-ice/60 dark:hover:text-ice"
         >
           <svg class="size-6 md:size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path :d="link.icon" /></svg>
           {{ link.label }}

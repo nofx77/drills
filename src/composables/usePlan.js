@@ -38,5 +38,9 @@ export function usePlan() {
     plan.value = { title: '', items: [] }
   }
 
-  return { plan, has, add, remove, move, setMinutes, totalMinutes, replace, clear }
+  function markSaved(id) {
+    plan.value.savedId = id
+  }
+
+  return { plan, has, add, remove, move, setMinutes, totalMinutes, replace, clear, markSaved }
 }

@@ -1,5 +1,19 @@
 <script setup>
+import { watch } from 'vue'
+import { useRouter } from 'vue-router'
 import AppNav from './components/AppNav.vue'
+import { useAuth } from './composables/useAuth.js'
+
+const router = useRouter()
+const { user, cameFromEmail } = useAuth()
+
+if (cameFromEmail) {
+  const stop = watch(user, (u) => {
+    if (!u) return
+    router.replace({ name: 'plans' })
+    stop()
+  })
+}
 </script>
 
 <template>

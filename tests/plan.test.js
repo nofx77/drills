@@ -21,3 +21,13 @@ test('usePlan : sans doublon, déplacement borné, total des minutes', () => {
   remove('b')
   assert.deepEqual(plan.value.items, [{ id: 'a', minutes: null }])
 })
+
+test('usePlan : nouveau plan oublie la sauvegarde, replace la garde', () => {
+  const { plan, replace, clear, markSaved } = usePlan()
+  replace({ title: 'X', items: [], savedId: 'abc' })
+  assert.equal(plan.value.savedId, 'abc')
+  markSaved('def')
+  assert.equal(plan.value.savedId, 'def')
+  clear()
+  assert.equal(plan.value.savedId, undefined)
+})
