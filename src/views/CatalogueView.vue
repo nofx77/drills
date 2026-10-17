@@ -81,6 +81,15 @@ function clearFilters() {
         />
       </label>
       <CategoryChips v-model="selected" :categories="allCategories" />
+      <button
+        v-if="hasFilters"
+        type="button"
+        class="inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium text-royal transition-colors duration-200 hover:bg-royal/10 dark:text-periwinkle dark:hover:bg-periwinkle/10"
+        @click="clearFilters"
+      >
+        <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
+        Effacer les filtres
+      </button>
     </header>
 
     <TransitionGroup v-if="results.length" tag="div" name="list" class="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
