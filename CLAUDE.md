@@ -2,7 +2,7 @@
 
 Site de planification de pratiques de hockey pour Martin (coach) et les coachs qu'il invite.
 En ligne : https://nofx77.github.io/drills/ — dépôt `git@github.com:nofx77/drills.git` (pousser en **SSH**, HTTPS n'a pas d'identifiants).
-Interface en **français**, titres d'exercices en anglais (source icehockeysystems.com).
+Interface en **français**, titres d'exercices en anglais.
 
 ## Règles de travail
 
