@@ -6,7 +6,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "node --test",
+    "test": "node --test 'scripts/*.test.mjs' 'tests/*.test.js'",
     "dev": "vite",
     "build": "vite build",
     "import": "node scripts/import.mjs"
