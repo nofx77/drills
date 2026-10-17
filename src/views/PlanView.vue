@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { drillById } from '../data/drills.js'
 import { encodePlan, decodePlan, resolvePlan } from '../lib/planCodec.js'
@@ -31,8 +31,10 @@ async function share() {
   if (navigator.share) {
     try {
       await navigator.share({ title, url })
-    } catch {}
-    return
+      return
+    } catch (e) {
+      if (e.name === 'AbortError') return
+    }
   }
   try {
     await navigator.clipboard.writeText(url)
@@ -50,11 +52,10 @@ function confirmClear() {
   if (confirm('Vider le plan ?')) clear()
 }
 
-onMounted(() => {
-  const known = new Set(drillById.keys())
-  if (plan.value.items.some((it) => !known.has(it.id))) replace(resolvePlan(plan.value, known).plan)
+const known = new Set(drillById.keys())
+if (plan.value.items.some((it) => !known.has(it.id))) replace(resolvePlan(plan.value, known).plan)
 
-  const encoded = route.query.p
+function openLink(encoded) {
   if (!encoded) return
   const decoded = decodePlan(encoded)
   if (!decoded) {
@@ -67,7 +68,9 @@ onMounted(() => {
     }
   }
   router.replace({ name: 'plan' })
-})
+}
+
+watch(() => route.query.p, openLink, { immediate: true })
 </script>
 
 <template>
@@ -119,7 +122,7 @@ onMounted(() => {
               placeholder="–"
               :aria-label="`Durée de ${row.drill.title} en minutes`"
               class="w-16 rounded-lg border border-navy/15 bg-transparent px-2 py-1 text-center text-navy outline-none focus:border-royal print:hidden dark:border-ice/20 dark:text-ice dark:focus:border-periwinkle"
-              @change="onMinutes(index, $event.target.value)"
+              @input="onMinutes(index, $event.target.value)"
             />
             <span class="hidden print:inline">{{ row.minutes ?? '–' }}</span>
             min

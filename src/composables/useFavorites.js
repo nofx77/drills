@@ -1,7 +1,8 @@
 import { ref, watch } from 'vue'
 import { storage } from '../lib/storage.js'
 
-const favorites = ref(new Set(storage.get('favorites', [])))
+const stored = storage.get('favorites', [])
+const favorites = ref(new Set(Array.isArray(stored) ? stored : []))
 
 watch(favorites, (value) => storage.set('favorites', [...value]), { deep: true })
 

@@ -15,7 +15,7 @@ const active = computed(() => isFavorite(props.id))
     :aria-label="active ? 'Retirer des favoris' : 'Ajouter aux favoris'"
     class="grid size-10 place-items-center rounded-full transition-colors duration-200 hover:bg-royal/10 dark:hover:bg-ice/10"
     :class="active ? 'text-periwinkle' : 'text-navy/40 dark:text-ice/50'"
-    @click.stop.prevent="toggle(id)"
+    @click="toggle(id)"
   >
     <svg
       class="size-5 transition-transform duration-200"

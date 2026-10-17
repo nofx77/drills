@@ -37,10 +37,6 @@ body {
   transform: scale(0.97);
 }
 
-.list-leave-active {
-  position: absolute;
-}
-
 .no-scrollbar {
   scrollbar-width: none;
 }

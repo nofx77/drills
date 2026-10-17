@@ -1,7 +1,8 @@
 import { ref, computed, watch } from 'vue'
 import { storage } from '../lib/storage.js'
 
-const plan = ref(storage.get('plan', null) ?? { title: '', items: [] })
+const stored = storage.get('plan', null)
+const plan = ref(Array.isArray(stored?.items) ? stored : { title: '', items: [] })
 
 watch(plan, (value) => storage.set('plan', value), { deep: true })
 
