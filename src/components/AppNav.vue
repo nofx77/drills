@@ -1,8 +1,9 @@
 <script setup>
-import { useTheme } from '../composables/useTheme.js'
+import { useTheme, THEMES, THEME_LABELS } from '../composables/useTheme.js'
 import { usePlan } from '../composables/usePlan.js'
 
-const { isDark, toggle } = useTheme()
+const { theme, cycle } = useTheme()
+const nextLabel = () => THEME_LABELS[THEMES[(THEMES.indexOf(theme.value) + 1) % THEMES.length]]
 const { plan } = usePlan()
 
 const links = [
@@ -36,11 +37,13 @@ const links = [
       <button
         type="button"
         class="ml-2 grid size-10 place-items-center rounded-xl text-navy/60 transition-colors duration-200 hover:bg-navy/5 hover:text-navy md:ml-auto dark:text-ice/60 dark:hover:bg-ice/10 dark:hover:text-ice"
-        :aria-label="isDark ? 'Passer en mode clair' : 'Passer en mode sombre'"
-        @click="toggle"
+        :aria-label="`Thème ${THEME_LABELS[theme]} — passer au thème ${nextLabel()}`"
+        :title="`Thème : ${THEME_LABELS[theme]}`"
+        @click="cycle"
       >
-        <svg v-if="isDark" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
-        <svg v-else class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" /></svg>
+        <svg v-if="theme === 'dark'" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" /></svg>
+        <svg v-else-if="theme === 'light'" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+        <svg v-else class="size-6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" class="fill-royal" /><circle cx="12" cy="12" r="6.5" class="fill-white" /><circle cx="12" cy="12" r="4" class="fill-habs-blue" /></svg>
       </button>
     </div>
   </nav>

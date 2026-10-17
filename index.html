@@ -8,7 +8,9 @@
     <title>Exercices de hockey</title>
     <script>
       try {
-        if (JSON.parse(localStorage.getItem('theme')) === 'light') document.documentElement.classList.remove('dark')
+        var theme = JSON.parse(localStorage.getItem('theme'))
+        if (theme === 'light') document.documentElement.classList.remove('dark')
+        if (theme === 'habs') document.documentElement.classList.add('habs')
       } catch (e) {}
     </script>
   </head>

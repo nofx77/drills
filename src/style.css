@@ -7,7 +7,26 @@
   --color-royal: #1B2CC1;
   --color-periwinkle: #7692FF;
   --color-ice: #ABD2FA;
+  --color-accent: var(--color-periwinkle);
+  --color-on-accent: var(--color-navy);
+  --color-habs-red: #AF1E2D;
+  --color-habs-red-light: #E8505E;
+  --color-habs-blue: #192168;
+  --color-habs-night: #101654;
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.habs {
+  --color-navy: var(--color-habs-night);
+  --color-royal: var(--color-habs-red);
+  --color-periwinkle: var(--color-habs-red-light);
+  --color-ice: var(--color-white);
+  --color-accent: var(--color-habs-red);
+  --color-on-accent: var(--color-white);
+}
+
+.habs nav {
+  border-color: var(--color-habs-red);
 }
 
 body {

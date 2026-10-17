@@ -62,8 +62,8 @@ function clearFilters() {
       <p class="text-lg text-navy/70 dark:text-ice/70">
         {{ favoritesOnly && !hasFilters ? 'Touche le cœur d’un exercice pour le retrouver ici.' : 'Aucun exercice ne correspond.' }}
       </p>
-      <button v-if="hasFilters" type="button" class="rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white dark:bg-periwinkle dark:text-navy" @click="clearFilters">Effacer les filtres</button>
-      <RouterLink v-else-if="favoritesOnly" :to="{ name: 'catalogue' }" class="rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white dark:bg-periwinkle dark:text-navy">Voir les exercices</RouterLink>
+      <button v-if="hasFilters" type="button" class="rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white dark:bg-accent dark:text-on-accent" @click="clearFilters">Effacer les filtres</button>
+      <RouterLink v-else-if="favoritesOnly" :to="{ name: 'catalogue' }" class="rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white dark:bg-accent dark:text-on-accent">Voir les exercices</RouterLink>
     </div>
   </div>
 </template>

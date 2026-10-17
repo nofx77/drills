@@ -20,7 +20,7 @@ function toggle(category) {
       class="shrink-0 rounded-full border px-3.5 py-1.5 text-sm font-medium whitespace-nowrap transition-colors duration-200"
       :class="
         selected.includes(category)
-          ? 'border-royal bg-royal text-white dark:border-periwinkle dark:bg-periwinkle dark:text-navy'
+          ? 'border-royal bg-royal text-white dark:border-accent dark:bg-accent dark:text-on-accent'
           : 'border-navy/15 text-navy/70 hover:border-royal/50 hover:text-navy dark:border-ice/15 dark:text-ice/70 dark:hover:border-ice/40 dark:hover:text-ice'
       "
       @click="toggle(category)"

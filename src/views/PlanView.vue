@@ -106,7 +106,7 @@ watch(() => route.query.p, openLink, { immediate: true })
         {{ rows.length }} exercice{{ rows.length > 1 ? 's' : '' }} · Durée totale : <strong class="text-navy dark:text-white">{{ totalMinutes }} min</strong>
       </p>
       <div v-if="rows.length" class="flex flex-wrap gap-2 print:hidden">
-        <button type="button" class="inline-flex items-center gap-2 rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-royal/85 dark:bg-periwinkle dark:text-navy dark:hover:bg-ice" @click="share">
+        <button type="button" class="inline-flex items-center gap-2 rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-royal/85 dark:bg-accent dark:text-on-accent dark:hover:bg-accent/85" @click="share">
           <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7M16 6l-4-4-4 4M12 2v13" /></svg>
           Partager
         </button>
@@ -165,7 +165,7 @@ watch(() => route.query.p, openLink, { immediate: true })
 
     <div v-else class="flex flex-col items-center gap-4 rounded-3xl border border-dashed border-navy/15 px-6 py-16 text-center dark:border-ice/15">
       <p class="text-lg text-navy/70 dark:text-ice/70">Ton plan est vide.</p>
-      <RouterLink :to="{ name: 'catalogue' }" class="rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white dark:bg-periwinkle dark:text-navy">Choisir des exercices</RouterLink>
+      <RouterLink :to="{ name: 'catalogue' }" class="rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white dark:bg-accent dark:text-on-accent">Choisir des exercices</RouterLink>
     </div>
 
     <Transition name="page">

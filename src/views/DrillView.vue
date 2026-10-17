@@ -59,7 +59,7 @@ function back() {
           :href="base + drill.pdf"
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center gap-2 rounded-full bg-royal px-5 py-2.5 font-semibold text-white transition-colors duration-200 hover:bg-royal/85 dark:bg-periwinkle dark:text-navy dark:hover:bg-ice"
+          class="inline-flex items-center gap-2 rounded-full bg-royal px-5 py-2.5 font-semibold text-white transition-colors duration-200 hover:bg-royal/85 dark:bg-accent dark:text-on-accent dark:hover:bg-accent/85"
         >
           <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z" /><path d="M14 3v5h5M9 13h6M9 17h4" /></svg>
           Ouvrir la fiche PDF
@@ -79,7 +79,7 @@ function back() {
 
     <div v-else class="flex flex-col items-center gap-4 rounded-3xl border border-dashed border-navy/15 px-6 py-16 text-center dark:border-ice/15">
       <p class="text-lg text-navy/70 dark:text-ice/70">Exercice introuvable.</p>
-      <RouterLink :to="{ name: 'catalogue' }" class="rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white dark:bg-periwinkle dark:text-navy">Voir les exercices</RouterLink>
+      <RouterLink :to="{ name: 'catalogue' }" class="rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white dark:bg-accent dark:text-on-accent">Voir les exercices</RouterLink>
     </div>
   </div>
 </template>

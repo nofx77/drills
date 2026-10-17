@@ -84,7 +84,7 @@ function askRemove(row) {
               class="w-full rounded-2xl border border-navy/10 bg-navy/[0.03] px-4 py-3 text-base outline-none transition-colors duration-200 placeholder:text-navy/40 focus:border-royal focus:ring-4 focus:ring-royal/15 dark:border-ice/10 dark:bg-ice/5 dark:placeholder:text-ice/40 dark:focus:border-periwinkle dark:focus:ring-periwinkle/20"
             />
           </label>
-          <button type="submit" :disabled="sending" class="rounded-2xl bg-royal px-5 py-3 font-semibold text-white transition-colors duration-200 hover:bg-royal/85 disabled:opacity-60 dark:bg-periwinkle dark:text-navy dark:hover:bg-ice">
+          <button type="submit" :disabled="sending" class="rounded-2xl bg-royal px-5 py-3 font-semibold text-white transition-colors duration-200 hover:bg-royal/85 disabled:opacity-60 dark:bg-accent dark:text-on-accent dark:hover:bg-accent/85">
             {{ sending ? 'Envoi…' : 'Recevoir le lien' }}
           </button>
         </form>
@@ -108,7 +108,7 @@ function askRemove(row) {
             </span>
           </button>
           <div class="flex items-center gap-1 text-sm">
-            <button type="button" class="rounded-full bg-royal px-3.5 py-1.5 font-semibold text-white transition-colors duration-200 hover:bg-royal/85 dark:bg-periwinkle dark:text-navy dark:hover:bg-ice" @click="open(row)">Ouvrir</button>
+            <button type="button" class="rounded-full bg-royal px-3.5 py-1.5 font-semibold text-white transition-colors duration-200 hover:bg-royal/85 dark:bg-accent dark:text-on-accent dark:hover:bg-accent/85" @click="open(row)">Ouvrir</button>
             <button type="button" class="rounded-full px-3 py-1.5 font-medium text-navy/60 transition-colors duration-200 hover:text-navy dark:text-ice/60 dark:hover:text-ice" @click="guard(() => duplicate(row))">Dupliquer</button>
             <button type="button" class="rounded-full px-3 py-1.5 font-medium text-navy/60 transition-colors duration-200 hover:text-navy dark:text-ice/60 dark:hover:text-ice" @click="askRename(row)">Renommer</button>
             <button type="button" class="rounded-full px-3 py-1.5 font-medium text-navy/40 transition-colors duration-200 hover:text-red-500 dark:text-ice/40" @click="askRemove(row)">Supprimer</button>
@@ -118,7 +118,7 @@ function askRemove(row) {
 
       <div v-else class="flex flex-col items-center gap-4 rounded-3xl border border-dashed border-navy/15 px-6 py-16 text-center dark:border-ice/15">
         <p class="text-lg text-navy/70 dark:text-ice/70">Aucun plan enregistré.</p>
-        <RouterLink :to="{ name: 'plan' }" class="rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white dark:bg-periwinkle dark:text-navy">Aller au plan en cours</RouterLink>
+        <RouterLink :to="{ name: 'plan' }" class="rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white dark:bg-accent dark:text-on-accent">Aller au plan en cours</RouterLink>
       </div>
     </template>
   </div>

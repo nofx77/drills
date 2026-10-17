@@ -25,7 +25,7 @@ const { has, add } = usePlan()
           type="button"
           :disabled="has(drill.id)"
           class="pointer-events-auto rounded-full px-3.5 py-1.5 text-sm font-semibold transition-colors duration-200"
-          :class="has(drill.id) ? 'text-navy/50 dark:text-ice/50' : 'bg-royal text-white hover:bg-royal/85 dark:bg-periwinkle dark:text-navy dark:hover:bg-ice'"
+          :class="has(drill.id) ? 'text-navy/50 dark:text-ice/50' : 'bg-royal text-white hover:bg-royal/85 dark:bg-accent dark:text-on-accent dark:hover:bg-accent/85'"
           @click="add(drill.id)"
         >
           {{ has(drill.id) ? '✓ Dans le plan' : '+ Plan' }}
