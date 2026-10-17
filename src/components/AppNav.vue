@@ -16,9 +16,8 @@ const links = [
 <template>
   <nav class="fixed inset-x-0 bottom-0 z-30 border-t border-navy/10 bg-white/80 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl md:sticky md:top-0 md:bottom-auto md:border-t-0 md:border-b dark:border-ice/10 dark:bg-navy/80 print:hidden">
     <div class="mx-auto flex max-w-7xl items-center px-4 sm:px-6">
-      <RouterLink :to="{ name: 'catalogue' }" class="mr-8 hidden items-center gap-2 py-4 text-lg font-semibold tracking-tight md:flex">
-        <span class="grid size-8 place-items-center rounded-xl bg-royal text-sm text-white">🏒</span>
-        Exercices de hockey
+      <RouterLink :to="{ name: 'catalogue' }" class="mr-8 hidden items-center gap-1.5 py-4 text-xl font-bold tracking-tight md:flex">
+        <span class="text-navy dark:text-white">Drill</span><span class="text-royal dark:text-periwinkle">Hub</span>
       </RouterLink>
       <div class="flex flex-1 justify-around md:flex-none md:gap-1">
         <RouterLink

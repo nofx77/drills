@@ -1,4 +1,4 @@
-# Exercices de hockey
+# Drill Hub
 
 Catalogue des exercices (schémas PNG + fiches PDF) pour monter des plans de pratique. Vue 3 + Tailwind, hébergé sur GitHub Pages.
 
