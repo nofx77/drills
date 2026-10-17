@@ -5,11 +5,13 @@ import AppNav from './components/AppNav.vue'
 import { useAuth } from './composables/useAuth.js'
 import { startPlanSync } from './composables/usePlanSync.js'
 import { startFavoritesSync } from './composables/useFavoritesSync.js'
+import { startCurrentPlanSync } from './composables/useCurrentPlanSync.js'
 
 const router = useRouter()
 const { user, cameFromEmail } = useAuth()
 startPlanSync()
 startFavoritesSync()
+startCurrentPlanSync()
 
 if (cameFromEmail) {
   const stop = watch(user, (u) => {

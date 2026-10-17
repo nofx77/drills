@@ -54,3 +54,22 @@ drop policy if exists "Retirer ses favoris" on public.favorites;
 create policy "Retirer ses favoris" on public.favorites for delete using (auth.uid() = user_id);
 
 alter publication supabase_realtime add table public.favorites;
+
+create table if not exists public.current_plans (
+  user_id uuid primary key default auth.uid() references auth.users (id) on delete cascade,
+  plan jsonb not null,
+  updated_at timestamptz not null default now()
+);
+
+alter table public.current_plans enable row level security;
+
+drop policy if exists "Lire son plan en cours" on public.current_plans;
+create policy "Lire son plan en cours" on public.current_plans for select using (auth.uid() = user_id);
+
+drop policy if exists "Créer son plan en cours" on public.current_plans;
+create policy "Créer son plan en cours" on public.current_plans for insert with check (auth.uid() = user_id);
+
+drop policy if exists "Modifier son plan en cours" on public.current_plans;
+create policy "Modifier son plan en cours" on public.current_plans for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+alter publication supabase_realtime add table public.current_plans;

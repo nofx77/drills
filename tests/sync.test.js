@@ -31,3 +31,12 @@ test('la suppression du plan en cours ailleurs le détache', () => {
   assert.equal(remoteAction({ eventType: 'DELETE', old: { id: 'abc' } }, current, new Set()), 'unlink')
   assert.equal(remoteAction({ eventType: 'DELETE', old: { id: 'zzz' } }, current, new Set()), 'ignore')
 })
+
+test('un bloc commentaire ajouté sur un appareil est appliqué sur l’autre', async () => {
+  const { toRow, fromRow } = await import('../src/lib/savedPlans.js')
+  const onB = { title: 'U13', items: [{ id: 'go-go', minutes: 5 }], savedId: 'abc' }
+  const onA = { ...onB, items: [...onB.items, { kind: 'note', id: 'note-x', title: 'Pause', text: '', url: '', minutes: 2 }] }
+  const event = { eventType: 'UPDATE', new: { id: 'abc', ...toRow(onA) } }
+  assert.equal(remoteAction(event, onB, new Set()), 'apply')
+  assert.deepEqual(fromRow(event.new).items[1], onA.items[1])
+})
