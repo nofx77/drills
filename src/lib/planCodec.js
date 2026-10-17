@@ -43,5 +43,5 @@ export function decodePlan(s) {
 
 export function resolvePlan(plan, knownIds) {
   const items = plan.items.filter((it) => it.kind === 'note' || knownIds.has(it.id))
-  return { plan: { title: plan.title, items }, missing: plan.items.length - items.length }
+  return { plan: { ...plan, items }, missing: plan.items.length - items.length }
 }

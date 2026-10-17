@@ -30,3 +30,10 @@ test('un ancien lien sans adresse donne un bloc avec url vide', () => {
   const back = decodePlan(btoa(JSON.stringify({ t: 'x', i: [['#', null, 'a', 'b']] })))
   assert.equal(back.items[0].url, '')
 })
+
+test('resolvePlan garde le lien vers la sauvegarde', () => {
+  const saved = { title: 'U13', items: [note, { id: 'go-go', minutes: 5 }], savedId: 'abc' }
+  const { plan: out, missing } = resolvePlan(saved, new Set(['go-go']))
+  assert.equal(out.savedId, 'abc')
+  assert.equal(missing, 0)
+})

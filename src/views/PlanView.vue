@@ -88,8 +88,8 @@ function newPlan() {
   if (!plan.value.items.length || confirm('Commencer un nouveau plan ? Le plan en cours sera vidé.')) clear()
 }
 
-const known = new Set(drillById.keys())
-if (plan.value.items.some((it) => !known.has(it.id))) replace(resolvePlan(plan.value, known).plan)
+const pruned = resolvePlan(plan.value, new Set(drillById.keys()))
+if (pruned.missing) replace(pruned.plan)
 
 </script>
 

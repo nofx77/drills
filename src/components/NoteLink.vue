@@ -15,7 +15,7 @@ watch(() => props.url, () => (playing.value = false))
 <template>
   <div v-if="href" class="flex flex-col gap-1">
     <template v-if="video">
-      <div class="relative aspect-video w-full max-w-md overflow-hidden rounded-xl bg-black print:hidden">
+      <div class="relative aspect-video overflow-hidden rounded-lg bg-black transition-[width] duration-200 print:hidden" :class="playing ? 'w-full max-w-sm' : 'w-36'">
         <iframe
           v-if="playing"
           :src="`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&start=${video.start}`"
@@ -25,9 +25,9 @@ watch(() => props.url, () => (playing.value = false))
           class="absolute inset-0 size-full"
         ></iframe>
         <button v-else type="button" class="group absolute inset-0 size-full" aria-label="Lire la vidéo" @click="playing = true">
-          <img :src="`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`" alt="" loading="lazy" class="size-full object-cover opacity-90 transition-opacity duration-200 group-hover:opacity-100" />
-          <span class="absolute top-1/2 left-1/2 grid h-12 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-2xl bg-habs-red text-white shadow-lg transition-transform duration-200 group-hover:scale-110">
-            <svg class="size-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7Z" /></svg>
+          <img :src="`https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`" alt="" loading="lazy" class="size-full object-cover opacity-90 transition-opacity duration-200 group-hover:opacity-100" />
+          <span class="absolute top-1/2 left-1/2 grid h-7 w-10 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-lg bg-habs-red text-white shadow-lg transition-transform duration-200 group-hover:scale-110">
+            <svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7Z" /></svg>
           </span>
         </button>
       </div>
