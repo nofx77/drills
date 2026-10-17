@@ -1,16 +1,13 @@
 <script setup>
-import { ref, computed, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { ref, computed } from 'vue'
 import { drillById } from '../data/drills.js'
-import { encodePlan, decodePlan, resolvePlan } from '../lib/planCodec.js'
+import { encodePlan, resolvePlan } from '../lib/planCodec.js'
 import { usePlan } from '../composables/usePlan.js'
 import { useAuth } from '../composables/useAuth.js'
 import { useSavedPlans } from '../composables/useSavedPlans.js'
 import { useSyncStatus, markSynced } from '../composables/usePlanSync.js'
 import DrillImage from '../components/DrillImage.vue'
 
-const route = useRoute()
-const router = useRouter()
 const { plan, remove, move, setMinutes, totalMinutes, replace, clear, markSaved } = usePlan()
 const { user } = useAuth()
 const { save } = useSavedPlans()
@@ -34,7 +31,7 @@ function onMinutes(index, value) {
 }
 
 async function share() {
-  const url = `${location.origin}${location.pathname}#/plan?p=${encodePlan(plan.value)}`
+  const url = `${location.origin}${location.pathname}#/partage?p=${encodePlan(plan.value)}`
   const title = plan.value.title || 'Plan de pratique'
   if (navigator.share) {
     try {
@@ -77,22 +74,6 @@ function newPlan() {
 const known = new Set(drillById.keys())
 if (plan.value.items.some((it) => !known.has(it.id))) replace(resolvePlan(plan.value, known).plan)
 
-function openLink(encoded) {
-  if (!encoded) return
-  const decoded = decodePlan(encoded)
-  if (!decoded) {
-    notify('Lien de plan invalide')
-  } else {
-    const { plan: incoming, missing } = resolvePlan(decoded, known)
-    if (!plan.value.items.length || confirm('Remplacer ton plan actuel par celui du lien ?')) {
-      replace(incoming)
-      if (missing) notify(`${missing} exercice${missing > 1 ? 's' : ''} introuvable${missing > 1 ? 's' : ''} ignoré${missing > 1 ? 's' : ''}`)
-    }
-  }
-  router.replace({ name: 'plan' })
-}
-
-watch(() => route.query.p, openLink, { immediate: true })
 </script>
 
 <template>
