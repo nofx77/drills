@@ -1,5 +1,6 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch, onBeforeUnmount } from 'vue'
+import Sortable from 'sortablejs'
 import { drillById } from '../data/drills.js'
 import { encodePlan, resolvePlan } from '../lib/planCodec.js'
 import { usePlan } from '../composables/usePlan.js'
@@ -10,7 +11,32 @@ import DrillImage from '../components/DrillImage.vue'
 import NoteLink from '../components/NoteLink.vue'
 import NoteThumb from '../components/NoteThumb.vue'
 
-const { plan, remove, move, setMinutes, totalMinutes, replace, clear, markSaved, addNote, updateNote } = usePlan()
+const { plan, remove, move, moveTo, setMinutes, totalMinutes, replace, clear, markSaved, addNote, updateNote } = usePlan()
+
+const listRef = ref(null)
+let sortable = null
+
+watch(listRef, (list) => {
+  sortable?.destroy()
+  sortable = null
+  if (!list?.$el) return
+  sortable = Sortable.create(list.$el, {
+    handle: '.drag-handle',
+    animation: 150,
+    forceFallback: true,
+    fallbackTolerance: 3,
+    ghostClass: 'drag-ghost',
+    chosenClass: 'drag-chosen',
+    onEnd({ item, from, oldIndex, newIndex }) {
+      if (oldIndex === newIndex) return
+      from.removeChild(item)
+      from.insertBefore(item, from.children[oldIndex] ?? null)
+      moveTo(oldIndex, newIndex)
+    },
+  })
+})
+
+onBeforeUnmount(() => sortable?.destroy())
 const { user } = useAuth()
 const { save } = useSavedPlans()
 const saving = ref(false)
@@ -130,13 +156,18 @@ if (pruned.missing) replace(pruned.plan)
       </div>
     </header>
 
-    <TransitionGroup v-if="rows.length" tag="ol" name="list" class="relative flex flex-col gap-3">
+    <TransitionGroup v-if="rows.length" ref="listRef" tag="ol" name="list" class="relative flex flex-col gap-3">
       <li
         v-for="(row, index) in rows"
         :key="row.id"
         class="plan-item flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-3 sm:gap-4 dark:border-ice/10 dark:bg-ice/5"
       >
-        <span class="w-6 shrink-0 pt-1 text-center text-lg font-bold text-royal dark:text-periwinkle">{{ index + 1 }}</span>
+        <div class="flex shrink-0 flex-col items-center gap-1">
+          <span class="drag-handle grid size-7 cursor-grab touch-none place-items-center rounded-lg text-navy/40 transition-colors duration-200 hover:bg-navy/5 hover:text-navy active:cursor-grabbing print:hidden dark:text-ice/40 dark:hover:bg-ice/10 dark:hover:text-ice" :aria-label="`Glisser pour déplacer ${label(row)}`" title="Glisser pour déplacer">
+            <svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.6" /><circle cx="15" cy="6" r="1.6" /><circle cx="9" cy="12" r="1.6" /><circle cx="15" cy="12" r="1.6" /><circle cx="9" cy="18" r="1.6" /><circle cx="15" cy="18" r="1.6" /></svg>
+          </span>
+          <span class="w-6 text-center text-lg font-bold text-royal dark:text-periwinkle">{{ index + 1 }}</span>
+        </div>
         <template v-if="row.kind === 'note'">
           <NoteThumb :url="row.url" :title="row.title" />
           <div class="plan-text flex min-w-0 flex-1 flex-col gap-2">

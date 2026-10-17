@@ -17,6 +17,7 @@
   "type": "module",
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",
+    "sortablejs": "^1.15.7",
     "vue": "^3.5.44",
     "vue-router": "^5.4.0"
   },

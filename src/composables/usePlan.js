@@ -37,6 +37,12 @@ export function usePlan() {
     ;[items[index], items[target]] = [items[target], items[index]]
   }
 
+  function moveTo(from, to) {
+    const items = plan.value.items
+    if (from === to || from < 0 || to < 0 || from >= items.length || to >= items.length) return
+    items.splice(to, 0, ...items.splice(from, 1))
+  }
+
   function setMinutes(index, minutes) {
     plan.value.items[index].minutes = minutes
   }
@@ -53,5 +59,5 @@ export function usePlan() {
     plan.value.savedId = id
   }
 
-  return { plan, has, add, addNote, updateNote, remove, move, setMinutes, totalMinutes, replace, clear, markSaved }
+  return { plan, has, add, addNote, updateNote, remove, move, moveTo, setMinutes, totalMinutes, replace, clear, markSaved }
 }

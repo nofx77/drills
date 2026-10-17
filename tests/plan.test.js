@@ -44,3 +44,17 @@ test('usePlan : ajouter, modifier et retirer un bloc commentaire', () => {
   remove(id)
   assert.deepEqual(plan.value.items, [])
 })
+
+test('usePlan : moveTo déplace un élément vers une position, borné', () => {
+  const { plan, clear, add, moveTo } = usePlan()
+  clear()
+  ;['a', 'b', 'c', 'd'].forEach(add)
+  moveTo(0, 2)
+  assert.deepEqual(plan.value.items.map((it) => it.id), ['b', 'c', 'a', 'd'])
+  moveTo(3, 0)
+  assert.deepEqual(plan.value.items.map((it) => it.id), ['d', 'b', 'c', 'a'])
+  moveTo(1, 1)
+  moveTo(0, 9)
+  moveTo(-1, 2)
+  assert.deepEqual(plan.value.items.map((it) => it.id), ['d', 'b', 'c', 'a'])
+})

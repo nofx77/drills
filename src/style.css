@@ -64,6 +64,14 @@ body {
   display: none;
 }
 
+.drag-ghost {
+  opacity: 0.3;
+}
+
+.drag-chosen {
+  box-shadow: 0 12px 32px -8px var(--color-royal);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
