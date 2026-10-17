@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-navy: #091540;
+  --color-royal: #1B2CC1;
+  --color-periwinkle: #7692FF;
+  --color-ice: #ABD2FA;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  @apply bg-white text-navy antialiased dark:bg-navy dark:text-ice;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: scale(0.97);
+}
+
+.list-leave-active {
+  position: absolute;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
+}
