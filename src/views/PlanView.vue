@@ -8,6 +8,7 @@ import { useSavedPlans } from '../composables/useSavedPlans.js'
 import { useSyncStatus, markSynced } from '../composables/usePlanSync.js'
 import DrillImage from '../components/DrillImage.vue'
 import NoteLink from '../components/NoteLink.vue'
+import NoteThumb from '../components/NoteThumb.vue'
 
 const { plan, remove, move, setMinutes, totalMinutes, replace, clear, markSaved, addNote, updateNote } = usePlan()
 const { user } = useAuth()
@@ -133,13 +134,11 @@ if (pruned.missing) replace(pruned.plan)
       <li
         v-for="(row, index) in rows"
         :key="row.id"
-        class="plan-item flex items-center gap-3 rounded-2xl border border-navy/10 bg-white p-3 sm:gap-4 dark:border-ice/10 dark:bg-ice/5"
+        class="plan-item flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-3 sm:gap-4 dark:border-ice/10 dark:bg-ice/5"
       >
-        <span class="w-6 shrink-0 text-center text-lg font-bold text-royal dark:text-periwinkle">{{ index + 1 }}</span>
+        <span class="w-6 shrink-0 pt-1 text-center text-lg font-bold text-royal dark:text-periwinkle">{{ index + 1 }}</span>
         <template v-if="row.kind === 'note'">
-          <div class="plan-thumb hidden aspect-2/1 w-24 shrink-0 place-items-center rounded-xl bg-royal/10 sm:grid text-royal sm:w-32 print:hidden dark:bg-ice/10 dark:text-periwinkle" aria-hidden="true">
-            <svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z" /><path d="M8 9h8M8 13h5" /></svg>
-          </div>
+          <NoteThumb :url="row.url" :title="row.title" />
           <div class="plan-text flex min-w-0 flex-1 flex-col gap-2">
             <input
               :id="`${row.id}-title`"
