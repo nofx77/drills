@@ -18,8 +18,6 @@ const resolved = computed(() => decoded.value && resolvePlan(decoded.value, new 
 const shared = computed(() => resolved.value?.plan)
 const missing = computed(() => resolved.value?.missing ?? 0)
 const rows = computed(() => (shared.value?.items ?? []).map((item) => ({ ...item, drill: drillById.get(item.id) })))
-const drillCount = computed(() => rows.value.filter((r) => r.kind !== 'note').length)
-const noteCount = computed(() => rows.value.length - drillCount.value)
 const totalMinutes = computed(() => rows.value.reduce((sum, r) => sum + (r.minutes ?? 0), 0))
 
 const saving = ref(false)
@@ -56,7 +54,7 @@ function printPlan() {
         <p class="text-sm font-medium tracking-wide text-royal uppercase print:hidden dark:text-periwinkle">Plan partagé · lecture seule</p>
         <h1 class="text-3xl font-bold tracking-tight text-navy sm:text-4xl dark:text-white">{{ shared.title || 'Plan de pratique' }}</h1>
         <p class="text-navy/70 dark:text-ice/70">
-          {{ drillCount }} exercice{{ drillCount > 1 ? 's' : '' }}<template v-if="noteCount"> · {{ noteCount }} bloc{{ noteCount > 1 ? 's' : '' }}</template> · Durée totale : <strong class="text-navy dark:text-white">{{ totalMinutes }} min</strong>
+          {{ rows.length }} exercice{{ rows.length > 1 ? 's' : '' }} · Durée totale : <strong class="text-navy dark:text-white">{{ totalMinutes }} min</strong>
         </p>
         <p v-if="missing" class="text-sm text-navy/60 print:hidden dark:text-ice/60">{{ missing }} exercice{{ missing > 1 ? 's' : '' }} introuvable{{ missing > 1 ? 's' : '' }} ignoré{{ missing > 1 ? 's' : '' }}.</p>
         <div class="flex flex-wrap items-center gap-2 print:hidden">

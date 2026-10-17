@@ -46,8 +46,6 @@ const syncLabel = { idle: 'Synchronisé', saved: 'Synchronisé', saving: 'Synchr
 const rows = computed(() =>
   plan.value.items.map((item) => ({ ...item, drill: drillById.get(item.id) })).filter((r) => r.kind === 'note' || r.drill),
 )
-const drillCount = computed(() => rows.value.filter((r) => r.kind !== 'note').length)
-const noteCount = computed(() => rows.value.length - drillCount.value)
 
 function newNote() {
   const id = addNote()
@@ -133,7 +131,7 @@ if (pruned.missing) replace(pruned.plan)
       />
       <h1 class="hidden text-3xl font-bold print:block">{{ plan.title || 'Plan de pratique' }}</h1>
       <p v-if="rows.length" class="text-navy/70 dark:text-ice/70">
-        {{ drillCount }} exercice{{ drillCount > 1 ? 's' : '' }}<template v-if="noteCount"> · {{ noteCount }} bloc{{ noteCount > 1 ? 's' : '' }}</template> · Durée totale : <strong class="text-navy dark:text-white">{{ totalMinutes }} min</strong>
+        {{ rows.length }} exercice{{ rows.length > 1 ? 's' : '' }} · Durée totale : <strong class="text-navy dark:text-white">{{ totalMinutes }} min</strong>
       </p>
       <div v-if="rows.length" class="flex flex-wrap gap-2 print:hidden">
         <button type="button" class="inline-flex items-center gap-2 rounded-full bg-royal px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-royal/85 dark:bg-accent dark:text-on-accent dark:hover:bg-accent/85" @click="share">
