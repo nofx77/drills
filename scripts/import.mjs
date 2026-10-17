@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync, existsSync, statSync } from 'node:fs'
 import { join } from 'node:path'
-import { buildDrill } from './lib.mjs'
+import { createHash } from 'node:crypto'
+import { buildDrill, dropDuplicatePngs } from './lib.mjs'
 
 const source = process.argv[2] ?? '/Users/mnantel/Downloads/2025/2025'
 const out = 'public/drills'
@@ -14,7 +15,7 @@ for (const folder of readdirSync(source).sort()) {
   const dir = join(source, folder)
   if (!statSync(dir).isDirectory()) continue
 
-  const files = readdirSync(dir)
+  const files = dropDuplicatePngs(readdirSync(dir), (f) => createHash('md5').update(readFileSync(join(dir, f))).digest('hex'))
   const htmlFile = join(dir, 'open_in_browser.html')
   const html = existsSync(htmlFile) ? readFileSync(htmlFile, 'utf8') : undefined
   const { drill, copies } = buildDrill(folder, files, html)

@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { slugify, titleFromFolder, extractSourceUrl, buildDrill } from './lib.mjs'
+import { slugify, titleFromFolder, extractSourceUrl, buildDrill, dropDuplicatePngs } from './lib.mjs'
 
 test('slugify produit une URL propre', () => {
   assert.equal(slugify('Cut_&_Drop_Warm_Up'), 'cut-drop-warm-up')
@@ -42,4 +42,12 @@ test('buildDrill lit sourceUrl du html', () => {
   const html = '<meta http-equiv="refresh" content="0; url=https://www.icehockeysystems.com/hockey-drills/go-go">'
   assert.equal(buildDrill('Go_Go', ['GO_GO.png'], html).drill.sourceUrl, 'https://www.icehockeysystems.com/hockey-drills/go-go')
   assert.equal(buildDrill('Go_Go', ['GO_GO.png']).drill.sourceUrl, null)
+})
+
+test('dropDuplicatePngs garde le schéma principal et retire les copies identiques', () => {
+  const hash = { 'A.png': 'h1', 'drill-maker-1.png': 'h1', 'field_content_image.png': 'h2', 'drill.pdf': 'h3' }
+  assert.deepEqual(
+    dropDuplicatePngs(['drill-maker-1.png', 'A.png', 'field_content_image.png', 'drill.pdf'], (f) => hash[f]),
+    ['A.png', 'field_content_image.png', 'drill.pdf'],
+  )
 })

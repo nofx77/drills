@@ -17,6 +17,19 @@ export function extractSourceUrl(html) {
 
 const isVariant = (name) => name.startsWith('drill-maker-') || name.startsWith('field_content_image')
 
+export function dropDuplicatePngs(files, hashOf) {
+  const seen = new Set()
+  const ordered = [...files].sort((a, b) => isVariant(a) - isVariant(b))
+  const dropped = new Set()
+  for (const f of ordered) {
+    if (!f.toLowerCase().endsWith('.png')) continue
+    const h = hashOf(f)
+    if (seen.has(h)) dropped.add(f)
+    seen.add(h)
+  }
+  return files.filter((f) => !dropped.has(f))
+}
+
 export function buildDrill(folder, files, html) {
   const id = slugify(folder)
   const dir = `drills/${id}`

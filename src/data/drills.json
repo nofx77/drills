@@ -3,9 +3,7 @@
     "id": "1-on-1-re-gap-transition",
     "title": "1 on 1 Re-Gap Transition",
     "image": "drills/1-on-1-re-gap-transition/main.png",
-    "variants": [
-      "drills/1-on-1-re-gap-transition/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/1-on-1-re-gap-transition/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/1-on-1-re-gap-transition"
   },
@@ -13,10 +11,7 @@
     "id": "1-on-1-retrievals",
     "title": "1 on 1 Retrievals",
     "image": "drills/1-on-1-retrievals/main.png",
-    "variants": [
-      "drills/1-on-1-retrievals/variant-1.png",
-      "drills/1-on-1-retrievals/variant-2.png"
-    ],
+    "variants": [],
     "pdf": "drills/1-on-1-retrievals/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/1-on-1-retrievals"
   },
@@ -24,9 +19,7 @@
     "id": "1-v-1-race-to-puck-to-2-v-2",
     "title": "1 v 1 Race to Puck to 2 v 2",
     "image": "drills/1-v-1-race-to-puck-to-2-v-2/main.png",
-    "variants": [
-      "drills/1-v-1-race-to-puck-to-2-v-2/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/1-v-1-race-to-puck-to-2-v-2/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/1-v-1-race-puck-2-v-2"
   },
@@ -34,9 +27,7 @@
     "id": "1-v-1-to-2-v-2-stick-vs-no-stick",
     "title": "1 v 1 to 2 v 2 (Stick vs No Stick)",
     "image": "drills/1-v-1-to-2-v-2-stick-vs-no-stick/main.png",
-    "variants": [
-      "drills/1-v-1-to-2-v-2-stick-vs-no-stick/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/1-v-1-to-2-v-2-stick-vs-no-stick/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/1-v-1-2-v-2-stick-vs-no-stick"
   },
@@ -44,9 +35,7 @@
     "id": "1-v-1-to-2-v-2-down-low",
     "title": "1 V 1 to 2 V 2 Down Low",
     "image": "drills/1-v-1-to-2-v-2-down-low/main.png",
-    "variants": [
-      "drills/1-v-1-to-2-v-2-down-low/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/1-v-1-to-2-v-2-down-low/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/1-v-1-2-v-2-down-low"
   },
@@ -54,9 +43,7 @@
     "id": "1-v-1-v-1-game",
     "title": "1 v 1 v 1 Game",
     "image": "drills/1-v-1-v-1-game/main.png",
-    "variants": [
-      "drills/1-v-1-v-1-game/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/1-v-1-v-1-game/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/1-v-1-v-1-game"
   },
@@ -64,9 +51,7 @@
     "id": "1-v-1-2-v-2-3-v-3",
     "title": "1 v 1, 2 v 2, 3 v 3",
     "image": "drills/1-v-1-2-v-2-3-v-3/main.png",
-    "variants": [
-      "drills/1-v-1-2-v-2-3-v-3/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/1-v-1-2-v-2-3-v-3/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/1-v-1-2-v-2-3-v-3-30"
   },
@@ -74,9 +59,7 @@
     "id": "1-v-1-to-2-v-2-to-3-v-3",
     "title": "1 v 1, to 2 v 2 to 3 v 3",
     "image": "drills/1-v-1-to-2-v-2-to-3-v-3/main.png",
-    "variants": [
-      "drills/1-v-1-to-2-v-2-to-3-v-3/variant-1.png"
-    ],
+    "variants": [],
     "pdf": null,
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/1-v-1-2-v-2-3-v-3-2"
   },
@@ -84,9 +67,7 @@
     "id": "1-3-1-mad-attacker",
     "title": "1-3-1 Mad Attacker",
     "image": "drills/1-3-1-mad-attacker/main.png",
-    "variants": [
-      "drills/1-3-1-mad-attacker/variant-1.png"
-    ],
+    "variants": [],
     "pdf": null,
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/1-3-1-mad-attacker"
   },
@@ -110,9 +91,7 @@
     "id": "2-on-1-with-d-activation",
     "title": "2 on 1 with D Activation",
     "image": "drills/2-on-1-with-d-activation/main.png",
-    "variants": [
-      "drills/2-on-1-with-d-activation/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/2-on-1-with-d-activation/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/2-on-1-d-activation"
   },
@@ -128,9 +107,7 @@
     "id": "2-on-2-angling-with-defensive-reward",
     "title": "2 on 2 Angling with Defensive Reward",
     "image": "drills/2-on-2-angling-with-defensive-reward/main.png",
-    "variants": [
-      "drills/2-on-2-angling-with-defensive-reward/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/2-on-2-angling-with-defensive-reward/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/2-on-2-angling-defensive-reward"
   },
@@ -138,9 +115,7 @@
     "id": "2-on-2-continuous-transition",
     "title": "2 on 2 Continuous Transition",
     "image": "drills/2-on-2-continuous-transition/main.png",
-    "variants": [
-      "drills/2-on-2-continuous-transition/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/2-on-2-continuous-transition/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/2-on-2-continuous-transition"
   },
@@ -148,9 +123,7 @@
     "id": "2-on-2-down-low-rim",
     "title": "2 on 2 Down Low Rim",
     "image": "drills/2-on-2-down-low-rim/main.png",
-    "variants": [
-      "drills/2-on-2-down-low-rim/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/2-on-2-down-low-rim/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/2-on-2-down-low-rim"
   },
@@ -158,9 +131,7 @@
     "id": "2-on-2-net-to-corner",
     "title": "2 on 2 Net to Corner",
     "image": "drills/2-on-2-net-to-corner/main.png",
-    "variants": [
-      "drills/2-on-2-net-to-corner/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/2-on-2-net-to-corner/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/2-on-2-net-corner"
   },
@@ -168,9 +139,7 @@
     "id": "2-on-2-transition-track",
     "title": "2 on 2 Transition & Track",
     "image": "drills/2-on-2-transition-track/main.png",
-    "variants": [
-      "drills/2-on-2-transition-track/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/2-on-2-transition-track/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/2-on-2-transition-track"
   },
@@ -178,9 +147,7 @@
     "id": "2-v-0-catch-and-release",
     "title": "2 v 0 Catch and Release",
     "image": "drills/2-v-0-catch-and-release/main.png",
-    "variants": [
-      "drills/2-v-0-catch-and-release/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/2-v-0-catch-and-release/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/2-v-0-catch-and-release"
   },
@@ -188,9 +155,7 @@
     "id": "2-v-0-continuous-backcheck",
     "title": "2 V 0 Continuous Backcheck",
     "image": "drills/2-v-0-continuous-backcheck/main.png",
-    "variants": [
-      "drills/2-v-0-continuous-backcheck/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/2-v-0-continuous-backcheck/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/the-2-v-0-continuous-backcheck"
   },
@@ -198,9 +163,7 @@
     "id": "2-v-0-high-roll",
     "title": "2 v 0 High Roll",
     "image": "drills/2-v-0-high-roll/main.png",
-    "variants": [
-      "drills/2-v-0-high-roll/variant-1.png"
-    ],
+    "variants": [],
     "pdf": "drills/2-v-0-high-roll/fiche.pdf",
     "sourceUrl": "https://www.icehockeysystems.com/hockey-drills/2-v-0-high-roll"
   },
