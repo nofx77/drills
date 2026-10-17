@@ -53,7 +53,7 @@ function printPlan() {
     <template v-else>
       <header class="mb-6 flex flex-col gap-4">
         <p class="text-sm font-medium tracking-wide text-royal uppercase print:hidden dark:text-periwinkle">Plan partagé · lecture seule</p>
-        <h1 class="text-3xl font-bold tracking-tight text-navy sm:text-4xl dark:text-white">{{ shared.title || 'Plan de pratique' }}</h1>
+        <h1 class="text-2xl leading-tight font-bold tracking-tight break-words text-navy sm:text-3xl dark:text-white">{{ shared.title || 'Plan de pratique' }}</h1>
         <p class="text-navy/70 dark:text-ice/70">
           {{ rows.length }} exercice{{ rows.length > 1 ? 's' : '' }} · Durée totale : <strong class="text-navy dark:text-white">{{ totalMinutes }} min</strong>
         </p>
@@ -87,7 +87,7 @@ function printPlan() {
             </div>
           </template>
           <template v-else>
-            <component :is="user ? RouterLink : 'div'" :to="{ name: 'drill', params: { id: row.id } }" class="plan-thumb w-24 shrink-0 overflow-hidden rounded-xl sm:w-32">
+            <component :is="user ? RouterLink : 'div'" :to="{ name: 'drill', params: { id: row.id } }" class="plan-thumb w-20 shrink-0 overflow-hidden rounded-xl sm:w-32">
               <DrillImage :src="row.drill.image" :alt="row.drill.title" />
             </component>
             <div class="plan-text flex min-w-0 flex-1 flex-col gap-1">

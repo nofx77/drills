@@ -19,7 +19,7 @@ onBeforeUnmount(() => removeEventListener('keydown', onKey))
   <button
     v-if="video"
     type="button"
-    class="plan-thumb group relative aspect-video w-24 shrink-0 overflow-hidden rounded-xl bg-black sm:w-32 print:hidden"
+    class="plan-thumb group relative aspect-video w-20 shrink-0 overflow-hidden rounded-xl bg-black sm:w-32 print:hidden"
     :aria-label="`Lire la vidéo ${title}`"
     @click="open = true"
   >
@@ -28,7 +28,7 @@ onBeforeUnmount(() => removeEventListener('keydown', onKey))
       <svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7Z" /></svg>
     </span>
   </button>
-  <div v-else class="plan-thumb hidden aspect-2/1 w-24 shrink-0 place-items-center rounded-xl bg-royal/10 text-royal sm:grid sm:w-32 print:hidden dark:bg-ice/10 dark:text-periwinkle" aria-hidden="true">
+  <div v-else class="plan-thumb hidden aspect-2/1 w-20 shrink-0 place-items-center rounded-xl bg-royal/10 text-royal sm:grid sm:w-32 print:hidden dark:bg-ice/10 dark:text-periwinkle" aria-hidden="true">
     <svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z" /><path d="M8 9h8M8 13h5" /></svg>
   </div>
 
