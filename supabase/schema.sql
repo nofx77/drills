@@ -34,3 +34,23 @@ drop trigger if exists plans_touch on public.plans;
 create trigger plans_touch before update on public.plans for each row execute function public.touch_updated_at();
 
 alter publication supabase_realtime add table public.plans;
+
+create table if not exists public.favorites (
+  user_id uuid not null default auth.uid() references auth.users (id) on delete cascade,
+  drill_id text not null,
+  created_at timestamptz not null default now(),
+  primary key (user_id, drill_id)
+);
+
+alter table public.favorites enable row level security;
+
+drop policy if exists "Lire ses favoris" on public.favorites;
+create policy "Lire ses favoris" on public.favorites for select using (auth.uid() = user_id);
+
+drop policy if exists "Ajouter ses favoris" on public.favorites;
+create policy "Ajouter ses favoris" on public.favorites for insert with check (auth.uid() = user_id);
+
+drop policy if exists "Retirer ses favoris" on public.favorites;
+create policy "Retirer ses favoris" on public.favorites for delete using (auth.uid() = user_id);
+
+alter publication supabase_realtime add table public.favorites;
